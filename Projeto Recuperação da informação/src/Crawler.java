@@ -10,7 +10,7 @@ public class Crawler {
 
 	public static void main(String[] args) {
 		Crawler spider = new Crawler();
-        spider.search("http://arstechnica.com/", "computer");
+		spider.search("https://www.origin.com/bra/pt-br/store/browse?fq=platform:pc-download", "computer");
 
 	}
 
@@ -36,12 +36,13 @@ public class Crawler {
 			}
 			crawlerAux.crawl(currentUrl); // Lots of stuff happening here. Look at the crawl method in
 			// SpiderLeg
-			boolean success = crawlerAux.searchForWord(searchWord);
-			if(success){
-				System.out.println(String.format("Palavra %s encontrada em %s", searchWord, currentUrl));
-				break;
+			//boolean relevantLink = crawlerAux.searchForWord(searchWord);
+			boolean relevantLink = crawlerAux.searchGameBodyText();
+			if(relevantLink){
+				System.out.println(String.format("Link %s é um anúncio de jogo", currentUrl));
 			}
 			this.pagesToVisit.addAll(crawlerAux.getLinks());
+
 		}
 		System.out.println(String.format("%s páginas visitadas.", this.pagesVisited.size()));
 	}
