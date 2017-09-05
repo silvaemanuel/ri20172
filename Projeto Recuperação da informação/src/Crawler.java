@@ -10,7 +10,9 @@ public class Crawler {
 
 	public static void main(String[] args) {
 		Crawler spider = new Crawler();
-		spider.search("https://www.origin.com/bra/pt-br/store/browse?fq=platform:pc-download", "computer");
+		//spider.search("http://store.steampowered.com/?l=portuguese", "");
+		CrawlerAux crew = new CrawlerAux();
+		crew.getExceptions("http://store.steampowered.com");
 
 	}
 
@@ -46,6 +48,8 @@ public class Crawler {
 		}
 		System.out.println(String.format("%s páginas visitadas.", this.pagesVisited.size()));
 	}
+	
+	
 
 
 }
