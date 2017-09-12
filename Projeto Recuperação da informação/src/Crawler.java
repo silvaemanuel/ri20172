@@ -9,29 +9,12 @@ public class Crawler {
 	private List<String> pagesToVisit = new LinkedList<String>();
 
 	public static void main(String[] args) {
-		
-		String exception = "*/browse?*,*,*,*,*,,,,";
-		String url = "https://www.origin.com/browse?dfdf,dfdf,dfdf,dfdfd";
 
-		
-		if(exception.charAt(0) == '*') {
-			exception = exception.substring(1, exception.length());
-		}
-		while(exception.contains("*")) {
-			String aux = exception.substring(0, exception.indexOf("*"));
-			exception = exception.substring(exception.indexOf("*") + 1, exception.length());
-			
-			if(url.contains(aux)) {
-				url = url.substring(url.indexOf(aux) + aux.length(), url.length());
-			}else {
-				System.out.println("acesa o site");
-			}
-		}
-		System.out.println("não acesa o site");
-		//Crawler spider = new Crawler();
-		//spider.search("http://store.steampowered.com/", "");
-//		CrawlerAux aux = new CrawlerAux();
-//		aux.getExceptions("https://www.origin.com");
+
+		Crawler teste = new Crawler();
+		teste.search("http://store.steampowered.com/");
+		//		CrawlerAux aux = new CrawlerAux();
+		//		aux.getExceptions("https://www.origin.com");
 
 	}
 
@@ -44,7 +27,7 @@ public class Crawler {
 		return nextUrl;
 	}
 
-	public void search(String url, String searchWord){
+	public void search(String url){
 		CrawlerAux crawlerAux = new CrawlerAux();
 		crawlerAux.checkExceptions(url);
 		while(this.pagesVisited.size() < pageLimit){
@@ -56,9 +39,9 @@ public class Crawler {
 			}
 			else{
 				currentUrl = this.visitNextUrl();
-				
+
 				//Garante que os links visitados devem conter a URL inicial para serem visitados.
-				while(!currentUrl.contains(url)) {
+				while(!currentUrl.contains(url) && checkExceptions(url, crawlerAux)) {
 					currentUrl = this.visitNextUrl();
 				}
 			}
@@ -73,26 +56,37 @@ public class Crawler {
 		}
 		System.out.println(String.format("%s páginas visitadas.", this.pagesVisited.size()));
 	}
-	
+
 	public boolean checkExceptions(String currentUrl, CrawlerAux crawlerAux){
-		
+		boolean valReturn = true;
 		for(String exception: crawlerAux.getExceptions()) {
-			
+			String url = currentUrl;
 			if(exception.charAt(0) == '*') {
 				exception = exception.substring(1, exception.length());
 			}
-			while(exception.contains("*")) {
-				String aux = exception.substring(0, exception.indexOf("*"));
+			if (exception.contains("*")) {
+				boolean notException = false;
+				while(exception.contains("*") && !notException) {
+					String aux = exception.substring(0, exception.indexOf("*"));
+					exception = exception.substring(exception.indexOf("*") + 1, exception.length());
+					if(url.contains(aux)) {
+						url = url.substring(url.indexOf(aux) + aux.length(), url.length());
+					}else {
+						notException = true;
+					}
+					if (notException) {
+						valReturn = false;
+					}
+				}
+			}else {
+				if(url.contains(exception)) {
+					url = url.substring(url.indexOf(exception) + exception.length(), url.length());
+				}else {
+					valReturn = true;
+				}
 			}
-			
+
 		}
-		
-		
-		return true;
+		return valReturn;
 	}
-	
-	
-	
-
-
 }
