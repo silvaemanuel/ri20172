@@ -28,14 +28,12 @@ public class CrawlerAux {
 
 			Elements linksOnPage = htmlDocument.select("a[href]");
 			//System.out.println("Encontrou (" + linksOnPage.size() + ") links");
-			for(Element link : linksOnPage)
-			{
+			for(Element link : linksOnPage){
 				this.links.add(link.absUrl("href"));
 			}
 		}
 		catch(IOException ioe)
 		{
-			// We were not successful in our HTTP request
 			System.out.println("Erro na saída HTTP request " + ioe);
 		}
 	}
@@ -46,6 +44,7 @@ public class CrawlerAux {
 		return bodyText.toLowerCase().contains(searchWord.toLowerCase());
 	}
 
+	//Método que pesquisa no corpo do HTML se o mesmo contém as palavras chave indicadas. 
 	public boolean searchGameBodyText(){
 		boolean returnPage = false;
 		String[] keyWords = {"R$", "cartão", "boleto", "jogo", "plataforma", "gênero", "requisitos", "game", "jogador", "mutiplayer", "desenvolvedor"};
@@ -57,6 +56,7 @@ public class CrawlerAux {
 					count++;
 				}
 			}
+			System.out.println(" Esse link tem " + count + " keywords");
 			if(count >= 7) {
 				returnPage = true;
 			}
@@ -64,33 +64,46 @@ public class CrawlerAux {
 		return returnPage;
 	}
 
+	//Método que retorna todos os links
 	public List<String> getLinks(){
 		return this.links;
 	}
 
-	public void getExceptions(String url) {
+	//Método que retorna todos os exceções
+	public List<String> getExceptions(){
+		return this.exceptions;
+	}
+
+	//Método que remove todos os links da classe
+	public void removeLinks(){
+		this.links = new LinkedList<String>();;
+	}
+
+	//Método que utiliza a url inicial para acessar o robots.txt e salvar sua exceções.
+	public void checkExceptions(String url) {
 		try{
 			Connection connection = Jsoup.connect(url + "/robots.txt").userAgent(USER_AGENT);
 			Document htmlDocument = connection.get();
 			this.htmlDocument = htmlDocument;
 
 			System.out.println(url + "/robots.txt");
-			
+
 			String body = htmlDocument.body().text();
-			
+
 			while (body.contains("Disallow: ")) {
 				body = body.substring(body.indexOf("Disallow: ") + 10);
-				String exception = body.substring(0, body.indexOf(" "));
- 				body = body.substring(body.indexOf(" "), body.length());
- 				System.out.println(exception);
-				
+				if (body.contains(" ")) {
+					String exception = body.substring(0, body.indexOf(" "));
+					body = body.substring(body.indexOf(" "), body.length());
+					this.exceptions.add(exception);
+					//System.out.println(exception);
+				}else {
+					String exception = body;
+					this.exceptions.add(exception);
+					//System.out.println(exception);
+				}
 			}
-			
-			Elements exceptions = htmlDocument.select("a[href]");
-			for(Element exception : exceptions)
-			{
-				this.exceptions.add(exception.absUrl("href"));
-			}
+
 			System.out.println(exceptions);
 		}
 		catch(IOException ioe)

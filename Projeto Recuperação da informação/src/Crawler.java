@@ -9,10 +9,29 @@ public class Crawler {
 	private List<String> pagesToVisit = new LinkedList<String>();
 
 	public static void main(String[] args) {
-		Crawler spider = new Crawler();
-		//spider.search("http://store.steampowered.com/?l=portuguese", "");
-		CrawlerAux crew = new CrawlerAux();
-		crew.getExceptions("http://store.steampowered.com");
+		
+		String exception = "*/browse?*,*,*,*,*,,,,";
+		String url = "https://www.origin.com/browse?dfdf,dfdf,dfdf,dfdfd";
+
+		
+		if(exception.charAt(0) == '*') {
+			exception = exception.substring(1, exception.length());
+		}
+		while(exception.contains("*")) {
+			String aux = exception.substring(0, exception.indexOf("*"));
+			exception = exception.substring(exception.indexOf("*") + 1, exception.length());
+			
+			if(url.contains(aux)) {
+				url = url.substring(url.indexOf(aux) + aux.length(), url.length());
+			}else {
+				System.out.println("acesa o site");
+			}
+		}
+		System.out.println("não acesa o site");
+		//Crawler spider = new Crawler();
+		//spider.search("http://store.steampowered.com/", "");
+//		CrawlerAux aux = new CrawlerAux();
+//		aux.getExceptions("https://www.origin.com");
 
 	}
 
@@ -26,18 +45,24 @@ public class Crawler {
 	}
 
 	public void search(String url, String searchWord){
+		CrawlerAux crawlerAux = new CrawlerAux();
+		crawlerAux.checkExceptions(url);
 		while(this.pagesVisited.size() < pageLimit){
 			String currentUrl;
-			CrawlerAux crawlerAux = new CrawlerAux();
+			crawlerAux.removeLinks();
 			if(this.pagesToVisit.isEmpty()){
 				currentUrl = url;
 				this.pagesVisited.add(url);
 			}
 			else{
 				currentUrl = this.visitNextUrl();
+				
+				//Garante que os links visitados devem conter a URL inicial para serem visitados.
+				while(!currentUrl.contains(url)) {
+					currentUrl = this.visitNextUrl();
+				}
 			}
-			crawlerAux.crawl(currentUrl); // Lots of stuff happening here. Look at the crawl method in
-			// SpiderLeg
+			crawlerAux.crawl(currentUrl); 
 			//boolean relevantLink = crawlerAux.searchForWord(searchWord);
 			boolean relevantLink = crawlerAux.searchGameBodyText();
 			if(relevantLink){
@@ -48,6 +73,24 @@ public class Crawler {
 		}
 		System.out.println(String.format("%s páginas visitadas.", this.pagesVisited.size()));
 	}
+	
+	public boolean checkExceptions(String currentUrl, CrawlerAux crawlerAux){
+		
+		for(String exception: crawlerAux.getExceptions()) {
+			
+			if(exception.charAt(0) == '*') {
+				exception = exception.substring(1, exception.length());
+			}
+			while(exception.contains("*")) {
+				String aux = exception.substring(0, exception.indexOf("*"));
+			}
+			
+		}
+		
+		
+		return true;
+	}
+	
 	
 	
 
