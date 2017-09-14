@@ -10,9 +10,13 @@ public class Crawler {
 
 	public static void main(String[] args) {
 
+		String exception = "*/busca*filtro*value*";
+		String url = "*https://www.americanas.com.br/"; 
 
-		Crawler teste = new Crawler();
-		teste.search("http://store.steampowered.com/");
+
+
+				Crawler teste = new Crawler();
+				teste.search("https://www.americanas.com.br/");
 		//		CrawlerAux aux = new CrawlerAux();
 		//		aux.getExceptions("https://www.origin.com");
 
@@ -57,35 +61,27 @@ public class Crawler {
 		System.out.println(String.format("%s páginas visitadas.", this.pagesVisited.size()));
 	}
 
-	public boolean checkExceptions(String currentUrl, CrawlerAux crawlerAux){
+	public boolean checkExceptions(String urlPrefix, CrawlerAux crawlerAux){
 		boolean valReturn = true;
 		for(String exception: crawlerAux.getExceptions()) {
-			String url = currentUrl;
+			String regex = "";
+
 			if(exception.charAt(0) == '*') {
 				exception = exception.substring(1, exception.length());
-			}
-			if (exception.contains("*")) {
-				boolean notException = false;
-				while(exception.contains("*") && !notException) {
-					String aux = exception.substring(0, exception.indexOf("*"));
-					exception = exception.substring(exception.indexOf("*") + 1, exception.length());
-					if(url.contains(aux)) {
-						url = url.substring(url.indexOf(aux) + aux.length(), url.length());
-					}else {
-						notException = true;
-					}
-					if (notException) {
-						valReturn = false;
-					}
-				}
 			}else {
-				if(url.contains(exception)) {
-					url = url.substring(url.indexOf(exception) + exception.length(), url.length());
-				}else {
-					valReturn = true;
-				}
+				regex = "^(";
 			}
-
+			while(exception.contains("*")) {
+				regex = regex + ".*(" + exception.substring(0, exception.indexOf("*")) + ")";
+				exception = exception.substring(exception.indexOf("*") + 1, exception.length());
+			}
+			if (!exception.equals("")){
+				regex = regex + "(" + exception + ")";
+			}
+			System.out.println(regex);
+			if(urlPrefix.matches(regex)) {
+				return false;
+			}
 		}
 		return valReturn;
 	}
