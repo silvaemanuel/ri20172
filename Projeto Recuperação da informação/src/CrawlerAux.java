@@ -22,6 +22,12 @@ public class CrawlerAux {
 	public void crawl(String url){
 		try{
 			Connection connection = Jsoup.connect(url).userAgent(USER_AGENT);
+			try {
+				Thread.sleep(4000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			Document htmlDocument = connection.get();
 			this.htmlDocument = htmlDocument;
 
@@ -57,7 +63,7 @@ public class CrawlerAux {
 					count++;
 				}
 			}
-			System.out.println(" Esse link tem " + count + " keywords");
+			//System.out.println(" Esse link tem " + count + " keywords");
 			if(count >= 7) {
 				returnPage = true;
 			}
@@ -81,7 +87,7 @@ public class CrawlerAux {
 	}
 
 	//Método que utiliza a url inicial para acessar o robots.txt e salvar sua exceções.
-	public void checkExceptions(String url) {
+	public void createExceptions(String url) {
 		try{
 			Connection connection = Jsoup.connect(url + "/robots.txt").userAgent(USER_AGENT);
 			Document htmlDocument = connection.get();
@@ -101,11 +107,11 @@ public class CrawlerAux {
 				}else {
 					String exception = body;
 					this.exceptions.add(exception);
-					//System.out.println(exception);
 				}
 			}
-
-			System.out.println(exceptions);
+			createRegex(url);
+			
+			System.out.println(regexExceptions);
 		}
 		catch(IOException ioe)
 		{
@@ -113,9 +119,9 @@ public class CrawlerAux {
 		}
 	}
 	
-	public void checkExceptions(String urlPrefix, CrawlerAux crawlerAux){
-		boolean valReturn = true;
-		for(String exception: crawlerAux.getExceptions()) {
+	public void createRegex(String urlPrefix){
+		
+		for(String exception: exceptions) {
 			String regex = "";
 
 			if(exception.charAt(0) == '*') {
@@ -156,5 +162,15 @@ public class CrawlerAux {
 			}
 		}
 		return fixedRegex;
+	}
+	
+	public boolean checkExceptions(String prefix) {
+		boolean valReturn = true;
+		for(String exception: regexExceptions) {
+			if(prefix.matches(exception)) {
+				valReturn = false;
+			}
+		}
+		return valReturn;
 	}
 }
