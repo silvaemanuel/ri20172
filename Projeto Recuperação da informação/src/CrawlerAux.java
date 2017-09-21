@@ -16,6 +16,7 @@ public class CrawlerAux {
 			"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.112 Safari/535.1";
 	private List<String> links = new LinkedList<String>();
 	private List<String> exceptions = new LinkedList<String>();
+	private List<String> regexExceptions = new LinkedList<String>();
 	private Document htmlDocument; 
 
 	public void crawl(String url){
@@ -111,5 +112,49 @@ public class CrawlerAux {
 			System.out.println("Erro na saída HTTP request " + ioe);
 		}
 	}
+	
+	public void checkExceptions(String urlPrefix, CrawlerAux crawlerAux){
+		boolean valReturn = true;
+		for(String exception: crawlerAux.getExceptions()) {
+			String regex = "";
 
+			if(exception.charAt(0) == '*') {
+				exception = exception.substring(1, exception.length());
+				if(!exception.contains("*")) {
+					regex = ".*(";
+				}
+			}else {
+				regex = "^(";
+			}
+			if(exception.contains("*")) {
+				while(exception.contains("*")) {
+					regex = regex + ".*(" + exception.substring(0, exception.indexOf("*")) + ")";
+					exception = exception.substring(exception.indexOf("*") + 1, exception.length());
+					if(!exception.contains("*")) {
+						regex = regex + ".*(" + exception + ")";
+						exception = exception.substring(exception.indexOf("*") + 1, exception.length());
+						if(regex.charAt(0) == '^') {
+							regex = regex + ")";
+						}
+					}
+				}
+			}else {
+				regex = regex + exception + ")";
+			}
+			regex = fixRegex(regex);
+			this.regexExceptions.add(regex);
+		}
+	}
+
+	public String fixRegex(String regex) {
+		String fixedRegex = "";
+		for(int i = 0; i < regex.length(); i++) {
+			if((regex.charAt(i) + "").matches("[?]")) {
+				fixedRegex = fixedRegex + "\\" + regex.charAt(i);
+			}else {
+				fixedRegex = fixedRegex + regex.charAt(i);
+			}
+		}
+		return fixedRegex;
+	}
 }

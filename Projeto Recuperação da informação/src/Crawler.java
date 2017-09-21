@@ -10,13 +10,8 @@ public class Crawler {
 
 	public static void main(String[] args) {
 
-		String exception = "*/busca*filtro*value*";
-		String url = "*https://www.americanas.com.br/"; 
-
-
-
 		Crawler teste = new Crawler();
-		teste.search("https://www.americanas.com.br/");
+		teste.search("https://www.americanas.com.br");
 		//		CrawlerAux aux = new CrawlerAux();
 		//		aux.getExceptions("https://www.origin.com");
 
@@ -42,10 +37,20 @@ public class Crawler {
 				this.pagesVisited.add(url);
 			}
 			else{
+				String https = "https://";
 				currentUrl = this.visitNextUrl();
+				if(currentUrl.substring(0, https.length()).equals(https)) {
 
+				}else {
+
+				}
+
+				if (!currentUrl.equals(url)) {
+					String newUrl = currentUrl.substring(url.length(), currentUrl.length());
+					System.out.println("======" + newUrl);
+				}
 				//Garante que os links visitados devem conter a URL inicial para serem visitados.
-				while(!currentUrl.contains(url) && checkExceptions(url, crawlerAux)) {
+				while(!currentUrl.contains(url)) {
 					currentUrl = this.visitNextUrl();
 				}
 			}
@@ -61,52 +66,4 @@ public class Crawler {
 		System.out.println(String.format("%s páginas visitadas.", this.pagesVisited.size()));
 	}
 
-	public boolean checkExceptions(String urlPrefix, CrawlerAux crawlerAux){
-		boolean valReturn = true;
-		for(String exception: crawlerAux.getExceptions()) {
-			String regex = "";
-
-			if(exception.charAt(0) == '*') {
-				exception = exception.substring(1, exception.length());
-				if(!exception.contains("*")) {
-					regex = ".*(";
-				}
-			}else {
-				regex = "^(";
-			}
-			if(exception.contains("*")) {
-				while(exception.contains("*")) {
-					regex = regex + ".*(" + exception.substring(0, exception.indexOf("*")) + ")";
-					exception = exception.substring(exception.indexOf("*") + 1, exception.length());
-					if(!exception.contains("*")) {
-						regex = regex + ".*(" + exception + ")";
-						exception = exception.substring(exception.indexOf("*") + 1, exception.length());
-						if(regex.charAt(0) == '^') {
-							regex = regex + ")";
-						}
-					}
-				}
-			}else {
-				regex = regex + exception + ")";
-			}
-			regex = fixRegex(regex);
-			System.out.println(regex);
-			if(urlPrefix.matches(regex)) {
-				return false;
-			}
-		}
-		return valReturn;
-	}
-
-	public String fixRegex(String regex) {
-		String fixedRegex = "";
-		for(int i = 0; i < regex.length(); i++) {
-			if((regex.charAt(i) + "").matches("[?]")) {
-				fixedRegex = fixedRegex + "\\" + regex.charAt(i);
-			}else {
-				fixedRegex = fixedRegex + regex.charAt(i);
-			}
-		}
-		return fixedRegex;
-	}
 }
