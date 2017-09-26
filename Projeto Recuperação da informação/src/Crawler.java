@@ -6,7 +6,7 @@ import java.util.Set;
 public class Crawler {
 	private static int pageLimit = 1000;
 	private Set<String> pagesVisited = new HashSet<String>();
-	private List<String> pagesToVisit = new LinkedList<String>();
+	private List<CrawlerAux.Node> pagesToVisit = new LinkedList<CrawlerAux.Node>();
 
 	public static void main(String[] args) {
 
@@ -18,9 +18,9 @@ public class Crawler {
 	}
 
 	private String visitNextUrl(){
-		String nextUrl = this.pagesToVisit.remove(0);
+		String nextUrl = this.pagesToVisit.remove(0).getLink();
 		while(this.pagesVisited.contains(nextUrl)){
-			nextUrl = this.pagesToVisit.remove(0);
+			nextUrl = this.pagesToVisit.remove(0).getLink();
 		}
 		this.pagesVisited.add(nextUrl);
 		return nextUrl;
@@ -42,7 +42,7 @@ public class Crawler {
 				currentUrl = this.visitNextUrl();
 
 				//Garante que os links visitados devem conter a URL inicial para serem visitados.
-				while(!currentUrl.contains(url)) {
+				while(!currentUrl.contains(url.subSequence(7, url.length()))) {
 					currentUrl = this.visitNextUrl();
 				}
 				if (!currentUrl.substring(currentUrl.indexOf("://"), currentUrl.length()).equals(url.substring(url.indexOf("://"), url.length()))) {

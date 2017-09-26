@@ -1,5 +1,7 @@
 import java.io.IOException;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -15,6 +17,7 @@ public class CrawlerAux {
 	private static final String USER_AGENT =
 			"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.112 Safari/535.1";
 	private List<String> links = new LinkedList<String>();
+	private List<Node> linksList = new LinkedList<Node>();
 	private List<String> exceptions = new LinkedList<String>();
 	private List<String> regexExceptions = new LinkedList<String>();
 	private Document htmlDocument; 
@@ -33,11 +36,30 @@ public class CrawlerAux {
 
 			System.out.println(url);
 
-			Elements linksOnPage = htmlDocument.select("a[href]");
-			//System.out.println("Encontrou (" + linksOnPage.size() + ") links");
-			for(Element link : linksOnPage){
-				this.links.add(link.absUrl("href"));
+			//Elements linksOnPage = htmlDocument.select("a[href]");
+
+			Elements divsions = htmlDocument.select("div");
+			int score = 0;
+			for(Element div : divsions){
+				if (div.toString().contains("</a>")){
+					String[] keyWords = {"jogo", "plataforma", "gênero", "requisitos", "game", "jogador", "mutiplayer", "desenvolvedor", "videogame"};
+					for(int i = 0; i < keyWords.length; i++) {
+						if(div.toString().contains(keyWords[i])) {
+							score++;
+						}
+					}
+					Elements linksOnPage = div.select("a[href]");
+
+					for(Element link : linksOnPage){
+						this.linksList.add(new Node(link.absUrl("href"), score));
+					}
+				}
 			}
+			Collections.sort(this.linksList, new Node.CompareScore());
+			System.out.println("Fim");
+			//			for(Element link : linksOnPage){
+			//				this.links.add(link.absUrl("href"));
+			//			}
 		}
 		catch(IOException ioe)
 		{
@@ -72,8 +94,8 @@ public class CrawlerAux {
 	}
 
 	//Método que retorna todos os links
-	public List<String> getLinks(){
-		return this.links;
+	public List<Node> getLinks(){
+		return this.linksList;
 	}
 
 	//Método que retorna todos os exceções
@@ -110,7 +132,7 @@ public class CrawlerAux {
 				}
 			}
 			createRegex(url);
-			
+
 			System.out.println(regexExceptions);
 		}
 		catch(IOException ioe)
@@ -118,9 +140,9 @@ public class CrawlerAux {
 			System.out.println("Erro na saída HTTP request " + ioe);
 		}
 	}
-	
+
 	public void createRegex(String urlPrefix){
-		
+
 		for(String exception: exceptions) {
 			String regex = "";
 
@@ -163,7 +185,7 @@ public class CrawlerAux {
 		}
 		return fixedRegex;
 	}
-	
+
 	public boolean checkExceptions(String prefix) {
 		boolean valReturn = true;
 		for(String exception: regexExceptions) {
@@ -173,4 +195,36 @@ public class CrawlerAux {
 		}
 		return valReturn;
 	}
+
+	public static class Node{
+		private String link;
+		private Integer score;
+		
+		 public static class CompareScore implements Comparator< Node >
+         {
+             @Override
+             public int compare( Node o1,  Node o2 )
+             {
+                 return o2.score.compareTo( o1.score );
+             }
+         }
+
+		public Node(String link, Integer score) {
+			this.link = link;
+			this.score = score;
+		}
+		public String getLink() {
+			return link;
+		}
+		public void setLink(String link) {
+			this.link = link;
+		}
+		public Integer getScore() {
+			return score;
+		}
+		public void setScore(Integer score) {
+			this.score = score;
+		}
+	}
 }
+
