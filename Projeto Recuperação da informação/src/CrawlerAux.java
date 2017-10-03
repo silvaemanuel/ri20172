@@ -36,13 +36,15 @@ public class CrawlerAux {
 
 			System.out.println(url);
 
-			//Elements linksOnPage = htmlDocument.select("a[href]");
+			Elements linksOnPage2 = htmlDocument.select("a[href]");
 
 			Elements divsions = htmlDocument.select("div");
+			String[] keyWords = {"jogo", "plataforma", "gênero",
+					"requisitos", "game", "jogador", "mutiplayer",
+					"desenvolvedor", "videogame", "app"};
 			int score = 0;
 			for(Element div : divsions){
 				if (div.toString().contains("</a>")){
-					String[] keyWords = {"jogo", "plataforma", "gênero", "requisitos", "game", "jogador", "mutiplayer", "desenvolvedor", "videogame"};
 					for(int i = 0; i < keyWords.length; i++) {
 						if(div.toString().contains(keyWords[i])) {
 							score++;
@@ -51,46 +53,42 @@ public class CrawlerAux {
 					Elements linksOnPage = div.select("a[href]");
 
 					for(Element link : linksOnPage){
-						this.linksList.add(new Node(link.absUrl("href"), score));
+						int scoreAux = score;
+						for(int i = 0; i < keyWords.length; i++) {
+							if(link.absUrl("href").toString().toLowerCase().contains(keyWords[i].toLowerCase())) {
+								if(link.absUrl("href").toString().contains("filtro")) {
+									scoreAux = scoreAux + 1;
+								}else{
+									scoreAux = scoreAux + 100;
+								}
+							}
+						}
+						insertList(new Node(link.absUrl("href"), scoreAux));
 					}
 				}
 			}
 			Collections.sort(this.linksList, new Node.CompareScore());
-			System.out.println("Fim");
-			//			for(Element link : linksOnPage){
-			//				this.links.add(link.absUrl("href"));
-			//			}
+			System.out.println("");
 		}
 		catch(IOException ioe)
 		{
 			System.out.println("Erro na saída HTTP request " + ioe);
 		}
 	}
-
-	public boolean searchForWord(String searchWord){
-		System.out.println("Procurando a palavra " + searchWord + "...");
-		String bodyText = this.htmlDocument.body().text();
-		return bodyText.toLowerCase().contains(searchWord.toLowerCase());
-	}
-
-	//Método que pesquisa no corpo do HTML se o mesmo contém as palavras chave indicadas. 
-	public boolean searchGameBodyText(){
-		boolean returnPage = false;
-		String[] keyWords = {"R$", "cartão", "boleto", "jogo", "plataforma", "gênero", "requisitos", "game", "jogador", "mutiplayer", "desenvolvedor"};
-		if (this.htmlDocument != null) {
-			String bodyText = this.htmlDocument.body().text();
-			int count = 0;
-			for(int i = 0; i < keyWords.length; i++) {
-				if(bodyText.toLowerCase().contains(keyWords[i])) {
-					count++;
-				}
-			}
-			//System.out.println(" Esse link tem " + count + " keywords");
-			if(count >= 7) {
-				returnPage = true;
+	
+	public void insertList(Node n) {
+		boolean exists = false;
+		List<Node> linksListAux = new LinkedList(this.linksList);
+		for(Node link : linksListAux){
+			if (link.getLink().equals(n.getLink())) {
+				this.linksList.remove(link);
+				this.linksList.add(n);
+				exists = true;
 			}
 		}
-		return returnPage;
+		if(!exists) {
+			this.linksList.add(n);
+		}
 	}
 
 	//Método que retorna todos os links
@@ -167,7 +165,7 @@ public class CrawlerAux {
 					}
 				}
 			}else {
-				regex = regex + exception + ")";
+				regex = regex + exception + ").*";
 			}
 			regex = fixRegex(regex);
 			this.regexExceptions.add(regex);
