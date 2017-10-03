@@ -1,4 +1,8 @@
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
@@ -21,6 +25,13 @@ public class CrawlerAux {
 	private List<String> exceptions = new LinkedList<String>();
 	private List<String> regexExceptions = new LinkedList<String>();
 	private Document htmlDocument; 
+	
+	private String name;
+	private Integer count = 0;
+	
+	public CrawlerAux(String name) {
+		this.name = name;
+	}
 
 	public void crawl(String url){
 		try{
@@ -33,10 +44,10 @@ public class CrawlerAux {
 			}
 			Document htmlDocument = connection.get();
 			this.htmlDocument = htmlDocument;
-
+			
+			savePage(htmlDocument);
+			
 			System.out.println(url);
-
-			Elements linksOnPage2 = htmlDocument.select("a[href]");
 
 			Elements divsions = htmlDocument.select("div");
 			String[] keyWords = {"jogo", "plataforma", "gênero",
@@ -75,6 +86,16 @@ public class CrawlerAux {
 			System.out.println("Erro na saída HTTP request " + ioe);
 		}
 	}
+	
+	public void savePage(Document doc) throws IOException {
+        File f = new File("C:\\Users\\lrb\\Downloads\\" + this.name + count + ".html");
+        f.getParentFile().mkdirs();
+        Writer out = new OutputStreamWriter(new FileOutputStream(f), "UTF-8");
+        out.write(doc.outerHtml() + '\n');
+        out.write("site_url: " + doc.baseUri()); // saves page url
+        out.close();
+        count +=1;
+    }
 	
 	public void insertList(Node n) {
 		boolean exists = false;

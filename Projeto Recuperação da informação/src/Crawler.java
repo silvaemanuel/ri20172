@@ -6,15 +6,24 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-public class Crawler {
+public class Crawler extends Thread{
+	private String name;
+	private String url;
 	private static int pageLimit = 1000;
 	private Set<String> pagesVisited = new HashSet<String>();
 	private List<CrawlerAux.Node> pagesToVisit = new LinkedList<CrawlerAux.Node>();
+	
+	public Crawler(String url, String name) {
+		this.url = url;
+		this.name = name;
+	}
 
-	public static void main(String[] args) throws MalformedURLException {
-
-		Crawler teste = new Crawler();
-		teste.search("https://www.americanas.com.br/");
+	public void run() {
+		try {
+			search(this.url);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
 
 	}
 
@@ -29,7 +38,7 @@ public class Crawler {
 
 	public void search(String url) throws MalformedURLException{
 		String newUrl = "";
-		CrawlerAux crawlerAux = new CrawlerAux();
+		CrawlerAux crawlerAux = new CrawlerAux(this.name);
 		crawlerAux.createExceptions(url);
 		while(this.pagesVisited.size() < pageLimit){
 			String currentUrl;
