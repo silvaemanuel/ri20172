@@ -10,6 +10,7 @@ INDEX VERSION 1.129+/home/emanuel/Documents/ri_projeto1/extractor/.metadata/.plu
 2105339449.index
 1444330774.index
 2552395443.index
+1794508112.index
 3761852267.index
 1617243237.index
 3225773959.index
