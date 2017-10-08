@@ -1,0 +1,17 @@
+INDEX VERSION 1.129+/home/emanuel/Documents/ri_projeto1/extractor/.metadata/.plugins/org.eclipse.jdt.core
+3456165427.index
+2952335432.index
+210284241.index
+3054642268.index
+2724750356.index
+3594760885.index
+1238682054.index
+357594604.index
+2105339449.index
+1444330774.index
+2552395443.index
+3761852267.index
+1617243237.index
+3225773959.index
+3380963114.index
+3420001255.index
