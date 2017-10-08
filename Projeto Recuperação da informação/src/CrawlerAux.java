@@ -79,7 +79,6 @@ public class CrawlerAux {
 				}
 			}
 			Collections.sort(this.linksList, new Node.CompareScore());
-			System.out.println("");
 		}
 		catch(IOException ioe)
 		{
@@ -88,7 +87,7 @@ public class CrawlerAux {
 	}
 	
 	public void savePage(Document doc) throws IOException {
-        File f = new File("C:\\Users\\lrb\\Downloads\\" + this.name + count + ".html");
+        File f = new File("C:\\Users\\Ribeiro\\Documents\\ri_projeto1\\" + this.name + count + ".html");
         f.getParentFile().mkdirs();
         Writer out = new OutputStreamWriter(new FileOutputStream(f), "UTF-8");
         out.write(doc.outerHtml() + '\n');
@@ -151,8 +150,6 @@ public class CrawlerAux {
 				}
 			}
 			createRegex(url);
-
-			System.out.println(regexExceptions);
 		}
 		catch(IOException ioe)
 		{
