@@ -52,7 +52,7 @@ public class CrawlerAux {
 			Elements divsions = htmlDocument.select("div");
 			String[] keyWords = {"jogo", "plataforma", "gênero",
 					"requisitos", "game", "jogador", "mutiplayer",
-					"desenvolvedor", "videogame", "app"};
+					"desenvolvedor", "videogame", "/app/"};
 			int score = 0;
 			for(Element div : divsions){
 				if (div.toString().contains("</a>")){
@@ -67,8 +67,15 @@ public class CrawlerAux {
 						int scoreAux = score;
 						for(int i = 0; i < keyWords.length; i++) {
 							if(link.absUrl("href").toString().toLowerCase().contains(keyWords[i].toLowerCase())) {
-								if(link.absUrl("href").toString().contains("filtro")) {
-									scoreAux = scoreAux + 1;
+								if(link.absUrl("href").toString().contains("filtro")
+										|| link.absUrl("href").toString().contains("mouse")
+										|| link.absUrl("href").toString().contains("teclado")
+										|| link.absUrl("href").toString().contains("cadeira")
+										|| link.absUrl("href").toString().contains("headset")
+										|| link.absUrl("href").toString().contains("console")
+										|| link.absUrl("href").toString().contains("livro")
+										|| link.absUrl("href").toString().contains("gabinete")) {
+									scoreAux = scoreAux + 5;
 								}else{
 									scoreAux = scoreAux + 100;
 								}

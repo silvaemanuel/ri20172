@@ -52,7 +52,7 @@ public class Crawler extends Thread{
 				URL aURL = new URL(url);
 
 				//Garante que os links visitados devem conter a URL inicial para serem visitados.
-				while(!currentUrl.contains(aURL.getHost())) {
+				while(!currentUrl.substring(0, aURL.getHost().length() + aURL.getHost().length()/2).contains(aURL.getHost())) {
 					currentUrl = this.visitNextUrl();
 				}
 				URL currentURL = new URL(currentUrl);
