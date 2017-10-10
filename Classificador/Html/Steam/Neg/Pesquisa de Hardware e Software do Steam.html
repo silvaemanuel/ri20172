@@ -1,0 +1,1979 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>Pesquisa de Hardware e Software do Steam</title>
+	<link href="http://store.edgecast.steamstatic.com/public/shared/css/motiva_sans.css?v=Sd0odMs2NjL1" rel="stylesheet" type="text/css" >
+<link href="http://store.edgecast.steamstatic.com/public/shared/css/shared_global.css?v=ezCZ54xw7bxo" rel="stylesheet" type="text/css" >
+<link href="http://store.edgecast.steamstatic.com/public/shared/css/buttons.css?v=FMXZx9fv9yp_" rel="stylesheet" type="text/css" >
+<link href="http://store.edgecast.steamstatic.com/public/css/v6/store.css?v=T0uxwgU5kQW8" rel="stylesheet" type="text/css" >
+	<link href="http://store.edgecast.steamstatic.com/public/css/styles_hwsurvey.css?v=z0gsH9UFcLJp" rel="stylesheet" type="text/css" >
+				<script>
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+						(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+					m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+				ga('create', 'UA-33786258-1', 'auto', {
+					'sampleRate': 0.4				});
+				ga('set', 'dimension1', false );
+				ga('set', 'dimension2', 'External' );
+				ga('set', 'dimension3', 'hwsurvey' );
+				ga('set', 'dimension4', "hwsurvey\/DefaultAction" );
+				ga('send', 'pageview');
+
+			</script>
+			<script type="text/javascript" src="http://store.edgecast.steamstatic.com/public/shared/javascript/jquery-1.8.3.min.js?v=.TZ2NKhB-nliU" ></script>
+<script type="text/javascript">$J = jQuery.noConflict();</script><script type="text/javascript" src="http://store.edgecast.steamstatic.com/public/shared/javascript/tooltip.js?v=.gcRSUfx-SLlh" ></script>
+
+<script type="text/javascript" src="http://store.edgecast.steamstatic.com/public/shared/javascript/shared_global.js?v=8JLSidq6cgDb&amp;l=brazilian" ></script>
+
+<script type="text/javascript" src="http://store.edgecast.steamstatic.com/public/javascript/main.js?v=hoRkPVjuPC6e&amp;l=brazilian" ></script>
+
+<script type="text/javascript" src="http://store.edgecast.steamstatic.com/public/javascript/prototype-1.7.js?v=.a38iP7Khdmyy" ></script>
+
+<script type="text/javascript" src="http://store.edgecast.steamstatic.com/public/javascript/scriptaculous/_combined.js?v=N9x7GFelaFEb&amp;l=brazilian&amp;load=effects,controls,slider" ></script>
+
+<script type="text/javascript" src="http://store.edgecast.steamstatic.com/public/javascript/dynamicstore.js?v=tU3_f9-IGU-A&amp;l=brazilian" ></script>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) { $J.data( document, 'x_readytime', new Date().getTime() ); 
+$J.data( document, 'x_oldref', GetNavCookie() ); 
+$('.tooltip').v_tooltip();
+window.BindStoreTooltip = function( $Selector ) { $Selector.v_tooltip( {'tooltipClass': 'store_tooltip', 'dataName': 'storeTooltip' } ); };
+BindStoreTooltip( $('[data-store-tooltip]') ); 
+});</script> 	<script type="text/javascript" src="http://store.edgecast.steamstatic.com/public/javascript/hwsurvey.js?v=.he9X4LPyVuy2" ></script>
+	<script type="text/javascript" src="http://store.edgecast.steamstatic.com/public/shared/javascript/flot-0.8/jquery.flot.js?v=.zrJjtPpGflQQ" ></script>
+	<script type="text/javascript" src="http://store.edgecast.steamstatic.com/public/shared/javascript/flot-0.8/jquery.flot.stack.js?v=.Gd0qoVY2NdXc" ></script>
+	<script type="text/javascript" src="http://store.edgecast.steamstatic.com/public/shared/javascript/flot-0.8/jquery.flot.resize.js?v=.TWn5-WgQL6_C" ></script>
+	<script type="text/javascript" src="http://store.edgecast.steamstatic.com/public/shared/javascript/flot-0.8/excanvas.js?v=.9q965-2pfjNq" ></script>
+
+	<script type="text/javascript">
+		jQuery(function()
+		{
+			jQuery("<div class='chartooltip' id='charttooltip'></div>").css({
+				position: "absolute",
+				border: "1px solid #ffdddd",
+				display: "none",
+				padding: "2px",
+				"background-color": "white",
+				color: "black",
+				"font-size": "10px",
+				opacity: "1.0",
+			}).appendTo("body");
+		});
+	</script>
+</head>
+
+<body class="v6">
+
+<div id="global_header">
+	<div class="content">
+		<div class="logo">
+			<span id="logo_holder">
+									<a href="http://store.steampowered.com/">
+						<img src="http://store.edgecast.steamstatic.com/public/shared/images/header/globalheader_logo.png?t=962016" width="176" height="44">
+					</a>
+							</span>
+			<!--[if lt IE 7]>
+			<style type="text/css">
+				#logo_holder img { filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); }
+				#logo_holder { display: inline-block; width: 176px; height: 44px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://store.edgecast.steamstatic.com/public/images/v5/globalheader_logo.png'); }
+			</style>
+			<![endif]-->
+		</div>
+
+			<div class="supernav_container">
+	<a class="menuitem supernav" href="http://store.steampowered.com/" data-tooltip-type="selector" data-tooltip-content=".submenu_store">
+		LOJA	</a>
+	<div class="submenu_store" style="display: none;" data-submenuid="store">
+		<a class="submenuitem" href="http://store.steampowered.com/">Destaques</a>
+		<a class="submenuitem" href="http://store.steampowered.com/explore/">Explorar</a>
+		<a class="submenuitem" href="http://store.steampowered.com/curators/">Curadores</a>
+		<a class="submenuitem" href="http://steamcommunity.com/my/wishlist/">Lista de desejos</a>
+		<a class="submenuitem" href="http://store.steampowered.com/news/">Notícias</a>
+		<a class="submenuitem" href="http://store.steampowered.com/stats/">Estatísticas</a>
+	</div>
+
+
+	<a class="menuitem supernav" style="display: block" href="http://steamcommunity.com/" data-tooltip-type="selector" data-tooltip-content=".submenu_community">
+		COMUNIDADE	</a>
+	<div class="submenu_community" style="display: none;" data-submenuid="community">
+		<a class="submenuitem" href="http://steamcommunity.com/">Página inicial</a>
+		<a class="submenuitem" href="http://steamcommunity.com/discussions/">Discussões</a>
+		<a class="submenuitem" href="http://steamcommunity.com/workshop/">Oficina</a>
+		<a class="submenuitem" href="http://steamcommunity.com/market/">Mercado</a>
+		<a class="submenuitem" href="http://steamcommunity.com/?subsection=broadcasts">Transmissões</a>
+					</div>
+
+	
+
+	
+			<a class="menuitem" href="http://store.steampowered.com/about/">
+			SOBRE		</a>
+	
+	<a class="menuitem" href="https://help.steampowered.com/pt-br/">
+		SUPORTE	</a>
+	</div>
+	<script type="text/javascript">
+		jQuery(function($) {
+			$('.tooltip').v_tooltip();
+			$('#global_header .supernav').v_tooltip({'location':'bottom', 'tooltipClass': 'supernav_content', 'offsetY':-4, 'offsetX': 1, 'horizontalSnap': 4, 'tooltipParent': '#global_header .supernav_container', 'correctForScreenSize': false});
+		});
+	</script>
+
+		<div id="global_actions">
+			<div id="global_action_menu">
+									<div class="header_installsteam_btn header_installsteam_btn_green">
+						<div class="header_installsteam_btn_leftcap"></div>
+						<div class="header_installsteam_btn_rightcap"></div>
+
+						<a class="header_installsteam_btn_content" href="http://store.steampowered.com/about/">
+							Instale o Steam						</a>
+					</div>
+				
+				
+														<a class="global_action_link" href="https://store.steampowered.com//login/?redir=hwsurvey">iniciar sessão</a>
+					&nbsp;|&nbsp;
+					<span class="pulldown global_action_link" id="language_pulldown" onclick="ShowMenu( this, 'language_dropdown', 'right' );">idioma</span>
+					<div class="popup_block_new" id="language_dropdown" style="display: none;">
+						<div class="popup_body popup_menu">
+																																	<a class="popup_menu_item tight" href="?l=bulgarian" onclick="ChangeLanguage( 'bulgarian' ); return false;">Български (Búlgaro)</a>
+																										<a class="popup_menu_item tight" href="?l=czech" onclick="ChangeLanguage( 'czech' ); return false;">čeština (Tcheco)</a>
+																										<a class="popup_menu_item tight" href="?l=danish" onclick="ChangeLanguage( 'danish' ); return false;">Dansk (Dinamarquês)</a>
+																										<a class="popup_menu_item tight" href="?l=dutch" onclick="ChangeLanguage( 'dutch' ); return false;">Nederlands (Holandês)</a>
+																										<a class="popup_menu_item tight" href="?l=english" onclick="ChangeLanguage( 'english' ); return false;">English (Inglês)</a>
+																										<a class="popup_menu_item tight" href="?l=finnish" onclick="ChangeLanguage( 'finnish' ); return false;">Suomi (Finlandês)</a>
+																										<a class="popup_menu_item tight" href="?l=french" onclick="ChangeLanguage( 'french' ); return false;">Français (Francês)</a>
+																										<a class="popup_menu_item tight" href="?l=greek" onclick="ChangeLanguage( 'greek' ); return false;">Ελληνικά (Grego)</a>
+																										<a class="popup_menu_item tight" href="?l=german" onclick="ChangeLanguage( 'german' ); return false;">Deutsch (Alemão)</a>
+																										<a class="popup_menu_item tight" href="?l=hungarian" onclick="ChangeLanguage( 'hungarian' ); return false;">Magyar (Húngaro)</a>
+																										<a class="popup_menu_item tight" href="?l=italian" onclick="ChangeLanguage( 'italian' ); return false;">Italiano (Italiano)</a>
+																										<a class="popup_menu_item tight" href="?l=japanese" onclick="ChangeLanguage( 'japanese' ); return false;">日本語 (Japonês)</a>
+																										<a class="popup_menu_item tight" href="?l=koreana" onclick="ChangeLanguage( 'koreana' ); return false;">한국어 (Coreano)</a>
+																										<a class="popup_menu_item tight" href="?l=norwegian" onclick="ChangeLanguage( 'norwegian' ); return false;">Norsk (Norueguês)</a>
+																										<a class="popup_menu_item tight" href="?l=polish" onclick="ChangeLanguage( 'polish' ); return false;">Polski (Polonês)</a>
+																										<a class="popup_menu_item tight" href="?l=portuguese" onclick="ChangeLanguage( 'portuguese' ); return false;">Português (Portugal)</a>
+																																			<a class="popup_menu_item tight" href="?l=russian" onclick="ChangeLanguage( 'russian' ); return false;">Русский (Russo)</a>
+																										<a class="popup_menu_item tight" href="?l=romanian" onclick="ChangeLanguage( 'romanian' ); return false;">Română (Romeno)</a>
+																										<a class="popup_menu_item tight" href="?l=schinese" onclick="ChangeLanguage( 'schinese' ); return false;">简体中文 (Chinês Simplificado)</a>
+																										<a class="popup_menu_item tight" href="?l=spanish" onclick="ChangeLanguage( 'spanish' ); return false;">Español (Espanhol)</a>
+																										<a class="popup_menu_item tight" href="?l=swedish" onclick="ChangeLanguage( 'swedish' ); return false;">Svenska (Sueco)</a>
+																										<a class="popup_menu_item tight" href="?l=tchinese" onclick="ChangeLanguage( 'tchinese' ); return false;">繁體中文 (Chinês Tradicional)</a>
+																										<a class="popup_menu_item tight" href="?l=thai" onclick="ChangeLanguage( 'thai' ); return false;">ไทย (Tailandês)</a>
+																										<a class="popup_menu_item tight" href="?l=turkish" onclick="ChangeLanguage( 'turkish' ); return false;">Türkçe (Turco)</a>
+																										<a class="popup_menu_item tight" href="?l=ukrainian" onclick="ChangeLanguage( 'ukrainian' ); return false;">Українська (Ucraniano)</a>
+																						<a class="popup_menu_item tight" href="http://translation.steampowered.com" target="_blank">Ajude-nos a traduzir o Steam</a>
+						</div>
+					</div>
+							</div>
+					</div>
+			</div>
+</div>
+
+<div class="">
+
+
+
+		<div id="store_header" class="">
+		<div class="content">
+			<div id="store_controls">
+				<div id="cart_status_data">
+																					<div class="store_header_btn_green store_header_btn" id="store_header_cart_btn" style="display: none;">
+							<div class="store_header_btn_caps store_header_btn_leftcap"></div>
+							<div class="store_header_btn_caps store_header_btn_rightcap"></div>
+							<a id="cart_link" class="store_header_btn_content" href="http://store.steampowered.com/cart/?snr=1_hwsurvey_4__12">
+								Carrinho								(<span id="cart_item_count_value">0</span>)
+							</a>
+						</div>
+									</div>
+			</div>
+							<div id="store_nav_area">
+					<div class="store_nav_leftcap"></div>
+					<div class="store_nav_bg">
+						<div class="store_nav">
+
+													<div class="tab  flyout_tab " id="foryou_tab" data-flyout="foryou_flyout" data-flyout-align="left" data-flyout-valign="bottom" onmouseover="EnsureStoreMenuTagsLoaded( '#foryou_yourtags' );">
+								<span class="pulldown">
+									<a class="pulldown_desktop" href="http://store.steampowered.com/?snr=1_hwsurvey_4__12">Sua loja</a>
+									<span></span>
+								</span>
+							</div>
+							<div class="popup_block_new flyout_tab_flyout responsive_slidedown" id="foryou_flyout" style="display: none;">
+								<div class="popup_body popup_menu">
+									<a class="popup_menu_item" href="http://store.steampowered.com/?snr=1_hwsurvey_4__12">
+										Página inicial da loja									</a>
+									<div class="hr"></div>
+									<a class="popup_menu_item" href="http://store.steampowered.com/recommended/?snr=1_hwsurvey_4__12">
+										Vistos recentemente									</a>
+									<a class="popup_menu_item" href="http://store.steampowered.com/curators/topcurators/?snr=1_hwsurvey_4__12">
+										Curadores Steam									</a>
+									<a class="popup_menu_item" href="http://store.steampowered.com/updated/all/?snr=1_hwsurvey_4__12">
+										Atualizados recentemente									</a>
+								</div>
+							</div>
+						
+
+															<div class="tab  flyout_tab " id="genre_tab" data-flyout="genre_flyout" data-flyout-align="left" data-flyout-valign="bottom">
+									<span class="pulldown">
+										<a class="pulldown_desktop" href="http://store.steampowered.com/games/?snr=1_hwsurvey_4__12">Jogos</a>
+										<a class="pulldown_mobile" href="#">Jogos</a>
+										<span></span>
+									</span>
+								</div>
+								<div class="popup_block_new flyout_tab_flyout responsive_slidedown" id="genre_flyout" style="display: none;">
+									<div class="popup_body popup_menu">
+																																											<a class="popup_menu_item" href="http://store.steampowered.com/genre/Free%20to%20Play/?snr=1_hwsurvey_4__12">
+													Gratuito para Jogar												</a>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																<a class="popup_menu_item" href="http://store.steampowered.com/genre/Early%20Access/?snr=1_hwsurvey_4__12">
+													Acesso Antecipado												</a>
+																																																																																																																																																																																																																																																	<a class="popup_menu_item" href="http://store.steampowered.com/freestuff/demos/?snr=1_hwsurvey_4__12">
+											<span>Demonstrações</span>
+										</a>
+										<a class="popup_menu_item" href="http://store.steampowered.com/vr/?snr=1_hwsurvey_4__12">
+											<span>Realidade virtual</span>
+										</a>
+										<a class="popup_menu_item" href="http://store.steampowered.com/controller/?snr=1_hwsurvey_4__12">
+											<span>Compatível com o Controle Steam</span>
+										</a>
+										<div class="hr"></div>
+										<div class="popup_menu_subheader">Navegar por gênero:</div>
+
+																																	<a class="popup_menu_item" href="http://store.steampowered.com/tag/pt-br/Aventura/?snr=1_hwsurvey_4__12">
+													Aventura												</a>
+																																												<a class="popup_menu_item" href="http://store.steampowered.com/tag/pt-br/A%C3%A7%C3%A3o/?snr=1_hwsurvey_4__12">
+													Ação												</a>
+																																												<a class="popup_menu_item" href="http://store.steampowered.com/tag/pt-br/Casual/?snr=1_hwsurvey_4__12">
+													Casual												</a>
+																																												<a class="popup_menu_item" href="http://store.steampowered.com/tag/pt-br/Corrida/?snr=1_hwsurvey_4__12">
+													Corrida												</a>
+																																																																	<a class="popup_menu_item" href="http://store.steampowered.com/tag/pt-br/Esportes/?snr=1_hwsurvey_4__12">
+													Esportes												</a>
+																																												<a class="popup_menu_item" href="http://store.steampowered.com/tag/pt-br/Estrat%C3%A9gia/?snr=1_hwsurvey_4__12">
+													Estratégia												</a>
+																																																																	<a class="popup_menu_item" href="http://store.steampowered.com/tag/pt-br/Indie/?snr=1_hwsurvey_4__12">
+													Indie												</a>
+																																												<a class="popup_menu_item" href="http://store.steampowered.com/tag/pt-br/Multijogador%20Massivo/?snr=1_hwsurvey_4__12">
+													Multijogador Massivo												</a>
+																																												<a class="popup_menu_item" href="http://store.steampowered.com/tag/pt-br/RPG/?snr=1_hwsurvey_4__12">
+													RPG												</a>
+																																												<a class="popup_menu_item" href="http://store.steampowered.com/tag/pt-br/Simula%C3%A7%C3%A3o/?snr=1_hwsurvey_4__12">
+													Simulação												</a>
+																					
+										<div class="hr"></div>
+										<a class="popup_menu_item" href="http://store.steampowered.com/tag/browse/?snr=1_hwsurvey_4__12">
+											Ver marcadores populares										</a>
+										<div class="hr"></div>
+										<div class="popup_menu_subheader">Navegar por plataforma:</div>
+										<a class="popup_menu_item" href="http://store.steampowered.com/macos?snr=1_hwsurvey_4__12">
+											macOS										</a>
+										<a class="popup_menu_item" href="http://store.steampowered.com/linux?snr=1_hwsurvey_4__12">
+											SteamOS + Linux										</a>
+									</div>
+								</div>
+							
+							<div class="tab  flyout_tab " id="software_tab" data-flyout="software_flyout" data-flyout-align="left" data-flyout-valign="bottom">
+								<span class="pulldown">
+									<a class="pulldown_desktop" href="http://store.steampowered.com/software/?snr=1_hwsurvey_4__12">Software</a>
+									<a class="pulldown_mobile" href="#">Software</a>
+									<span></span>
+								</span>
+
+							</div>
+							<div class="popup_block_new flyout_tab_flyout responsive_slidedown" id="software_flyout" style="display: none;">
+								<div class="popup_body popup_menu">
+									<a class="popup_menu_item" href="http://store.steampowered.com/software/?snr=1_hwsurvey_4__12">
+										Central de softwares									</a>
+									<div class="hr"></div>
+																			<a class="popup_menu_item" href="http://store.steampowered.com/tag/pt-br/Anima%C3%A7%C3%A3o%20e%20modelagem/?snr=1_hwsurvey_4__12">
+											Animação e modelagem										</a>
+																			<a class="popup_menu_item" href="http://store.steampowered.com/tag/pt-br/Desenvolvimento%20de%20Jogos/?snr=1_hwsurvey_4__12">
+											Desenvolvimento de Jogos										</a>
+																			<a class="popup_menu_item" href="http://store.steampowered.com/tag/pt-br/Design%20e%20ilustra%C3%A7%C3%A3o/?snr=1_hwsurvey_4__12">
+											Design e ilustração										</a>
+																			<a class="popup_menu_item" href="http://store.steampowered.com/tag/pt-br/Edi%C3%A7%C3%A3o%20de%20fotos/?snr=1_hwsurvey_4__12">
+											Edição de fotos										</a>
+																			<a class="popup_menu_item" href="http://store.steampowered.com/tag/pt-br/Educativo/?snr=1_hwsurvey_4__12">
+											Educativo										</a>
+																			<a class="popup_menu_item" href="http://store.steampowered.com/tag/pt-br/Produ%C3%A7%C3%A3o%20de%20v%C3%ADdeo/?snr=1_hwsurvey_4__12">
+											Produção de vídeo										</a>
+																			<a class="popup_menu_item" href="http://store.steampowered.com/tag/pt-br/Produ%C3%A7%C3%A3o%20de%20%C3%A1udio/?snr=1_hwsurvey_4__12">
+											Produção de áudio										</a>
+																			<a class="popup_menu_item" href="http://store.steampowered.com/tag/pt-br/Publica%C3%A7%C3%A3o%20para%20web/?snr=1_hwsurvey_4__12">
+											Publicação para web										</a>
+																			<a class="popup_menu_item" href="http://store.steampowered.com/tag/pt-br/Utilit%C3%A1rios/?snr=1_hwsurvey_4__12">
+											Utilitários										</a>
+									
+								</div>
+							</div>
+
+							<div class="tab  flyout_tab " id="hardware_tab" data-flyout="hardware_flyout" data-flyout-align="left" data-flyout-valign="bottom">
+								<span class="pulldown">
+									<a class="pulldown_desktop" href="http://store.steampowered.com/hardware/?snr=1_hwsurvey_4__12">Hardware</a>
+									<a class="pulldown_mobile" href="#">Hardware</a>
+									<span></span>
+								</span>
+
+							</div>
+							<div class="popup_block_new flyout_tab_flyout responsive_slidedown" id="hardware_flyout" style="display: none;">
+								<div class="popup_body popup_menu">
+									<a class="popup_menu_item" href="http://store.steampowered.com/app/353370/?snr=1_hwsurvey_4__12">
+										Controle Steam									</a>
+									<a class="popup_menu_item" href="http://store.steampowered.com/app/353380/?snr=1_hwsurvey_4__12">
+										Steam Link									</a>
+									<a class="popup_menu_item" href="http://store.steampowered.com/hardware/?snr=1_hwsurvey_4__12#Machines">
+										Máquinas Steam									</a>
+									<a class="popup_menu_item" href="http://store.steampowered.com/app/358040/?snr=1_hwsurvey_4__12">
+										HTC Vive									</a>
+								</div>
+							</div>
+
+							<div class="tab  flyout_tab " id="videos_tab" data-flyout="videos_flyout" data-flyout-align="left" data-flyout-valign="bottom">
+								<span class="pulldown">
+									<a class="pulldown_desktop" href="http://store.steampowered.com/videos/?snr=1_hwsurvey_4__12">Vídeos</a>
+									<a class="pulldown_mobile" href="#">Vídeos</a>
+									<span></span>
+								</span>
+
+							</div>
+							<div class="popup_block_new flyout_tab_flyout responsive_slidedown" id="videos_flyout" style="display: none;">
+								<div class="popup_body popup_menu">
+									<a class="popup_menu_item" href="http://store.steampowered.com/videos/?snr=1_hwsurvey_4__12">
+										Central de vídeos									</a>
+									<div class="hr"></div>
+									<div class="popup_menu_subheader">Navegar por tipo:</div>
+																			<a class="popup_menu_item" href="http://store.steampowered.com/search/?snr=1_hwsurvey_4__12#category1=992&sort_by=Released_DESC&page=1&tags=4700">
+											Filme										</a>
+																			<a class="popup_menu_item" href="http://store.steampowered.com/search/?snr=1_hwsurvey_4__12#category1=992&sort_by=Released_DESC&page=1&tags=4242">
+											Episódico										</a>
+																			<a class="popup_menu_item" href="http://store.steampowered.com/search/?snr=1_hwsurvey_4__12#category1=992&sort_by=Released_DESC&page=1&tags=15339">
+											Documentário										</a>
+																			<a class="popup_menu_item" href="http://store.steampowered.com/search/?snr=1_hwsurvey_4__12#category1=992&sort_by=Released_DESC&page=1&tags=150626">
+											Gaming										</a>
+																			<a class="popup_menu_item" href="http://store.steampowered.com/search/?snr=1_hwsurvey_4__12#category1=992&sort_by=Released_DESC&page=1&tags=12057">
+											Tutorial										</a>
+																			<a class="popup_menu_item" href="http://store.steampowered.com/search/?snr=1_hwsurvey_4__12#category1=992&sort_by=Released_DESC&page=1&tags=4234">
+											Curta-metragem										</a>
+									
+									<div class="hr"></div>
+									<div class="popup_menu_subheader">Navegar por gênero:</div>
+																			<a class="popup_menu_item" href="http://store.steampowered.com/search/?snr=1_hwsurvey_4__12#category1=992&sort_by=Released_DESC&page=1&tags=19">
+											Ação										</a>
+																			<a class="popup_menu_item" href="http://store.steampowered.com/search/?snr=1_hwsurvey_4__12#category1=992&sort_by=Released_DESC&page=1&tags=4085">
+											Anime										</a>
+																			<a class="popup_menu_item" href="http://store.steampowered.com/search/?snr=1_hwsurvey_4__12#category1=992&sort_by=Released_DESC&page=1&tags=1719">
+											Comédia										</a>
+																			<a class="popup_menu_item" href="http://store.steampowered.com/search/?snr=1_hwsurvey_4__12#category1=992&sort_by=Released_DESC&page=1&tags=5984">
+											Drama										</a>
+																			<a class="popup_menu_item" href="http://store.steampowered.com/search/?snr=1_hwsurvey_4__12#category1=992&sort_by=Released_DESC&page=1&tags=1667">
+											Terror										</a>
+																			<a class="popup_menu_item" href="http://store.steampowered.com/search/?snr=1_hwsurvey_4__12#category1=992&sort_by=Released_DESC&page=1&tags=3942">
+											Ficção Científica										</a>
+																	</div>
+							</div>
+
+							<a class="tab  " href="http://store.steampowered.com/news/?snr=1_hwsurvey_4__12">
+								<span>Notícias</span>
+							</a>
+
+							<div class="search_area">
+								<div id="store_search">
+									<form id="searchform" name="searchform" method="get" action="http://store.steampowered.com/search/" onsubmit="return SearchSuggestCheckTerm(this);">
+										<input type="hidden" name="snr" value="1_hwsurvey_4__12" >
+										<div class="searchbox">
+											<input id="store_nav_search_term" name="term" type="text" class="default" placeholder="buscar na loja" size="22" autocomplete="off">
+											<a href="#" id="store_search_link" onclick="var $Form = $J(this).parents('form'); $Form.submit(); return false;"><img src="http://store.edgecast.steamstatic.com/public/images/blank.gif"></a>
+										</div>
+									</form>
+								</div>
+								<div id="searchterm_options" class="search_suggest popup_block_new" style="display: none;">
+									<div class="popup_body" style="border-top: none;">
+										<div id="search_suggestion_contents">
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="store_nav_rightcap"></div>
+				</div>
+					</div>
+	</div>
+				<script type="text/javascript">
+			$J( function() {
+				BindAutoFlyoutEvents();
+
+				var $Window = $J(window);
+				var $Header = $J('#store_header');
+				var $ResponsiveNavCtn = $J('#responsive_store_nav_ctn');
+				var $HeaderWrapper;
+				$Window.on('Responsive_SmallScreenModeToggled.StoreMenu', function() {
+					var bUseSmallScreenMode =window.UseSmallScreenMode && window.UseSmallScreenMode();
+
+					if ( !$HeaderWrapper )
+						$HeaderWrapper = $Header.wrap( $J('<div/>', {'class': 'responsive_store_nav_ctn_spacer'} ) ).parent();
+
+					if ( bUseSmallScreenMode )
+						$ResponsiveNavCtn.append( $Header );
+					else
+						$HeaderWrapper.append( $Header );
+
+
+					if ( bUseSmallScreenMode )
+					{
+						$Header.css( 'visibility', 'hidden' );
+						$Header.show();
+						var nMenuHeight = $J('#store_header' ).height() + $J('#store_header' ).offset().top;
+						if ( $Window.scrollTop() < nMenuHeight )
+							$Window.scrollTop( nMenuHeight - GetResponsiveHeaderFixedOffsetAdjustment() );
+
+						$Header.css('visibility', 'visible');
+					}
+				} ).trigger('Responsive_SmallScreenModeToggled.StoreMenu');
+
+									if( $J('#searchform').length > 0 )
+					{
+						EnableSearchSuggestions( $J('#searchform')[0].elements['term'], '1_hwsurvey_4_', 'BR', 'brazilian', '0', '0', '3513487' );
+					}
+				
+
+			} );
+		</script>
+	<script type="text/javascript">
+	var g_AccountID = 0;
+	var g_sessionID = "58eb8dfc417f2b795093f438";
+	var g_ServerTime = 1507583381;
+
+	$J( InitMiniprofileHovers );
+
+			GDynamicStore.Init( 0, false, "" );
+		GStoreItemData.SetCurrencyFormatter( function( nValueInCents, bWholeUnitsOnly ) { var fmt = function( nValueInCents, bWholeUnitsOnly ) {	var format = v_numberformat( nValueInCents / 100, bWholeUnitsOnly ? 0 : 2, ",", "."); return format; };var strNegativeSymbol = '';return strNegativeSymbol + "R$ " + fmt( nValueInCents, bWholeUnitsOnly );} );
+		GStoreItemData.SetCurrencyMinPriceIncrement( 1 );
+	</script>
+
+
+				<div id="main">
+	<div id="main_content">
+		<!-- Main Content -->
+		
+		<div id="hws_main">
+		<div id="hws_ctn" class="page_header_ctn search">
+			<div class="page_content">
+			<h1>Pesquisa de Hardware e Software do Steam: September 2017</h1>
+
+					<p class="blurb" style="width:780px;">
+				Steam conducts a monthly survey to collect data about what kinds of computer hardware and software our customers are using. 
+				Participation in the survey is optional, and anonymous. The information gathered is incredibly helpful to us as we make 
+				decisions about what kinds of technology investments to make and products to offer.
+			</p>
+			<br />
+			<div class="graph_block padRight"><a name="pcvidcard"></a>
+				<div class="graph_title">PC Video card usage by mfg</div>
+				<div class="graph_holder" id="PCVideoCardMfg">
+					<div class="chartRange">April 2016 - September 2017</div>
+					<div id="chartlegend1" class="chartLegend" ></div>
+					<div id="chartKey1" class="chartKey" ></div>
+					<a href="http://store.steampowered.com/hwsurvey/videocard/" class="chartInfoLink">CLICK FOR MORE INFO</a>
+					<div id="chartdiv1" class="chartdiv" ></div>
+					<script type="text/javascript">
+	series = [{"label":"OTHER","color":"#8064a2","data":[[1459494000000,0.38],[1462086000000,0.37],[1464764400000,0.38],[1467356400000,0.45],[1470034800000,0.43],[1472713200000,0.44],[1475305200000,0.44],[1477983600000,0.44],[1480579200000,0.47],[1483257600000,0.47],[1485936000000,0.38],[1488355200000,0.38],[1491030000000,0.39],[1493622000000,0.41],[1496300400000,0.35],[1498892400000,0.35],[1501570800000,0.34],[1504249200000,0.31]],"max":0.47},{"label":"INTEL","color":"#0070c0","data":[[1459494000000,17.68],[1462086000000,17.53],[1464764400000,17.77],[1467356400000,17.89],[1470034800000,17.56],[1472713200000,17.7],[1475305200000,17.89],[1477983600000,17.48],[1480579200000,17.41],[1483257600000,17.39],[1485936000000,16.2],[1488355200000,16.27],[1491030000000,16.15],[1493622000000,15.65],[1496300400000,15.54],[1498892400000,15.52],[1501570800000,13.41],[1504249200000,12.23]],"max":17.89},{"label":"ATI","color":"#c00000","data":[[1459494000000,25.36],[1462086000000,25.46],[1464764400000,25.14],[1467356400000,24.68],[1470034800000,24.44],[1472713200000,24.06],[1475305200000,23.84],[1477983600000,23.46],[1480579200000,23.28],[1483257600000,23.41],[1485936000000,23.62],[1488355200000,22.14],[1491030000000,21.92],[1493622000000,21.53],[1496300400000,20.5],[1498892400000,20.23],[1501570800000,18.63],[1504249200000,17.14]],"max":25.46},{"label":"NVIDIA","color":"#80b919","data":[[1459494000000,56.58],[1462086000000,56.64],[1464764400000,56.71],[1467356400000,56.98],[1470034800000,57.57],[1472713200000,57.8],[1475305200000,57.83],[1477983600000,58.62],[1480579200000,58.84],[1483257600000,58.73],[1485936000000,59.8],[1488355200000,61.21],[1491030000000,61.54],[1493622000000,62.41],[1496300400000,63.61],[1498892400000,63.9],[1501570800000,67.62],[1504249200000,70.32]],"max":70.32}];						ChartPlot( '#chartdiv1', '#chartlegend1', '#chartKey1', series );
+					</script>
+				</div>
+			</div>
+			<div class="graph_block padRight">
+				<div class="graph_title">DX10/11/12 Systems</div>
+				<div class="graph_holder" id="DXLevels">
+					<div class="chartRange">April 2016 - September 2017</div>
+					<div id="chartlegendDX" class="chartLegend" ></div>
+					<div id="chartKeyDX" class="chartKey" ></div>
+					<a href="http://store.steampowered.com/hwsurvey/directx/" class="chartInfoLink">CLICK FOR MORE INFO</a>
+					<div id="chartdivDX" class="chartdiv" ></div>
+					<script type="text/javascript">
+					series = [{"label":"OTHER","color":"#ffffff","data":[[1459494000000,1.66],[1462086000000,1.6],[1464764400000,2.17],[1467356400000,2.72],[1470034800000,2.56],[1472713200000,2.48],[1475305200000,2.45],[1477983600000,2.4],[1480579200000,2.32],[1483257600000,2.34],[1485936000000,2.12],[1488355200000,2.07],[1491030000000,2.05],[1493622000000,1.96],[1496300400000,1.82],[1498892400000,1.83],[1501570800000,1.54],[1504249200000,1.34]],"max":2.72},{"label":"DX10\/11\/12GPU & XP","color":"#d9aaa9","data":[[1459494000000,1.98],[1462086000000,0.93],[1464764400000,0.97],[1467356400000,0.67],[1470034800000,0.63],[1472713200000,1.45],[1475305200000,0.58],[1477983600000,0.75],[1480579200000,0.5],[1483257600000,0.56],[1485936000000,1.07],[1488355200000,0.62],[1491030000000,0.25],[1493622000000,0.36],[1496300400000,0.68],[1498892400000,0.41],[1501570800000,0.36],[1504249200000,0.28]],"max":1.98},{"label":"DX10GPU & Vista+","color":"#91b469","data":[[1459494000000,12.66],[1462086000000,13.79],[1464764400000,12.35],[1467356400000,12.02],[1470034800000,11.5],[1472713200000,10.62],[1475305200000,11.33],[1477983600000,10.51],[1480579200000,10.36],[1483257600000,10.01],[1485936000000,9.65],[1488355200000,8.91],[1491030000000,8.93],[1493622000000,8.51],[1496300400000,8.15],[1498892400000,7.89],[1501570800000,6.72],[1504249200000,5.9]],"max":13.79},{"label":"DX11GPU & Vista+","color":"#4e6127","data":[[1459494000000,12.78],[1462086000000,11.97],[1464764400000,13.72],[1467356400000,14.62],[1470034800000,14.26],[1472713200000,13.89],[1475305200000,13.67],[1477983600000,13.43],[1480579200000,13.25],[1483257600000,13.23],[1485936000000,12.08],[1488355200000,12.01],[1491030000000,11.73],[1493622000000,11.19],[1496300400000,10.43],[1498892400000,10.69],[1501570800000,9.11],[1504249200000,8.15]],"max":14.62},{"label":"DX12GPU & Pre-WIN10","color":"#6c93d1","data":[[1459494000000,37.38],[1462086000000,28.27],[1464764400000,29.39],[1467356400000,22.53],[1470034800000,29.84],[1472713200000,35.32],[1475305200000,18.46],[1477983600000,22.3],[1480579200000,30.67],[1483257600000,25.3],[1485936000000,33.61],[1488355200000,27.79],[1491030000000,28.38],[1493622000000,27.67],[1496300400000,24.27],[1498892400000,27.14],[1501570800000,21.05],[1504249200000,16.05]],"max":37.38},{"label":"DX12GPU & WIN10","color":"#40699d","data":[[1459494000000,33.54],[1462086000000,43.44],[1464764400000,41.4],[1467356400000,47.44],[1470034800000,41.21],[1472713200000,36.24],[1475305200000,53.51],[1477983600000,50.61],[1480579200000,42.91],[1483257600000,48.55],[1485936000000,41.47],[1488355200000,48.6],[1491030000000,48.65],[1493622000000,50.31],[1496300400000,54.65],[1498892400000,52.05],[1501570800000,61.22],[1504249200000,68.27]],"max":68.27}];						ChartPlot( '#chartdivDX', '#chartlegendDX', '#chartKeyDX', series );
+					</script>
+				</div>
+			</div>
+			<div class="graph_block">
+				<div class="graph_title">PC Processor usage by manufacturer</div>
+				<div class="graph_holder" id="PCCPUMfg">
+					<div class="chartRange">April 2016 - September 2017</div>
+					<div id="chartlegendCPUMan" class="chartLegend" ></div>
+					<div id="chartKeyCPUMan" class="chartKey" ></div>
+					<a href="http://store.steampowered.com/hwsurvey/processormfg/" class="chartInfoLink">CLICK FOR MORE INFO</a>
+					<div id="chartdivCPUMan" class="chartdiv" ></div>
+					<script type="text/javascript">
+					series = [{"label":"INTEL","color":"#1f497d","data":[[1459494000000,76.73],[1462086000000,76.76],[1464764400000,77.17],[1467356400000,77.25],[1470034800000,77.4],[1472713200000,77.77],[1475305200000,78.12],[1477983600000,78.5],[1480579200000,78.65],[1483257600000,78.5],[1485936000000,78.15],[1488355200000,79.68],[1491030000000,79.73],[1493622000000,80.22],[1496300400000,80.99],[1498892400000,80.74],[1501570800000,82.28],[1504249200000,83.47]],"max":83.47},{"label":"AMD","color":"#05851a","data":[[1459494000000,23.27],[1462086000000,23.24],[1464764400000,22.83],[1467356400000,22.75],[1470034800000,22.6],[1472713200000,22.23],[1475305200000,21.88],[1477983600000,21.5],[1480579200000,21.35],[1483257600000,21.5],[1485936000000,21.85],[1488355200000,20.32],[1491030000000,20.27],[1493622000000,19.78],[1496300400000,19.01],[1498892400000,19.26],[1501570800000,17.72],[1504249200000,16.53]],"max":23.27}];						ChartPlot( '#chartdivCPUMan', '#chartlegendCPUMan', '#chartKeyCPUMan', series );
+					</script>
+				</div>
+			</div>
+			<br clear="left" />
+			<div class="graph_block padRight">
+				<div class="graph_title">PC Number of CPUs per computer</div>
+				<div class="graph_holder" id="PCCPUs">
+					<div class="chartCaption">4 CPU adoption trend: +12.450% (18 mos)</div>
+					<div class="chartRange">April 2016 - September 2017</div>
+					<div id="chartlegendCPUPer" class="chartLegend" ></div>
+					<div id="chartKeyCPUPer" class="chartKey" ></div>
+					<a href="http://store.steampowered.com/hwsurvey/cpus/" class="chartInfoLink">CLICK FOR MORE INFO</a>
+					<div id="chartdivCPUPer" class="chartdiv" ></div>
+					<script type="text/javascript">
+					series = [{"label":"1 CPU","color":"#9e413e","data":[[1459494000000,2.23],[1462086000000,2.2],[1464764400000,2.06],[1467356400000,2.09],[1470034800000,2.1],[1472713200000,2.03],[1475305200000,1.92],[1477983600000,1.77],[1480579200000,1.78],[1483257600000,1.84],[1485936000000,1.93],[1488355200000,1.64],[1491030000000,1.62],[1493622000000,1.6],[1496300400000,1.53],[1498892400000,1.52],[1501570800000,1.48],[1504249200000,1.32]],"max":2.23},{"label":"2 CPUS","color":"#c0504d","data":[[1459494000000,47.68],[1462086000000,48.13],[1464764400000,47.76],[1467356400000,47.44],[1470034800000,46.87],[1472713200000,46.73],[1475305200000,46.34],[1477983600000,45.94],[1480579200000,45.92],[1483257600000,46.46],[1485936000000,46.19],[1488355200000,44.46],[1491030000000,44],[1493622000000,45.15],[1496300400000,42.23],[1498892400000,42.39],[1501570800000,38.89],[1504249200000,36.83]],"max":48.13},{"label":"4 CPUS","color":"#d9aaa9","data":[[1459494000000,45.49],[1462086000000,45.08],[1464764400000,45.62],[1467356400000,45.98],[1470034800000,46.48],[1472713200000,46.7],[1475305200000,47.24],[1477983600000,47.8],[1480579200000,47.89],[1483257600000,47.45],[1485936000000,47.74],[1488355200000,49.63],[1491030000000,50.11],[1493622000000,49.01],[1496300400000,52.06],[1498892400000,51.81],[1501570800000,55.65],[1504249200000,57.94]],"max":57.94},{"label":"OTHER","color":"#ffffff","data":[[1459494000000,4.6],[1462086000000,4.58],[1464764400000,4.56],[1467356400000,4.49],[1470034800000,4.55],[1472713200000,4.54],[1475305200000,4.5],[1477983600000,4.5],[1480579200000,4.41],[1483257600000,4.25],[1485936000000,4.14],[1488355200000,4.27],[1491030000000,4.26],[1493622000000,4.25],[1496300400000,4.19],[1498892400000,4.27],[1501570800000,3.99],[1504249200000,3.91]],"max":4.6}];						ChartPlot( '#chartdivCPUPer', '#chartlegendCPUPer', '#chartKeyCPUPer', series );
+					</script>
+				</div>
+			</div>
+			<div class="graph_block padRight">
+				<div class="graph_title">Mac Hardware ownership</div>
+				<div class="graph_holder" id="MacHardware">
+					<div class="chartRange">April 2016 - September 2017</div>
+					<div id="chartlegendMacHW" class="chartLegend" ></div>
+					<div id="chartKeyMacHW" class="chartKey" ></div>
+					<div id="chartdivMacHW" class="chartdiv" ></div>
+					<script type="text/javascript">
+					series = [{"label":"MACPRO","color":"#4d6e32","data":[[1459494000000,1.48],[1462086000000,1.47],[1464764400000,1.5],[1467356400000,1.51],[1470034800000,1.44],[1472713200000,1.4],[1475305200000,1.35],[1477983600000,1.3],[1480579200000,1.29],[1483257600000,1.23],[1485936000000,1.22],[1488355200000,1.3],[1491030000000,1.26],[1493622000000,1.11],[1496300400000,1.09],[1498892400000,1.08],[1501570800000,1.03],[1504249200000,1.12]],"max":1.51},{"label":"MACBOOK","color":"#c4e3a6","data":[[1459494000000,2],[1462086000000,1.91],[1464764400000,2.17],[1467356400000,2.21],[1470034800000,2.28],[1472713200000,2.18],[1475305200000,2.14],[1477983600000,2.16],[1480579200000,2.16],[1483257600000,2.23],[1485936000000,2.13],[1488355200000,2.08],[1491030000000,2.09],[1493622000000,2.07],[1496300400000,2.13],[1498892400000,2.23],[1501570800000,2.08],[1504249200000,2.07]],"max":2.28},{"label":"MACMINI","color":"#6fa146","data":[[1459494000000,2.94],[1462086000000,3.05],[1464764400000,2.93],[1467356400000,3.24],[1470034800000,3.01],[1472713200000,3.06],[1475305200000,3.06],[1477983600000,2.87],[1480579200000,2.83],[1483257600000,2.72],[1485936000000,2.65],[1488355200000,2.64],[1491030000000,2.69],[1493622000000,2.64],[1496300400000,2.64],[1498892400000,2.71],[1501570800000,2.47],[1504249200000,2.32]],"max":3.24},{"label":"MACBOOKAIR","color":"#7fc1ee","data":[[1459494000000,20.13],[1462086000000,20.11],[1464764400000,19.64],[1467356400000,19.12],[1470034800000,20.67],[1472713200000,21.43],[1475305200000,21.24],[1477983600000,20.66],[1480579200000,21.06],[1483257600000,21.1],[1485936000000,21.84],[1488355200000,21.99],[1491030000000,21.66],[1493622000000,21.68],[1496300400000,21.38],[1498892400000,21.08],[1501570800000,22.25],[1504249200000,22.72]],"max":22.72},{"label":"IMAC","color":"#d9aaa9","data":[[1459494000000,23.43],[1462086000000,23.55],[1464764400000,23.6],[1467356400000,22.94],[1470034800000,22.95],[1472713200000,22.77],[1475305200000,21.98],[1477983600000,21.94],[1480579200000,21.37],[1483257600000,21.09],[1485936000000,21.27],[1488355200000,21.88],[1491030000000,21.76],[1493622000000,21.86],[1496300400000,21.94],[1498892400000,21.26],[1501570800000,20.97],[1504249200000,20.4]],"max":23.6},{"label":"MACBOOKPRO","color":"#0c6a9d","data":[[1459494000000,50.03],[1462086000000,49.91],[1464764400000,50.17],[1467356400000,50.99],[1470034800000,49.65],[1472713200000,49.16],[1475305200000,50.24],[1477983600000,51.07],[1480579200000,51.3],[1483257600000,51.62],[1485936000000,50.89],[1488355200000,50.12],[1491030000000,50.54],[1493622000000,50.63],[1496300400000,50.82],[1498892400000,51.64],[1501570800000,51.21],[1504249200000,51.37]],"max":51.64}];						ChartPlot( '#chartdivMacHW', '#chartlegendMacHW', '#chartKeyMacHW', series );
+					</script>
+				</div>
+			</div>
+			<div class="graph_block">
+				<div class="graph_title">VR Headsets</div>
+				 <div class="graph_holder" id="VRHeadSets">
+					<div class="chartRange">April 2016 - September 2017</div>
+						<div id="chartlegendVR" class="chartLegend" ></div>
+						<div id="chartKeyVR" class="chartKey" ></div>
+						<div id="chartdivVR" class="chartdiv" ></div>
+						<script type="text/javascript">
+	series = [{"label":"OCULUS RIFT DK1","color":"#c4e3a6","data":[[1459494000000,0],[1462086000000,0],[1464764400000,0],[1467356400000,0],[1470034800000,0],[1472713200000,0],[1475305200000,0],[1477983600000,0],[1480579200000,0],[1483257600000,0],[1485936000000,0],[1488355200000,0],[1491030000000,0],[1493622000000,0],[1496300400000,0],[1498892400000,0],[1501570800000,0],[1504249200000,0]],"max":0},{"label":"OCULUS RIFT DK2","color":"#05851a","data":[[1459494000000,43.36],[1462086000000,13.9],[1464764400000,6.25],[1467356400000,3.94],[1470034800000,5.98],[1472713200000,9.98],[1475305200000,9.51],[1477983600000,9.41],[1480579200000,7.56],[1483257600000,6.19],[1485936000000,6.49],[1488355200000,5.73],[1491030000000,6.16],[1493622000000,5.39],[1496300400000,4.61],[1498892400000,4.33],[1501570800000,3.88],[1504249200000,2.96]],"max":43.36},{"label":"OCULUS RIFT","color":"#93cddd","data":[[1459494000000,18.78],[1462086000000,19.49],[1464764400000,27.75],[1467356400000,31.35],[1470034800000,33.24],[1472713200000,30.22],[1475305200000,30.9],[1477983600000,29.24],[1480579200000,31.43],[1483257600000,32.22],[1485936000000,30.25],[1488355200000,33.39],[1491030000000,33.52],[1493622000000,34.25],[1496300400000,34.57],[1498892400000,35.67],[1501570800000,43.81],[1504249200000,46.87]],"max":46.87},{"label":"HTC VIVE","color":"#0c6a9d","data":[[1459494000000,37.86],[1462086000000,66.61],[1464764400000,66],[1467356400000,64.71],[1470034800000,60.77],[1472713200000,59.8],[1475305200000,59.59],[1477983600000,61.36],[1480579200000,61.01],[1483257600000,61.59],[1485936000000,63.25],[1488355200000,60.88],[1491030000000,60.32],[1493622000000,60.36],[1496300400000,60.82],[1498892400000,60],[1501570800000,52.31],[1504249200000,50.16]],"max":66.61}];							ChartPlot( '#chartdivVR', '#chartlegendVR', '#chartKeyVR', series );
+						</script>
+					</div>
+				</div>
+				</div>
+			</div>
+			<br clear="all" />
+<!--
+			
+			<div class="main_graph padRight8"><a onMouseover="iSwap('header_videocard','g')" onMouseout="iSwap('header_videocard','g')" href="http://store.steampowered.com/hwsurvey/videocard/"><img id="header_videocard" src="http://store.edgecast.steamstatic.com/public/images/hws_header_videocard.gif" width="323" height="47" border="0" /><br /><img src="http://store.edgecast.steamstatic.com/public/images/hws_graph_videocard.gif" width="323" height="209" border="0" /></a></div>
+			<div class="main_graph"><a onMouseover="iSwap('header_directx','g')" onMouseout="iSwap('header_directx','g')" href="http://store.steampowered.com/hwsurvey/directx/"><img id="header_directx" src="http://store.edgecast.steamstatic.com/public/images/hws_header_directx.gif" width="323" height="47" border="0" /><br /><img src="http://store.edgecast.steamstatic.com/public/images/hws_graph_directx.gif" width="323" height="209" border="0" /></a></div>
+			<div class="main_graph padRight8"><a onMouseover="iSwap('header_processormfg','g')" onMouseout="iSwap('header_processormfg','g')" href="http://store.steampowered.com/hwsurvey/processormfg/"><img id="header_processormfg" src="http://store.edgecast.steamstatic.com/public/images/hws_header_processormfg.gif" width="323" height="47" border="0" /><br /><img src="http://store.edgecast.steamstatic.com/public/images/hws_graph_processormfg.gif" width="323" height="209" border="0" /></a></div>
+			<div class="main_graph"><a onMouseover="iSwap('header_cpus','g')" onMouseout="iSwap('header_cpus','g')" href="http://store.steampowered.com/hwsurvey/cpus/"><img id="header_cpus" src="http://store.edgecast.steamstatic.com/public/images/hws_header_cpus.gif" width="323" height="47" border="0" /><br /><img src="http://store.edgecast.steamstatic.com/public/images/hws_graph_cpus.gif" width="323" height="209" border="0" /></a></div>
+			<br clear="all" />
+-->
+
+		<div class="popup_block" id="platform_dropdown" style="display: none;">
+			<div class="popup_body popup_menu shadow_content">
+				<a class="popup_menu_item tight" href="?platform=combined" style="display:none;">
+					<h5><img src="http://store.edgecast.steamstatic.com/public/images/hws_icon_linux.png" width="19" height="22" border="0" /><img src="http://store.edgecast.steamstatic.com/public/images/hws_icon_pc.gif" width="16" height="15" border="0" /><img src="http://store.edgecast.steamstatic.com/public/images/hws_icon_mac.gif" width="16" height="15" border="0" /> Combined</h5>
+				</a>
+				<a class="popup_menu_item tight" href="?platform=pc" style="">
+					<h5><img src="http://store.edgecast.steamstatic.com/public/images/hws_icon_pc.gif" width="16" height="15" border="0" />  Windows Only</h5>
+				</a>
+				<a class="popup_menu_item tight" href="?platform=mac" style="">
+					<h5><img src="http://store.edgecast.steamstatic.com/public/images/hws_icon_mac.gif" width="16" height="15" border="0" />  Mac Only</h5>
+				</a>
+				<a class="popup_menu_item tight" href="?platform=linux" style="">
+					<h5><img src="http://store.edgecast.steamstatic.com/public/images/hws_icon_linux.png" width="19" height="22" border="0" />  Linux Only</h5>
+				</a>
+			</div>
+		</div>
+
+		<div class="page_content under_popup">
+			<div class="filter_options">
+				<span class="pulldown" id="platform_pulldown" onclick="ShowMenu( this, 'platform_dropdown', 'right' );">
+				<img src="http://store.edgecast.steamstatic.com/public/images/hws_icon_linux.png" width="19" height="22" border="0" />  <img src="http://store.edgecast.steamstatic.com/public/images/hws_icon_pc.gif" width="16" height="15" border="0" />  <img src="http://store.edgecast.steamstatic.com/public/images/hws_icon_mac.gif" width="16" height="15" border="0" />  Windows, Mac and Linux</span>
+
+				Use the dropdown to filter by platform or view combined stats.
+			</div>
+			<div id="main_stats_header">
+				September 2017 <span class="h1subtext">(click line item to see more detail)</span>
+			</div>
+			<div id="main_stats">
+				<div class="stats_col_left col_header">ITEM</div>
+				<div class="stats_col_mid col_header">MOST POPULAR</div>
+				<div class="stats_col_right col_header">PERCENTAGE</div>
+				<div class="stats_col_right2 col_header">CHANGE</div>
+
+						<div class="stats_row row_0" id="osversion_stats_row" onClick="toggleRow('osversion')"><a name="osversion"></a>
+					<div class="stats_col_left">OS Version</div>
+					<div class="stats_col_mid"><span id="osversion_val_1_on">Windows 10 64 bit</span><span class="hideme" id="osversion_val_1_off">&nbsp;</span></div>
+					<div class="stats_col_right"><span id="osversion_val_2_on">45.37%</span><span class="hideme" id="osversion_val_2_off">&nbsp;</span></div>
+					<div class="stats_col_right2"><span id="osversion_val_3_on" class="stat_decrease">-4.66%</span><span class="hideme" id="osversion_val_3_off">&nbsp;</span></div>
+					<br clear="left" />
+				</div>
+				<div class="stats_row_details" id="osversion_details">
+									<div class="stats_row" style="margin-top: 12px;" id="">
+							<div class="stats_col_left">&nbsp;</div>
+							<div class="stats_col_mid" style="color:#abdaf4;">Windows</div>
+							<div class="stats_col_right">96.60%</div>
+							<div class="stats_col_right2"><span id="cat0_val_3_on" class="stat_increase">+0.30%</span><span class="hideme" id="cat0_val_3_off">&nbsp;</span></div>
+							<br clear="left" />
+						</div>
+	<!--
+						<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+						<div class="stats_col_mid data_row"><nobr><strong>Windows</strong></nobr></div>
+						<div class="stats_col_right data_row"><strong>96.60%</strong></div>
+						<div class="stats_col_right2 data_row">&nbsp;</div>
+						<br clear="left" />
+	-->
+									<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+						<div class="stats_col_mid data_row"><nobr>Windows 10 64 bit</nobr></div>
+						<div class="stats_col_right data_row">45.37%</div>
+						<div class="stats_col_right2 data_row"><span class="stat_decrease">-4.66%</span></div>
+						<br clear="left" />
+									<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+						<div class="stats_col_mid data_row"><nobr>Windows 7 64 bit</nobr></div>
+						<div class="stats_col_right data_row">41.01%</div>
+						<div class="stats_col_right2 data_row"><span class="stat_increase">+6.00%</span></div>
+						<br clear="left" />
+									<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+						<div class="stats_col_mid data_row"><nobr>Windows 8.1 64 bit</nobr></div>
+						<div class="stats_col_right data_row">5.23%</div>
+						<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.78%</span></div>
+						<br clear="left" />
+									<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+						<div class="stats_col_mid data_row"><nobr>Windows 7</nobr></div>
+						<div class="stats_col_right data_row">2.98%</div>
+						<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.14%</span></div>
+						<br clear="left" />
+									<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+						<div class="stats_col_mid data_row"><nobr>Windows 10</nobr></div>
+						<div class="stats_col_right data_row">0.61%</div>
+						<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.02%</span></div>
+						<br clear="left" />
+									<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+						<div class="stats_col_mid data_row"><nobr>Windows 8 64 bit</nobr></div>
+						<div class="stats_col_right data_row">0.58%</div>
+						<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.07%</span></div>
+						<br clear="left" />
+									<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+						<div class="stats_col_mid data_row"><nobr>Windows XP 32 bit</nobr></div>
+						<div class="stats_col_right data_row">0.54%</div>
+						<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+						<br clear="left" />
+									<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+						<div class="stats_col_mid data_row"><nobr>Windows 8.1</nobr></div>
+						<div class="stats_col_right data_row">0.13%</div>
+						<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+						<br clear="left" />
+									<div class="stats_row" style="margin-top: 12px;" id="">
+							<div class="stats_col_left">&nbsp;</div>
+							<div class="stats_col_mid" style="color:#abdaf4;">OSX</div>
+							<div class="stats_col_right">2.74%</div>
+							<div class="stats_col_right2"><span id="cat1_val_3_on" class="stat_decrease">-0.29%</span><span class="hideme" id="cat1_val_3_off">&nbsp;</span></div>
+							<br clear="left" />
+						</div>
+	<!--
+						<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+						<div class="stats_col_mid data_row"><nobr><strong>OSX</strong></nobr></div>
+						<div class="stats_col_right data_row"><strong>2.74%</strong></div>
+						<div class="stats_col_right2 data_row">&nbsp;</div>
+						<br clear="left" />
+	-->
+									<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+						<div class="stats_col_mid data_row"><nobr>MacOS 10.12.6 64 bit</nobr></div>
+						<div class="stats_col_right data_row">1.40%</div>
+						<div class="stats_col_right2 data_row"><span class="stat_increase">+0.36%</span></div>
+						<br clear="left" />
+									<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+						<div class="stats_col_mid data_row"><nobr>MacOS 10.11.6 64 bit</nobr></div>
+						<div class="stats_col_right data_row">0.39%</div>
+						<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.07%</span></div>
+						<br clear="left" />
+									<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+						<div class="stats_col_mid data_row"><nobr>MacOS 10.10.5 64 bit</nobr></div>
+						<div class="stats_col_right data_row">0.24%</div>
+						<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.04%</span></div>
+						<br clear="left" />
+									<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+						<div class="stats_col_mid data_row"><nobr>MacOS 10.12.5 64 bit</nobr></div>
+						<div class="stats_col_right data_row">0.23%</div>
+						<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.44%</span></div>
+						<br clear="left" />
+									<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+						<div class="stats_col_mid data_row"><nobr>MacOS 10.12.4 64 bit</nobr></div>
+						<div class="stats_col_right data_row">0.07%</div>
+						<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.06%</span></div>
+						<br clear="left" />
+									<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+						<div class="stats_col_mid data_row"><nobr>MacOS 10.13.0 64 bit</nobr></div>
+						<div class="stats_col_right data_row">0.07%</div>
+						<div class="stats_col_right2 data_row"><span class="stat_increase">+0.07%</span></div>
+						<br clear="left" />
+									<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+						<div class="stats_col_mid data_row"><nobr>MacOS 10.9.5 64 bit</nobr></div>
+						<div class="stats_col_right data_row">0.07%</div>
+						<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.01%</span></div>
+						<br clear="left" />
+									<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+						<div class="stats_col_mid data_row"><nobr>MacOS 10.12.3 64 bit</nobr></div>
+						<div class="stats_col_right data_row">0.06%</div>
+						<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.02%</span></div>
+						<br clear="left" />
+									<div class="stats_row" style="margin-top: 12px;" id="">
+							<div class="stats_col_left">&nbsp;</div>
+							<div class="stats_col_mid" style="color:#abdaf4;">Linux</div>
+							<div class="stats_col_right">0.60%</div>
+							<div class="stats_col_right2"><span id="cat2_val_3_on" class="stat_decrease">-0.03%</span><span class="hideme" id="cat2_val_3_off">&nbsp;</span></div>
+							<br clear="left" />
+						</div>
+	<!--
+						<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+						<div class="stats_col_mid data_row"><nobr><strong>Linux</strong></nobr></div>
+						<div class="stats_col_right data_row"><strong>0.60%</strong></div>
+						<div class="stats_col_right2 data_row">&nbsp;</div>
+						<br clear="left" />
+	-->
+									<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+						<div class="stats_col_mid data_row"><nobr>Ubuntu 16.04.3 LTS 64 bit</nobr></div>
+						<div class="stats_col_right data_row">0.14%</div>
+						<div class="stats_col_right2 data_row"><span class="stat_increase">+0.08%</span></div>
+						<br clear="left" />
+									<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+						<div class="stats_col_mid data_row"><nobr>Ubuntu 17.04 64 bit</nobr></div>
+						<div class="stats_col_right data_row">0.09%</div>
+						<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+						<br clear="left" />
+									<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+						<div class="stats_col_mid data_row"><nobr>Linux 64 bit</nobr></div>
+						<div class="stats_col_right data_row">0.07%</div>
+						<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+						<br clear="left" />
+									<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+						<div class="stats_col_mid data_row"><nobr>Linux Mint 18.2 Sonya 64 bit</nobr></div>
+						<div class="stats_col_right data_row">0.05%</div>
+						<div class="stats_col_right2 data_row"><span class="stat_increase">+0.05%</span></div>
+						<br clear="left" />
+						<div class="stats_hr_clear"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="900" height="1" border="0" /></div>
+			</div>
+								
+				<div class="stats_row row_1" id="cat0_stats_row" onClick="toggleRow('cat0')"><a name="cat0"></a>
+					<div class="stats_col_left">System RAM</div>
+					<div class="stats_col_mid"><span id="cat0_val_1_on">8 GB</span><span class="hideme" id="cat0_val_1_off">&nbsp;</span></div>
+					<div class="stats_col_right"><span id="cat0_val_2_on">44.46%</span><span class="hideme" id="cat0_val_2_off">&nbsp;</span></div>
+					<div class="stats_col_right2"><span id="cat0_val_3_on" class="stat_increase">+1.69%</span><span class="hideme" id="cat0_val_3_off">&nbsp;</span></div>
+					<br clear="left" />
+				</div>
+				<div class="stats_row_details" id="cat0_details">
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Less than 512 MB</nobr></div>
+					<div class="stats_col_right data_row">0.00%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>512 Mb to 999 MB</nobr></div>
+					<div class="stats_col_right data_row">0.03%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>1 GB</nobr></div>
+					<div class="stats_col_right data_row">0.53%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.01%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>2 GB</nobr></div>
+					<div class="stats_col_right data_row">3.15%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.15%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3 GB</nobr></div>
+					<div class="stats_col_right data_row">6.39%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.12%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>4 GB</nobr></div>
+					<div class="stats_col_right data_row">14.85%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.11%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>5 GB</nobr></div>
+					<div class="stats_col_right data_row">0.59%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.07%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>6 GB</nobr></div>
+					<div class="stats_col_right data_row">2.83%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.40%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>7 GB</nobr></div>
+					<div class="stats_col_right data_row">2.25%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.08%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr><strong>8 GB</strong></nobr></div>
+					<div class="stats_col_right data_row"><strong>44.46%</strong></div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+1.69%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>9 GB</nobr></div>
+					<div class="stats_col_right data_row">0.03%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.01%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>10 GB</nobr></div>
+					<div class="stats_col_right data_row">0.25%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.04%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>11 GB</nobr></div>
+					<div class="stats_col_right data_row">0.17%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.01%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>12 GB and higher</nobr></div>
+					<div class="stats_col_right data_row">24.45%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.94%</span></div>
+					<br clear="left" />
+							<div class="stats_hr_clear"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="900" height="1" border="0" /></div>
+				</div>
+						
+				<div class="stats_row row_0" id="cat1_stats_row" onClick="toggleRow('cat1')"><a name="cat1"></a>
+					<div class="stats_col_left">Intel CPU Speeds</div>
+					<div class="stats_col_mid"><span id="cat1_val_1_on">3.3 Ghz to 3.69 Ghz</span><span class="hideme" id="cat1_val_1_off">&nbsp;</span></div>
+					<div class="stats_col_right"><span id="cat1_val_2_on">20.97%</span><span class="hideme" id="cat1_val_2_off">&nbsp;</span></div>
+					<div class="stats_col_right2"><span id="cat1_val_3_on" class="stat_increase">+0.14%</span><span class="hideme" id="cat1_val_3_off">&nbsp;</span></div>
+					<br clear="left" />
+				</div>
+				<div class="stats_row_details" id="cat1_details">
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Below 1.4 Ghz</nobr></div>
+					<div class="stats_col_right data_row">0.50%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.07%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>1.4 Ghz to 1.49 Ghz</nobr></div>
+					<div class="stats_col_right data_row">0.36%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>1.5 Ghz to 1.69 Ghz</nobr></div>
+					<div class="stats_col_right data_row">1.86%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.01%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>1.7 Ghz to 1.99 Ghz</nobr></div>
+					<div class="stats_col_right data_row">2.44%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.09%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>2.0 Ghz to 2.29 Ghz</nobr></div>
+					<div class="stats_col_right data_row">4.85%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.19%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>2.3 Ghz to 2.69 Ghz</nobr></div>
+					<div class="stats_col_right data_row">16.50%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.81%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>2.7 Ghz to 2.99 Ghz</nobr></div>
+					<div class="stats_col_right data_row">12.02%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+1.28%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3.0 Ghz to 3.29 Ghz</nobr></div>
+					<div class="stats_col_right data_row">19.37%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+1.77%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr><strong>3.3 Ghz to 3.69 Ghz</strong></nobr></div>
+					<div class="stats_col_right data_row"><strong>20.97%</strong></div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.14%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3.7 Ghz and above</nobr></div>
+					<div class="stats_col_right data_row">5.01%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.73%</span></div>
+					<br clear="left" />
+							<div class="stats_hr_clear"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="900" height="1" border="0" /></div>
+				</div>
+						
+				<div class="stats_row row_1" id="cat2_stats_row" onClick="toggleRow('cat2')"><a name="cat2"></a>
+					<div class="stats_col_left">Physical CPUs</div>
+					<div class="stats_col_mid"><span id="cat2_val_1_on">4 cpus</span><span class="hideme" id="cat2_val_1_off">&nbsp;</span></div>
+					<div class="stats_col_right"><span id="cat2_val_2_on">57.94%</span><span class="hideme" id="cat2_val_2_off">&nbsp;</span></div>
+					<div class="stats_col_right2"><span id="cat2_val_3_on" class="stat_increase">+0.58%</span><span class="hideme" id="cat2_val_3_off">&nbsp;</span></div>
+					<br clear="left" />
+				</div>
+				<div class="stats_row_details" id="cat2_details">
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Unspecified</nobr></div>
+					<div class="stats_col_right data_row">0.00%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>1 cpu</nobr></div>
+					<div class="stats_col_right data_row">1.32%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.04%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>2 cpus</nobr></div>
+					<div class="stats_col_right data_row">36.83%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.08%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3 cpus</nobr></div>
+					<div class="stats_col_right data_row">1.83%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.38%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr><strong>4 cpus</strong></nobr></div>
+					<div class="stats_col_right data_row"><strong>57.94%</strong></div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.58%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>5 cpus</nobr></div>
+					<div class="stats_col_right data_row">0.00%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.01%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>6 cpus</nobr></div>
+					<div class="stats_col_right data_row">1.42%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.17%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>7 cpus</nobr></div>
+					<div class="stats_col_right data_row">0.00%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>8 cpus</nobr></div>
+					<div class="stats_col_right data_row">0.59%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>10 cpus</nobr></div>
+					<div class="stats_col_right data_row">0.02%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.01%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>11 cpus</nobr></div>
+					<div class="stats_col_right data_row">0.00%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>12 cpus</nobr></div>
+					<div class="stats_col_right data_row">0.02%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>14 cpus</nobr></div>
+					<div class="stats_col_right data_row">0.00%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>16 cpus</nobr></div>
+					<div class="stats_col_right data_row">0.01%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>18 cpus</nobr></div>
+					<div class="stats_col_right data_row">0.00%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>20 cpus</nobr></div>
+					<div class="stats_col_right data_row">0.00%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>22 cpus</nobr></div>
+					<div class="stats_col_right data_row">0.00%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>24 cpus</nobr></div>
+					<div class="stats_col_right data_row">0.00%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>28 cpus</nobr></div>
+					<div class="stats_col_right data_row">0.00%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>32 cpus</nobr></div>
+					<div class="stats_col_right data_row">0.00%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_hr_clear"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="900" height="1" border="0" /></div>
+				</div>
+						
+				<div class="stats_row row_0" id="cat3_stats_row" onClick="toggleRow('cat3')"><a name="cat3"></a>
+					<div class="stats_col_left">Video Card Description</div>
+					<div class="stats_col_mid"><span id="cat3_val_1_on"><img src="http://store.edgecast.steamstatic.com/public/images/hws_nvidia.gif" border="0" /> NVIDIA GeForce GTX 1060</span><span class="hideme" id="cat3_val_1_off">&nbsp;</span></div>
+					<div class="stats_col_right"><span id="cat3_val_2_on">7.47%</span><span class="hideme" id="cat3_val_2_off">&nbsp;</span></div>
+					<div class="stats_col_right2"><span id="cat3_val_3_on" class="stat_increase">+1.17%</span><span class="hideme" id="cat3_val_3_off">&nbsp;</span></div>
+					<br clear="left" />
+				</div>
+				<div class="stats_row_details" id="cat3_details">
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr><strong><img src="http://store.edgecast.steamstatic.com/public/images/hws_nvidia.gif" border="0" /> NVIDIA GeForce GTX 1060</strong></nobr></div>
+					<div class="stats_col_right data_row"><strong>7.47%</strong></div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+1.17%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr><img src="http://store.edgecast.steamstatic.com/public/images/hws_nvidia.gif" border="0" /> NVIDIA GeForce GTX 960</nobr></div>
+					<div class="stats_col_right data_row">6.59%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.90%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr><img src="http://store.edgecast.steamstatic.com/public/images/hws_nvidia.gif" border="0" /> NVIDIA GeForce GTX 750 Ti</nobr></div>
+					<div class="stats_col_right data_row">6.03%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.81%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Other</nobr></div>
+					<div class="stats_col_right data_row">79.91%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+67.20%</span></div>
+					<br clear="left" />
+							<div class="stats_hr_clear"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="900" height="1" border="0" /></div>
+				</div>
+						
+				<div class="stats_row row_1" id="cat4_stats_row" onClick="toggleRow('cat4')"><a name="cat4"></a>
+					<div class="stats_col_left">VRAM</div>
+					<div class="stats_col_mid"><span id="cat4_val_1_on">2047 MB</span><span class="hideme" id="cat4_val_1_off">&nbsp;</span></div>
+					<div class="stats_col_right"><span id="cat4_val_2_on">27.93%</span><span class="hideme" id="cat4_val_2_off">&nbsp;</span></div>
+					<div class="stats_col_right2"><span id="cat4_val_3_on" class="stat_increase">+1.07%</span><span class="hideme" id="cat4_val_3_off">&nbsp;</span></div>
+					<br clear="left" />
+				</div>
+				<div class="stats_row_details" id="cat4_details">
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>256 MB</nobr></div>
+					<div class="stats_col_right data_row">0.87%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.04%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>512 MB</nobr></div>
+					<div class="stats_col_right data_row">4.43%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.20%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>768 MB</nobr></div>
+					<div class="stats_col_right data_row">1.64%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.12%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>1024 MB</nobr></div>
+					<div class="stats_col_right data_row">26.86%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-1.25%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr><strong>2047 MB</strong></nobr></div>
+					<div class="stats_col_right data_row"><strong>27.93%</strong></div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+1.07%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>2048 MB</nobr></div>
+					<div class="stats_col_right data_row">0.77%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.17%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3071 MB</nobr></div>
+					<div class="stats_col_right data_row">4.74%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+1.07%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>4095 MB</nobr></div>
+					<div class="stats_col_right data_row">14.34%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.58%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>4096 MB</nobr></div>
+					<div class="stats_col_right data_row">0.82%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.25%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>6143 MB</nobr></div>
+					<div class="stats_col_right data_row">4.64%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.16%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>8191 MB</nobr></div>
+					<div class="stats_col_right data_row">4.35%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.86%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>11263 MB</nobr></div>
+					<div class="stats_col_right data_row">0.61%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Other</nobr></div>
+					<div class="stats_col_right data_row">8.02%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.12%</span></div>
+					<br clear="left" />
+							<div class="stats_hr_clear"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="900" height="1" border="0" /></div>
+				</div>
+						
+				<div class="stats_row row_0" id="cat5_stats_row" onClick="toggleRow('cat5')"><a name="cat5"></a>
+					<div class="stats_col_left">Primary Display Resolution</div>
+					<div class="stats_col_mid"><span id="cat5_val_1_on">1920 x 1080</span><span class="hideme" id="cat5_val_1_off">&nbsp;</span></div>
+					<div class="stats_col_right"><span id="cat5_val_2_on">56.79%</span><span class="hideme" id="cat5_val_2_off">&nbsp;</span></div>
+					<div class="stats_col_right2"><span id="cat5_val_3_on" class="stat_increase">+2.51%</span><span class="hideme" id="cat5_val_3_off">&nbsp;</span></div>
+					<br clear="left" />
+				</div>
+				<div class="stats_row_details" id="cat5_details">
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>1024 x 768</nobr></div>
+					<div class="stats_col_right data_row">1.07%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.01%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>1280 x 720</nobr></div>
+					<div class="stats_col_right data_row">0.50%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.02%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>1280 x 768</nobr></div>
+					<div class="stats_col_right data_row">0.22%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.02%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>1280 x 800</nobr></div>
+					<div class="stats_col_right data_row">1.04%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.09%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>1280 x 1024</nobr></div>
+					<div class="stats_col_right data_row">2.60%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.30%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>1360 x 768</nobr></div>
+					<div class="stats_col_right data_row">2.10%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.26%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>1366 x 768</nobr></div>
+					<div class="stats_col_right data_row">17.36%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.49%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>1440 x 900</nobr></div>
+					<div class="stats_col_right data_row">3.85%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.30%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>1536 x 864</nobr></div>
+					<div class="stats_col_right data_row">0.70%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.04%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>1600 x 900</nobr></div>
+					<div class="stats_col_right data_row">4.39%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.37%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>1680 x 1050</nobr></div>
+					<div class="stats_col_right data_row">2.76%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.35%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr><strong>1920 x 1080</strong></nobr></div>
+					<div class="stats_col_right data_row"><strong>56.79%</strong></div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+2.51%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>1920 x 1200</nobr></div>
+					<div class="stats_col_right data_row">0.88%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.14%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>2560 x 1080</nobr></div>
+					<div class="stats_col_right data_row">0.67%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.02%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>2560 x 1440</nobr></div>
+					<div class="stats_col_right data_row">2.68%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.02%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3440 x 1440</nobr></div>
+					<div class="stats_col_right data_row">0.25%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.03%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3840 x 2160</nobr></div>
+					<div class="stats_col_right data_row">0.79%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.11%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Other</nobr></div>
+					<div class="stats_col_right data_row">1.36%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.08%</span></div>
+					<br clear="left" />
+							<div class="stats_hr_clear"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="900" height="1" border="0" /></div>
+				</div>
+						
+				<div class="stats_row row_1" id="cat6_stats_row" onClick="toggleRow('cat6')"><a name="cat6"></a>
+					<div class="stats_col_left">Multi-Monitor Desktop Resolution</div>
+					<div class="stats_col_mid"><span id="cat6_val_1_on">3840 x 1080</span><span class="hideme" id="cat6_val_1_off">&nbsp;</span></div>
+					<div class="stats_col_right"><span id="cat6_val_2_on">33.37%</span><span class="hideme" id="cat6_val_2_off">&nbsp;</span></div>
+					<div class="stats_col_right2"><span id="cat6_val_3_on" class="stat_decrease">-0.45%</span><span class="hideme" id="cat6_val_3_off">&nbsp;</span></div>
+					<br clear="left" />
+				</div>
+				<div class="stats_row_details" id="cat6_details">
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>1920 x 2160</nobr></div>
+					<div class="stats_col_right data_row">0.61%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.03%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>2390 x 768</nobr></div>
+					<div class="stats_col_right data_row">0.34%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.10%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>2560 x 1024</nobr></div>
+					<div class="stats_col_right data_row">0.50%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.02%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>2640 x 1024</nobr></div>
+					<div class="stats_col_right data_row">0.21%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.01%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>2646 x 1024</nobr></div>
+					<div class="stats_col_right data_row">0.52%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.05%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>2720 x 1024</nobr></div>
+					<div class="stats_col_right data_row">0.23%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.23%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>2726 x 768</nobr></div>
+					<div class="stats_col_right data_row">0.42%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.01%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>2732 x 768</nobr></div>
+					<div class="stats_col_right data_row">0.56%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.01%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>2806 x 900</nobr></div>
+					<div class="stats_col_right data_row">0.42%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.05%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>2880 x 900</nobr></div>
+					<div class="stats_col_right data_row">0.33%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.01%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>2880 x 1024</nobr></div>
+					<div class="stats_col_right data_row">0.26%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.01%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>2880 x 1800</nobr></div>
+					<div class="stats_col_right data_row">0.26%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.03%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>2944 x 1080</nobr></div>
+					<div class="stats_col_right data_row">1.03%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.05%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>2960 x 900</nobr></div>
+					<div class="stats_col_right data_row">0.20%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.01%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>2960 x 1050</nobr></div>
+					<div class="stats_col_right data_row">0.56%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.04%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>2966 x 900</nobr></div>
+					<div class="stats_col_right data_row">0.32%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3000 x 1920</nobr></div>
+					<div class="stats_col_right data_row">0.42%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.04%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3040 x 900</nobr></div>
+					<div class="stats_col_right data_row">0.24%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.02%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3046 x 1050</nobr></div>
+					<div class="stats_col_right data_row">0.30%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.01%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3120 x 1050</nobr></div>
+					<div class="stats_col_right data_row">0.26%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.01%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3200 x 900</nobr></div>
+					<div class="stats_col_right data_row">0.44%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.02%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3200 x 1080</nobr></div>
+					<div class="stats_col_right data_row">5.74%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.24%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3200 x 1200</nobr></div>
+					<div class="stats_col_right data_row">0.35%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.02%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3280 x 1050</nobr></div>
+					<div class="stats_col_right data_row">0.22%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.22%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3280 x 1080</nobr></div>
+					<div class="stats_col_right data_row">1.75%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.03%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3286 x 1080</nobr></div>
+					<div class="stats_col_right data_row">2.75%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3360 x 1050</nobr></div>
+					<div class="stats_col_right data_row">0.68%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.02%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3360 x 1080</nobr></div>
+					<div class="stats_col_right data_row">2.90%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.13%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3520 x 1080</nobr></div>
+					<div class="stats_col_right data_row">2.61%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.08%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3520 x 1200</nobr></div>
+					<div class="stats_col_right data_row">0.36%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.04%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3600 x 1080</nobr></div>
+					<div class="stats_col_right data_row">4.43%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.08%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3600 x 1086</nobr></div>
+					<div class="stats_col_right data_row">0.21%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.05%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3600 x 1200</nobr></div>
+					<div class="stats_col_right data_row">0.25%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr><strong>3840 x 1080</strong></nobr></div>
+					<div class="stats_col_right data_row"><strong>33.37%</strong></div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.45%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3840 x 1081</nobr></div>
+					<div class="stats_col_right data_row">0.28%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.03%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3840 x 1200</nobr></div>
+					<div class="stats_col_right data_row">1.95%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.04%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>3840 x 2160</nobr></div>
+					<div class="stats_col_right data_row">0.62%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.04%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>4240 x 1440</nobr></div>
+					<div class="stats_col_right data_row">0.22%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.02%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>4480 x 1080</nobr></div>
+					<div class="stats_col_right data_row">0.99%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.03%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>4480 x 1440</nobr></div>
+					<div class="stats_col_right data_row">3.42%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.05%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>5120 x 1080</nobr></div>
+					<div class="stats_col_right data_row">0.30%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>5120 x 1440</nobr></div>
+					<div class="stats_col_right data_row">0.86%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.09%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>5120 x 2880</nobr></div>
+					<div class="stats_col_right data_row">0.35%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.06%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>5360 x 1440</nobr></div>
+					<div class="stats_col_right data_row">0.32%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.02%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>5760 x 1080</nobr></div>
+					<div class="stats_col_right data_row">2.36%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.07%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>5760 x 2160</nobr></div>
+					<div class="stats_col_right data_row">1.41%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.13%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>6400 x 1440</nobr></div>
+					<div class="stats_col_right data_row">0.37%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.02%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>7680 x 2160</nobr></div>
+					<div class="stats_col_right data_row">0.43%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.03%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Other</nobr></div>
+					<div class="stats_col_right data_row">22.07%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.55%</span></div>
+					<br clear="left" />
+							<div class="stats_hr_clear"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="900" height="1" border="0" /></div>
+				</div>
+						
+				<div class="stats_row row_0" id="cat7_stats_row" onClick="toggleRow('cat7')"><a name="cat7"></a>
+					<div class="stats_col_left">Microphones</div>
+					<div class="stats_col_mid"><span id="cat7_val_1_on">Yes</span><span class="hideme" id="cat7_val_1_off">&nbsp;</span></div>
+					<div class="stats_col_right"><span id="cat7_val_2_on">99.11%</span><span class="hideme" id="cat7_val_2_off">&nbsp;</span></div>
+					<div class="stats_col_right2"><span id="cat7_val_3_on" class="stat_increase">+0.61%</span><span class="hideme" id="cat7_val_3_off">&nbsp;</span></div>
+					<br clear="left" />
+				</div>
+				<div class="stats_row_details" id="cat7_details">
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr><strong>Yes</strong></nobr></div>
+					<div class="stats_col_right data_row"><strong>99.11%</strong></div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.61%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Unknown</nobr></div>
+					<div class="stats_col_right data_row">0.49%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.35%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>No</nobr></div>
+					<div class="stats_col_right data_row">0.41%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.26%</span></div>
+					<br clear="left" />
+							<div class="stats_hr_clear"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="900" height="1" border="0" /></div>
+				</div>
+						
+				<div class="stats_row row_1" id="cat8_stats_row" onClick="toggleRow('cat8')"><a name="cat8"></a>
+					<div class="stats_col_left">Language</div>
+					<div class="stats_col_mid"><span id="cat8_val_1_on">English</span><span class="hideme" id="cat8_val_1_off">&nbsp;</span></div>
+					<div class="stats_col_right"><span id="cat8_val_2_on">34.64%</span><span class="hideme" id="cat8_val_2_off">&nbsp;</span></div>
+					<div class="stats_col_right2"><span id="cat8_val_3_on" class="stat_decrease">-3.92%</span><span class="hideme" id="cat8_val_3_off">&nbsp;</span></div>
+					<br clear="left" />
+				</div>
+				<div class="stats_row_details" id="cat8_details">
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr><strong>English</strong></nobr></div>
+					<div class="stats_col_right data_row"><strong>34.64%</strong></div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-3.92%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Simplified Chinese</nobr></div>
+					<div class="stats_col_right data_row">29.54%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+7.91%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Russian</nobr></div>
+					<div class="stats_col_right data_row">10.33%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-1.94%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Spanish</nobr></div>
+					<div class="stats_col_right data_row">4.27%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.50%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Brazilian Portuguese</nobr></div>
+					<div class="stats_col_right data_row">3.20%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.33%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>German</nobr></div>
+					<div class="stats_col_right data_row">3.06%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.96%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Korean</nobr></div>
+					<div class="stats_col_right data_row">2.95%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.91%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>French</nobr></div>
+					<div class="stats_col_right data_row">2.37%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.39%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Polish</nobr></div>
+					<div class="stats_col_right data_row">1.64%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.34%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Turkish</nobr></div>
+					<div class="stats_col_right data_row">1.54%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.40%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Thai</nobr></div>
+					<div class="stats_col_right data_row">1.12%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.17%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Traditional Chinese</nobr></div>
+					<div class="stats_col_right data_row">0.91%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.08%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Japanese</nobr></div>
+					<div class="stats_col_right data_row">0.81%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.10%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Italian</nobr></div>
+					<div class="stats_col_right data_row">0.65%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.05%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Portuguese</nobr></div>
+					<div class="stats_col_right data_row">0.51%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.09%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Czech</nobr></div>
+					<div class="stats_col_right data_row">0.47%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.07%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Swedish</nobr></div>
+					<div class="stats_col_right data_row">0.35%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.03%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Hungarian</nobr></div>
+					<div class="stats_col_right data_row">0.33%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.06%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Dutch</nobr></div>
+					<div class="stats_col_right data_row">0.32%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.01%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Danish</nobr></div>
+					<div class="stats_col_right data_row">0.27%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.02%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Finnish</nobr></div>
+					<div class="stats_col_right data_row">0.17%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.05%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Romanian</nobr></div>
+					<div class="stats_col_right data_row">0.15%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Norwegian</nobr></div>
+					<div class="stats_col_right data_row">0.15%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Ukrainian</nobr></div>
+					<div class="stats_col_right data_row">0.11%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.03%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Greek</nobr></div>
+					<div class="stats_col_right data_row">0.09%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.02%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Bulgarian</nobr></div>
+					<div class="stats_col_right data_row">0.04%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Unknown</nobr></div>
+					<div class="stats_col_right data_row">0.00%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_hr_clear"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="900" height="1" border="0" /></div>
+				</div>
+						
+				<div class="stats_row row_0" id="cat9_stats_row" onClick="toggleRow('cat9')"><a name="cat9"></a>
+					<div class="stats_col_left">Free Hard Drive Space</div>
+					<div class="stats_col_mid"><span id="cat9_val_1_on">100 GB to 249 GB</span><span class="hideme" id="cat9_val_1_off">&nbsp;</span></div>
+					<div class="stats_col_right"><span id="cat9_val_2_on">25.25%</span><span class="hideme" id="cat9_val_2_off">&nbsp;</span></div>
+					<div class="stats_col_right2"><span id="cat9_val_3_on" class="stat_increase">+0.28%</span><span class="hideme" id="cat9_val_3_off">&nbsp;</span></div>
+					<br clear="left" />
+				</div>
+				<div class="stats_row_details" id="cat9_details">
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Unspecified</nobr></div>
+					<div class="stats_col_right data_row">0.00%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Less than 10 GB</nobr></div>
+					<div class="stats_col_right data_row">1.06%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.12%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>10 GB to  99 GB</nobr></div>
+					<div class="stats_col_right data_row">19.19%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.27%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr><strong>100 GB to 249 GB</strong></nobr></div>
+					<div class="stats_col_right data_row"><strong>25.25%</strong></div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.28%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>250 GB to 499 GB</nobr></div>
+					<div class="stats_col_right data_row">24.35%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.21%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>500 GB to 749 GB</nobr></div>
+					<div class="stats_col_right data_row">11.97%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.53%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>750 GB to 999 GB</nobr></div>
+					<div class="stats_col_right data_row">9.26%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.46%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Above 1 TB</nobr></div>
+					<div class="stats_col_right data_row">8.92%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.38%</span></div>
+					<br clear="left" />
+							<div class="stats_hr_clear"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="900" height="1" border="0" /></div>
+				</div>
+						
+				<div class="stats_row row_1" id="cat10_stats_row" onClick="toggleRow('cat10')"><a name="cat10"></a>
+					<div class="stats_col_left">Total Hard Drive Space</div>
+					<div class="stats_col_mid"><span id="cat10_val_1_on">Above 1 TB</span><span class="hideme" id="cat10_val_1_off">&nbsp;</span></div>
+					<div class="stats_col_right"><span id="cat10_val_2_on">44.88%</span><span class="hideme" id="cat10_val_2_off">&nbsp;</span></div>
+					<div class="stats_col_right2"><span id="cat10_val_3_on" class="stat_increase">+2.98%</span><span class="hideme" id="cat10_val_3_off">&nbsp;</span></div>
+					<br clear="left" />
+				</div>
+				<div class="stats_row_details" id="cat10_details">
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Unspecified</nobr></div>
+					<div class="stats_col_right data_row">0.00%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Less than 10 GB</nobr></div>
+					<div class="stats_col_right data_row">0.00%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>10 GB to  99 GB</nobr></div>
+					<div class="stats_col_right data_row">0.72%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.08%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>100 GB to 249 GB</nobr></div>
+					<div class="stats_col_right data_row">8.48%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.56%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>250 GB to 499 GB</nobr></div>
+					<div class="stats_col_right data_row">19.54%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-1.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>500 GB to 749 GB</nobr></div>
+					<div class="stats_col_right data_row">5.61%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.38%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>750 GB to 999 GB</nobr></div>
+					<div class="stats_col_right data_row">20.75%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-2.25%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr><strong>Above 1 TB</strong></nobr></div>
+					<div class="stats_col_right data_row"><strong>44.88%</strong></div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+2.98%</span></div>
+					<br clear="left" />
+							<div class="stats_hr_clear"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="900" height="1" border="0" /></div>
+				</div>
+						
+				<div class="stats_row row_0" id="cat11_stats_row" onClick="toggleRow('cat11')"><a name="cat11"></a>
+					<div class="stats_col_left">Network Speed</div>
+					<div class="stats_col_mid"><span id="cat11_val_1_on">Unspecified</span><span class="hideme" id="cat11_val_1_off">&nbsp;</span></div>
+					<div class="stats_col_right"><span id="cat11_val_2_on">99.09%</span><span class="hideme" id="cat11_val_2_off">&nbsp;</span></div>
+					<div class="stats_col_right2"><span id="cat11_val_3_on" class="stat_increase">+0.64%</span><span class="hideme" id="cat11_val_3_off">&nbsp;</span></div>
+					<br clear="left" />
+				</div>
+				<div class="stats_row_details" id="cat11_details">
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr><strong>Unspecified</strong></nobr></div>
+					<div class="stats_col_right data_row"><strong>99.09%</strong></div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.64%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>33.6 Kbps</nobr></div>
+					<div class="stats_col_right data_row">0.03%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.02%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>56.0 Kbps</nobr></div>
+					<div class="stats_col_right data_row">0.03%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.03%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>112.0 Kbps</nobr></div>
+					<div class="stats_col_right data_row">0.01%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.02%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>256.0 Kbps</nobr></div>
+					<div class="stats_col_right data_row">0.05%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.03%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>768.0 Kbps</nobr></div>
+					<div class="stats_col_right data_row">0.05%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.04%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>1,024.0 Kbps</nobr></div>
+					<div class="stats_col_right data_row">0.06%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.05%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>2,048.0 Kbps</nobr></div>
+					<div class="stats_col_right data_row">0.28%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.19%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>10,000.0 Kbps</nobr></div>
+					<div class="stats_col_right data_row">0.40%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.26%</span></div>
+					<br clear="left" />
+							<div class="stats_hr_clear"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="900" height="1" border="0" /></div>
+				</div>
+						
+				<div class="stats_row row_1" id="cat12_stats_row" onClick="toggleRow('cat12')"><a name="cat12"></a>
+					<div class="stats_col_left">VR Headsets</div>
+					<div class="stats_col_mid"><span id="cat12_val_1_on">HTC Vive</span><span class="hideme" id="cat12_val_1_off">&nbsp;</span></div>
+					<div class="stats_col_right"><span id="cat12_val_2_on">0.19%</span><span class="hideme" id="cat12_val_2_off">&nbsp;</span></div>
+					<div class="stats_col_right2"><span id="cat12_val_3_on" class="stat_decrease">-0.04%</span><span class="hideme" id="cat12_val_3_off">&nbsp;</span></div>
+					<br clear="left" />
+				</div>
+				<div class="stats_row_details" id="cat12_details">
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr><strong>HTC Vive</strong></nobr></div>
+					<div class="stats_col_right data_row"><strong>0.19%</strong></div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.04%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Oculus Rift</nobr></div>
+					<div class="stats_col_right data_row">0.18%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.01%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Oculus Rift DK2</nobr></div>
+					<div class="stats_col_right data_row">0.01%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.01%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Oculus Rift DK1</nobr></div>
+					<div class="stats_col_right data_row">0.00%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>Unknown</nobr></div>
+					<div class="stats_col_right data_row">0.00%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_hr_clear"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="900" height="1" border="0" /></div>
+				</div>
+						
+				<div class="stats_row row_0" id="cat13_stats_row" onClick="toggleRow('cat13')"><a name="cat13"></a>
+					<div class="stats_col_left">Other Settings</div>
+					<div class="stats_col_mid"><span id="cat13_val_1_on">SSE2</span><span class="hideme" id="cat13_val_1_off">&nbsp;</span></div>
+					<div class="stats_col_right"><span id="cat13_val_2_on">100.00%</span><span class="hideme" id="cat13_val_2_off">&nbsp;</span></div>
+					<div class="stats_col_right2"><span id="cat13_val_3_on" class="stat_decrease">0.00%</span><span class="hideme" id="cat13_val_3_off">&nbsp;</span></div>
+					<br clear="left" />
+				</div>
+				<div class="stats_row_details" id="cat13_details">
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>FCMOV</nobr></div>
+					<div class="stats_col_right data_row">100.00%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr><strong>SSE2</strong></nobr></div>
+					<div class="stats_col_right data_row"><strong>100.00%</strong></div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>SSE3</nobr></div>
+					<div class="stats_col_right data_row">99.99%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">0.00%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>LAHF / SAHF</nobr></div>
+					<div class="stats_col_right data_row">99.86%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.04%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>CMPXCHG16B </nobr></div>
+					<div class="stats_col_right data_row">99.80%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-0.02%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>NTFS</nobr></div>
+					<div class="stats_col_right data_row">96.46%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.29%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>PrefetchW</nobr></div>
+					<div class="stats_col_right data_row">96.45%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.27%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>SSSE3</nobr></div>
+					<div class="stats_col_right data_row">95.61%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.57%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>SSE4.1</nobr></div>
+					<div class="stats_col_right data_row">93.00%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.80%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>SSE4.2</nobr></div>
+					<div class="stats_col_right data_row">91.19%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.95%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>AVX</nobr></div>
+					<div class="stats_col_right data_row">82.73%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+0.92%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>AES</nobr></div>
+					<div class="stats_col_right data_row">80.59%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_increase">+1.57%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>HyperThreading</nobr></div>
+					<div class="stats_col_right data_row">52.49%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-1.87%</span></div>
+					<br clear="left" />
+							<div class="stats_col_left data_row"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="20" height="1" border="0" /></div>
+					<div class="stats_col_mid data_row"><nobr>SSE4a</nobr></div>
+					<div class="stats_col_right data_row">15.64%</div>
+					<div class="stats_col_right2 data_row"><span class="stat_decrease">-1.37%</span></div>
+					<br clear="left" />
+							<div class="stats_hr_clear"><img src="http://store.edgecast.steamstatic.com/public/images/trans.gif" width="900" height="1" border="0" /></div>
+				</div>
+								
+							
+						
+						
+			</div>
+		  </div>
+			
+	  </div>
+								
+			<br clear="all">	
+
+						
+			<br clear="all" />	
+			<br clear="all" />	
+					
+		
+			</div>
+		</div>
+</div>
+	</div>
+</div>
+
+<!-- Footer -->
+<div id="footer_spacer" class="small_footer"></div>
+<div id="footer"  class="small_footer">
+<div class="footer_content">
+
+    <div class="rule"></div>
+    <div id="footer_logo"><a href="http://www.valvesoftware.com" target="_blank" rel="noreferrer"><img src="http://store.edgecast.steamstatic.com/public/images/v6/logo_valve_footer.png" alt="Valve Software" border="0" /></a></div>
+    <div id="footer_text">
+        <div>&copy; 2017 Valve Corporation. Todos os direitos reservados. Todas as marcas são propriedade dos seus respectivos donos nos EUA e em outros países.</div>
+        <div>IVA incluso em todos os preços onde aplicável.&nbsp;&nbsp;
+
+            <a href="http://store.steampowered.com/privacy_agreement/" target="_blank" rel="noreferrer">Política de Privacidade</a>
+            &nbsp; | &nbsp;
+            <a href="http://store.steampowered.com/legal/" target="_blank" rel="noreferrer">Termos Legais</a>
+            &nbsp; | &nbsp;
+            <a href="http://store.steampowered.com/subscriber_agreement/" target="_blank" rel="noreferrer">Acordo de Assinatura do Steam</a>
+            &nbsp; | &nbsp;
+            <a href="http://store.steampowered.com/steam_refunds/" target="_blank" rel="noreferrer">Reembolsos</a>
+
+        </div>
+					<div class="responsive_optin_link">
+				<div class="btn_medium btnv6_grey_black" onclick="Responsive_RequestMobileView()">
+					<span>Ver versão para dispositivos móveis</span>
+				</div>
+			</div>
+		    </div>
+
+
+
+    <div style="clear: left;"></div>
+
+    <div class="rule"></div>
+
+    <div class="valve_links">
+        <a href="http://www.valvesoftware.com/about.html" target="_blank" rel="noreferrer">Sobre a Valve</a>
+        &nbsp; | &nbsp;<a href="http://www.steampowered.com/steamworks/" target="_blank" rel="noreferrer">Steamworks</a>
+        &nbsp; | &nbsp;<a href="http://www.valvesoftware.com/jobs.html" target="_blank" rel="noreferrer">Empregos</a>
+        &nbsp; | &nbsp;<a href="http://steamcommunity.com/greenlight" target="_blank" rel="noreferrer">Distribuição no Steam</a>
+		&nbsp; | &nbsp;<a href="https://store.steampowered.com/account/redeemwalletcode" target="_blank" rel="noreferrer">Vales-presente</a>
+		&nbsp; | &nbsp;<a href="http://www.facebook.com/Steam" target="_blank" rel="noreferrer"><img src="http://store.edgecast.steamstatic.com/public/images/ico/ico_facebook.gif"> Steam</a>
+		&nbsp; | &nbsp;<a href="http://twitter.com/steam_games" target="_blank" rel="noreferrer"><img src="http://store.edgecast.steamstatic.com/public/images/ico/ico_twitter.gif"> @steam_games</a>
+    </div>
+
+</div>
+</div><!-- End Footer -->
+
+</body>

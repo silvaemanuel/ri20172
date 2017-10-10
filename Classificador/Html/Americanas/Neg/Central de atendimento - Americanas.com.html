@@ -1,0 +1,2637 @@
+<!DOCTYPE html >
+
+<!--[if IE 7 ]><html class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html class="ie8"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="pt-br">
+<!--<![endif]--><head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UgEAU1NQGwYDUlJaAAI="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,n,e)])}catch(s){try{i("ierr",[s,c.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t){i("err",[t,c.now()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,n,e){u&&(d+=1)}),s.on("fn-err",function(t,n,e){u&&(this.thrown=!0,o(e))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);</script>
+	<meta charset="UTF-8" />
+<script>
+	checkoutUrl  = "http://sacola.americanas.com.br/checkout/";
+</script>
+<script src="http://imagens.americanas.com.br/statics-release-258/catalog/js/v1/js_min/general_header.js"></script>
+            <title>Central de atendimento - Americanas.com</title>
+            <meta name="keywords" content="" />
+            <meta name="description" content="" />
+            <link href="http://www.americanas.com.br/central-de-atendimento" rel="canonical" />
+            <link rel="alternate" href="android-app://com.b2w.americanas/http/www.americanas.com.br/central-de-atendimento" />
+
+<meta name="apple-itunes-app" content="app-id=476307592" />
+	<!--[if lt IE 9]>
+	<script src="http://imagens.americanas.com.br/statics-release-258/catalog/js/html5shiv.js">
+	</script>
+	<![endif]-->
+	<link rel="stylesheet" href="http://imagens.americanas.com.br/statics-release-258/catalog/css/v1/catalog.base.min.css" />
+	<script src="http://imagens.americanas.com.br/statics-release-258/catalog/js/v1/vendor/jquery/jquery.js"></script>
+	<script type="text/javascript">
+		$.ajaxSetup({
+			cache: true
+		});
+		var readyEvents = [];
+		var app_loaded = false;
+		function onReady(func) {
+			if (func) readyEvents.push(func);
+			if (app_loaded) {
+				if (readyEvents.length > 0) {
+					for (var f in readyEvents) {
+						readyEvents[f].call(this);
+					}
+					readyEvents = [];
+				}
+			}
+		}
+
+    </script>
+
+	<script>
+		OAS_query = 'central-de-atendimento';
+		OAS_sitepage = 'americanas/Atendimento';
+		APP_OAS = true;
+	</script>
+	<script type="text/javascript">
+    var APP_DEBUG = false;
+    var OAS_url = 'http://oas.americanas.com.br/RealMedia/ads/adstream_mjx.ads/';
+</script>
+<link rel="stylesheet" href="http://iacom.s8.com.br/mktacom/arquivos/css/lightboxcss.css" />
+
+	<script src="http://imagens.americanas.com.br/statics-release-258/catalog/skin/app/dist/brands/americanas/scripts/americanas.js"></script>
+	<link rel="stylesheet" href="http://imagens.americanas.com.br/statics-release-258/catalog/skin/app/dist/brands/americanas/styles/app.css" />
+</head>
+	<body class="static-page" itemscope="itemscope" itemtype="http://schema.org/WebPage" data-recommendation-page="geral"><!-- 319447 -->
+<script>
+  /* reload if testAB = new */
+  (function() {
+    function isNewCatalog (pathname) {
+      if (!pathname) return false;
+      if (pathname === '/') return true;
+
+      var pattern = /\/categoria|\/busca|\/oferta-do-dia|\/artista|\/lojista|\/marca/;
+      return pattern.test(pathname)
+    }
+
+    if (isNewCatalog(window.location.pathname) && document.cookie && document.cookie.indexOf('catalogTestAB=new') >= 0) {
+      //  window.location.reload();
+    }
+  })();
+</script>
+
+<div class="grid-control full-width collapse">
+	<div class="oas spacey-top-header" data-oas="spacey-top-header" style="text-align:center;"></div>
+</div>
+<div class="oas spacey-background" data-oas="spacey-background"></div>
+<div class="oas spacey-cr" data-oas="spacey-cr"></div>
+<div class="grid-control full-width collapse">
+	<div class="oas spacey-intermission" data-oas="spacey-intermission" style="position:relative;"></div>
+</div>
+
+<script>
+/* Polyfill Object Assign */
+if (!Object.assign) {
+  Object.defineProperty(Object, 'assign', {
+    enumerable: false,
+    configurable: true,
+    writable: true,
+    value: function(target) {
+      'use strict';
+      if (target === undefined || target === null) {
+        throw new TypeError('Cannot convert first argument to object');
+      }
+
+      var to = Object(target);
+      for (var i = 1; i < arguments.length; i++) {
+        var nextSource = arguments[i];
+        if (nextSource === undefined || nextSource === null) {
+          continue;
+        }
+        nextSource = Object(nextSource);
+
+        var keysArray = Object.keys(Object(nextSource));
+        for (var nextIndex = 0, len = keysArray.length; nextIndex < len; nextIndex++) {
+          var nextKey = keysArray[nextIndex];
+          var desc = Object.getOwnPropertyDescriptor(nextSource, nextKey);
+          if (desc !== undefined && desc.enumerable) {
+            to[nextKey] = nextSource[nextKey];
+          }
+        }
+      }
+      return to;
+    }
+  });
+}
+</script>
+<script>
+(function(){function G(){var a;if("undefined"!==typeof global)a=global;else if("undefined"!==typeof self)a=self;else try{a=Function("return this")()}catch(c){throw Error("polyfill failed because global object is unavailable in this environment");}var b=a.Promise;if(!b||"[object Promise]"!==Object.prototype.toString.call(b.resolve())||b.A)a.Promise=f}function A(a){if(a&&"object"===typeof a&&a.constructor===this)return a;var b=new this(l);u(b,a);return b}function B(a,b){var c=this,d=new this.constructor(l);
+void 0===d[x]&&H(d);var g=c.b;if(g){var e=arguments[g-1];k(function(){I(g,d,e,c.a)})}else C(c,d,a,b);return d}function k(a,b){n[p]=a;n[p+1]=b;p+=2;2===p&&(D?D(q):J())}function T(){return function(){process.B(q)}}function U(){return function(){K(q)}}function V(){var a=0,b=new L(q),c=document.createTextNode("");b.observe(c,{characterData:!0});return function(){c.data=a=++a%2}}function W(){var a=new MessageChannel;a.port1.onmessage=q;return function(){a.port2.postMessage(0)}}function M(){return function(){setTimeout(q,
+1)}}function q(){for(var a=0;a<p;a+=2)(0,n[a])(n[a+1]),n[a]=void 0,n[a+1]=void 0;p=0}function X(){try{var a=require("vertx");K=a.F||a.D;return U()}catch(b){return M()}}function l(){}function N(a){try{return a.then}catch(b){return y.error=b,y}}function Y(a,b,c,d){try{a.call(b,c,d)}catch(g){return g}}function Z(a,b,c){k(function(a){var g=!1,e=Y(c,b,function(c){g||(g=!0,b!==c?u(a,c):m(a,c))},function(b){g||(g=!0,h(a,b))});!g&&e&&(g=!0,h(a,e))},a)}function aa(a,b){b.b===v?m(a,b.a):b.b===r?h(a,b.a):C(b,
+void 0,function(b){u(a,b)},function(b){h(a,b)})}function O(a,b,c){b.constructor===a.constructor&&c===B&&constructor.resolve===A?aa(a,b):c===y?h(a,y.error):void 0===c?m(a,b):"function"===typeof c?Z(a,b,c):m(a,b)}function u(a,b){a===b?h(a,new TypeError("You cannot resolve a promise with itself")):"function"===typeof b||"object"===typeof b&&null!==b?O(a,b,N(b)):m(a,b)}function ba(a){a.j&&a.j(a.a);E(a)}function m(a,b){a.b===t&&(a.a=b,a.b=v,0!==a.f.length&&k(E,a))}function h(a,b){a.b===t&&(a.b=r,a.a=b,
+k(ba,a))}function C(a,b,c,d){var g=a.f,e=g.length;a.j=null;g[e]=b;g[e+v]=c;g[e+r]=d;0===e&&a.b&&k(E,a)}function E(a){var b=a.f,c=a.b;if(0!==b.length){for(var d,g,e=a.a,f=0;f<b.length;f+=3)d=b[f],g=b[f+c],d?I(c,d,g,e):g(e);a.f.length=0}}function P(){this.error=null}function I(a,b,c,d){var g="function"===typeof c,e,f,k,l;if(g){try{e=c(d)}catch(n){F.error=n,e=F}e===F?(l=!0,f=e.error,e=null):k=!0;if(b===e){h(b,new TypeError("A promises callback cannot return that same promise."));return}}else e=d,k=!0;
+b.b===t&&(g&&k?u(b,e):l?h(b,f):a===v?m(b,e):a===r&&h(b,e))}function ca(a,b){try{b(function(b){u(a,b)},function(b){h(a,b)})}catch(c){h(a,c)}}function H(a){a[x]=Q++;a.b=void 0;a.a=void 0;a.f=[]}function f(a){this[x]=Q++;this.a=this.b=void 0;this.f=[];if(l!==a){if("function"!==typeof a)throw new TypeError("You must pass a resolver function as the first argument to the promise constructor");if(this instanceof f)ca(this,a);else throw new TypeError("Failed to construct 'Promise': Please use the 'new' operator, this object constructor cannot be called as a function.");
+}}function w(a,b){this.s=a;this.c=new a(l);this.c[x]||H(this.c);R(b)?(this.o=b,this.g=this.length=b.length,this.a=Array(this.length),0===this.length?m(this.c,this.a):(this.length=this.length||0,this.m(),0===this.g&&m(this.c,this.a))):h(this.c,Error("Array Methods must be provided an Array"))}var R=Array.isArray?Array.isArray:function(a){return"[object Array]"===Object.prototype.toString.call(a)},p=0,K,D,S="undefined"!==typeof window?window:void 0,z=S||{},L=z.MutationObserver||z.WebKitMutationObserver,
+z="undefined"!==typeof Uint8ClampedArray&&"undefined"!==typeof importScripts&&"undefined"!==typeof MessageChannel,n=Array(1E3),J;J="undefined"===typeof self&&"undefined"!==typeof process&&"[object process]"==={}.toString.call(process)?T():L?V():z?W():void 0===S&&"function"===typeof require?X():M();var x=Math.random().toString(36).substring(16),t=void 0,v=1,r=2,y=new P,F=new P,Q=0;f.all=function(a){return(new da(this,a)).c};f.race=function(a){var b=this;return R(a)?new b(function(c,d){for(var g=a.length,
+e=0;e<g;e++)b.resolve(a[e]).then(c,d)}):new b(function(a,b){b(new TypeError("You must pass an array to race."))})};f.resolve=A;f.reject=function(a){var b=new this(l);h(b,a);return b};f.w=function(a){D=a};f.v=function(a){k=a};f.u=k;f.prototype={constructor:f,then:B,"catch":function(a){return this.then(null,a)}};var da=w;w.prototype.m=function(){for(var a=this.length,b=this.o,c=0;this.b===t&&c<a;c++)this.l(b[c],c)};w.prototype.l=function(a,b){var c=this.s,d=c.resolve;d===A?(d=N(a),d===B&&a.b!==t?this.h(a.b,
+b,a.a):"function"!==typeof d?(this.g--,this.a[b]=a):c===f?(c=new c(l),O(c,a,d),this.i(c,b)):this.i(new c(function(b){b(a)}),b)):this.i(d(a),b)};w.prototype.h=function(a,b,c){var d=this.c;d.b===t&&(this.g--,a===r?h(d,c):this.a[b]=c);0===this.g&&m(d,this.a)};w.prototype.i=function(a,b){var c=this;C(a,void 0,function(a){c.h(v,b,a)},function(a){c.h(r,b,a)})};f.Promise=f;f.C=G;"function"===typeof define&&define.amd?define(function(){return f}):"undefined"!==typeof module&&module.exports?module.exports=
+f:"undefined"!==typeof this&&(this.Promise=f);G()}).call(this);
+</script>
+
+
+<!-- script src="//iacom1-a.akamaihd.net/mktacom/arquivos/js/mobileredirect.js" script -->
+
+<!-- script src="//iacom1-a.akamaihd.net/catalog/skins/mobileredirect.js"></script -->
+
+<link  rel="stylesheet" href="//iacom1-a.akamaihd.net/statics-1.68.4/catalog/css/v1/header.min.css"/>
+<style>
+.card1x-price .product-price-digits {float:left}
+  .home-page [data-oas="x35"]>* {float: left;}
+  #footer > .sitemap-link {display: none;}
+  .list-product-linhas {margin-bottom: 20px;}
+  .home-page .pure-g .pure-u-1-3 div.app-product{ height:196px;}
+  .home-page .pure-g .pure-u-1-3{ position:relative;}
+  .home-page .banner-principal {height: 380px;}
+  .home-page .pure-g .app-product .product-price{ position:absolute; bottom:30px;}
+  .home-page .pure-g .pure-u-1-3 .app-product .btn-buy{ position:absolute; bottom:10px;}
+  .a-menu-sanzonal .ams-item{max-width: 185px;}
+  .a-menu-sanzonal .ams-item:first-child, .a-menu-sanzonal .oferta-do-dia{max-width:none;}
+  .comparator-itens { display:none; }
+  .paginado .comparator-itens { display:block; }
+  .highlight-dpto .top-area-product { overflow: hidden;}
+  span.new-tag {background: #99E200;padding: 0 5px 2px 5px;margin-left: 6px;font-weight: bold;color: #ffffff;}
+  .a-bottom-header .a-menu-header .abh-menu-header .list-depts .pooler:hover span.new-tag {background: #fff200;color: #e60014;}
+  .banner-featured .app-product .product-title{color:#666;}
+  .busca-fontcolor{color:#999;}
+  .a-aux-box1 {z-index:2;}
+  .product-page .prompt-delivery figure:before {right:0;top:0;}
+  .home-page .banner-featured .app-product {width:612px;}
+
+  .prompt-delivery .selo-item img {position:absolute;bottom:0;right:0;}
+
+  .landing-page .breadcrumb{display:none;}
+  .grid .box01 .prods .pList .li {width: inherit!important;}
+  .app-banner .product-card{box-shadow: none;}
+
+  .list-product-linhas .it-product-linha {margin-left: -2px;}
+
+  /*ocultar o selo da app da vitrine caso tenha o selo de evento*/
+  .integrated-stamp+form .selo-item .selo-image {display:none!important;}
+
+  .tooltipster-base {z-index: 1001;}
+  .banner-moveis .app-product .product-price-from.no-price{display:none;}
+
+  /* webStore */
+  .web-store-page .sku.sku-tamanho{display:none}
+
+  .a-top-header {width: 1003px !important;;padding:0 !important;}
+  .a-menu-sanzonal .ams-item>a,.a-menu-sanzonal .menu-top-list .tt-item a{padding:0;}
+
+  body.oferta-dia #aoferta .container_36 .prod-style {width: 233px;min-height: 301px;}
+  body.product-page .social-area {display:none;}
+
+  /*retirada do breadcrumb na pagina de busca no evento*/
+  .search-page.search-hasproducts #breadcrumb{display:none;}
+
+  .oferta-dia .page-area .page-area01 .oas{width:0;}
+
+
+/* skin saldao */
+body.aniversario-2016,
+body.aniversario-2016 .slide-items-wrapper, 
+body.aniversario-2016 .banner-featured .banner-container>.app-slide,
+body.aniversario-2016 .grid-control
+{background-color: #ffc600!important;}
+
+body.aniversario-2016 .banner-featured .app-product .product-info .btn-buy,
+body.aniversario-2016 .banner-featured .app-product .product-price .product-price-value-wrapper
+{color:#e60014!important;}
+
+body.aniversario-2016 .banner-featured .app-product .product-info .btn-buy .icon-shopping-cart{background-position: 0 -424px!important;height:26px!important;width:28px!important;background-image: url(http://imagens.americanas.com.br/statics-release-240/catalog/skin/app/dist/brands/americanas/images/icon-sa38f066fa3.png)!important;}
+
+</style>
+
+
+<header id="a-header" role="banner">
+    <div class="a-top-header">
+
+        <div class="banner-top-header">
+            <a href="http://www.soubarato.com.br/?epar=pm_cv_ba_am_siteacomaba&s_term=dhtmlacom" class="ban-top ban-top-01 spt-top-position01">Soubarato.com</a>
+            <span class="ban-top ban-top-02 spt-top-position02">Americanas.com</span>
+        </div>
+        <ul class="menu-top-header">
+            <li class="mth-item tooltip" style="min-width: 85px; text-align: center;">
+                <a href="http://www.americanas.com.br/estaticapop/popCentralAtendimento" data-modal="true" data-modal-maxwidth="750" data-modal-maxheight="430" target="_blank">
+                    <span>televendas </span>
+                </a>
+                <div class="btip-element-header tip-bottom-header" style="text-align: left; top: 11px;">
+                    <strong class="tip-tit">quer comprar pelo telefone?</strong>
+                    <p class="tip-tx" style="font-size: 12px;">ligue: 4003-1000</p>
+                </div>
+            </li>
+            <li class="mth-item size-bt tooltip disabled">
+                <a href="http://www.americanas.com.br/central-de-atendimento?WT.mc_id=internas-atendimentoHome&WT.mc_ev=click" class="tool-item" crmwa_mdc="Home|Topo|atendimento|">atendimento</a>
+                <div class="btip-element-header tip-bottom-header">
+                    <strong class="tip-tit">precisa de ajuda?</strong>
+                    <p class="tip-tx">atendimento por telefone, e-mail e dúvidas frequentes.
+                        <a href="http://www.americanas.com.br/central-de-atendimento?WT.mc_id=internas-atendimentoHome&WT.mc_ev=click" class="tip-lk">clique aqui</a>
+                    </p>
+                </div>
+            </li>
+            <li class="mth-item">
+                <a href="https://minhaconta.americanas.com.br/#/orders/home">meus pedidos</a>
+            </li>
+            <li class="mth-item">
+                <a href="https://minhaconta.americanas.com.br/#/">minha conta</a>
+            </li>
+            <li class="mth-item">
+                <a href="http://www.americanas.com.br/lojamaisproxima">loja mais próxima</a>
+            </li>
+            <li class="mth-item">
+                <a href="http://www.americanas.com.br/cartao-americanas?WT.mc_id=d_cartaoacom_topo&chave=HM_TOPO_VC_CARTAOACOM" class="release">cartão americanas.com</a>
+            </li>
+        </ul>
+    </div>
+    <div class="a-content-header">
+        <div class="header-control">
+            <a href="http://www.americanas.com.br/"><h1 class="spt-logo h-logo">americanas.com</h1></a>
+            <div class="h-cart">
+                <div class="cart-itens">
+                     <a href="http://sacola.americanas.com.br/checkout" class="ci-itens-lnk">
+                        <span class="spt-cesta"></span>
+                        <span class="ci-itens-wp">
+                            <span class="ci-label">minha cesta</span>
+                            <script type="template/text" id="template-totalProducts">
+                                <span class="ci-titens">{{ numberProducts }}</span> {{ numberProductsText }} <span class="spt-seta"></span>
+                            </script>
+                            <span class="ci-total">
+                                <span class="ci-titens">0</span> item <span class="spt-seta"></span>
+                            </span>
+                        </span>
+                    </a>
+                    <div class="hidden-area cart-content-opened">
+                        <div class="cart-empty">
+                            <strong class="cart-empty-title">sua cesta está vazia</strong>
+                        </div>
+                         <script type="template/text" id="template-cart-products">
+                            <ul class="cart-products-list">
+                                {{#products}}
+                                    <li class="cart-products-item">
+                                        <img src="{{ product.image }}" class="cart-product-photo"/>
+                                        <span class="cart-product-title">
+                                            <a href="/produto/{{ product.id }}">
+                                                {{ product.name }}
+                                            </a>
+                                        </span>
+                                        <span class="cart-product-price">
+
+                                            <span class="ctp-sale">{{#formattedPrice}}{{ salesPrice }}{{/formattedPrice}}</span>
+                                        </span>
+                                    </li>
+                                {{/products}}
+                            </ul>
+                            {{#showLinkCart}}
+                            <div class="cart-all-products">
+                                <a href="http://sacola.americanas.com.br/checkout/"> ver todos os {{ numberProducts }} produtos da cesta</a>
+                            </div>
+                            {{/showLinkCart}}
+                            <div class="cart-price">
+                                <strong class="box-cart-price">
+                                    total:
+                                    <span class="cart-price-subtotal">{{#formattedPrice}}{{ subtotal }}{{/formattedPrice}}</span>
+                                </strong>
+
+                                <a href="http://sacola.americanas.com.br/checkout/" class="spt-ir-cesta"></a>
+                            </div>
+                        </script>
+                        <div class="cart-not-empty">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="h-user-login">
+                <span class="spt-smile"></span>
+                <div class="user-area">
+                    <div id="user-logged">
+                        <span class="user-welcome">olá <span id="acomNick"></span>,</span>
+                        <span class="user-menu">
+                            <a href="https://cliente.americanas.com.br/s/signout/?p=l,s&h=responsive">sair</a>
+                        </span>
+                    </div>
+                    <div id="user-not-logged">
+                        <a href="https://cliente.americanas.com.br/s/?guest=false&h=responsive">olá, faça seu <span class="it-user-log">login</span>
+                            ou <span class="it-user-log">cadastre-se</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="h-search">
+                <div class="ginput">
+                    <form action="https://www.americanas.com.br/busca">
+                        <input type="search" class="input-search placeholder busca-fontcolor" name="conteudo"  placeholder="Buscar" default-placeholder="Buscar" onBlur="this.placeholder = this.getAttribute('default-placeholder');" onFocus="this.placeholder = '';" data-position="header" style="padding-left: 7px !important;" autocomplete="off"/>
+                        <input type="submit" class="spt-lupa-buscar" data-position="header"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="a-bottom-header">
+
+      <ul class="a-menu-sanzonal">
+
+        <li class="ams-item">
+          <div class="a-menu-header">
+            <span class="mh-label">compre por departamento <span class="spt-seta-menu"></span></span>
+            <nav class="abh-menu-header" role="navigation">
+                <ul class="mh-list list-depts">
+
+                  <!-- NATAL -->
+
+                  <li class="mh-item afr-arw">
+                      <span class="pooler">enfeites de natal<span class="new-tag">novo</span><span class="spt-seta-submenu"></span></span>
+                      <div class="a-subnivel two-columns">
+                          <div class="a-snl-opts">
+                              <a href="http://www.americanas.com.br/loja/232169/enfeites-de-natal" class="a-title">enfeites de natal</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/232575/enfeites-de-natal/arvore-de-natal-tradicional">Árvore de Natal Tradicional </a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/232574/enfeites-de-natal/arvore-de-natal-de-fibra-otica">Árvore de Natal de Fibra Ótica </a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/249608/enfeites-de-natal/arvore-de-natal-de-mesa">Árvore de Natal de Mesa </a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/249676/enfeites-de-natal/bola-de-natal-decorada">Bola de Natal Decorada </a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/249716/enfeites-de-natal/bola-de-natal-lisa">Bola de Natal Lisa </a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/249660/enfeites-de-natal/enfeites-de-arvores">Enfeites de Árvores </a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/349250/enfeites-de-natal/enfeites">Enfeites para Casa </a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/249684/enfeites-de-natal/guirlanda">Guirlanda </a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/232572/enfeites-de-natal/luzes-de-natal">Luzes de Natal </a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/249722/enfeites-de-natal/presepio">Presépio </a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/349309/enfeites-de-natal/toalha-de-natal">Toalha de Mesa </a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/349310/enfeites-de-natal/utensilio-de-mesa">Utensílio de Mesa </a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/249663/enfeites-de-natal/velas-e-porta-velas">Velas e Porta Velas </a>
+                                  </li>
+                              </ul>
+                          </div>
+                         <div class="a-snl-opts">
+                              <a href="http://www.americanas.com.br/loja/226795/alimentos-e-bebidas" class="a-title">Alimentos e bebidas</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/342150/alimentos-e-bebidas/panetones-e-colombas">Panettone e colombas</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/314083/alimentos-e-bebidas/espumantes-champagne">Espumantes e champagne</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/314370/alimentos-e-bebidas/vinhos">Vinhos</a>
+                                  </li>
+                              </ul>
+                          </div>
+
+                          <div class="banner-snl-item">
+                              <div class="oas" data-oas="x93"></div>
+                          </div>
+                      </div>
+                  </li>
+
+                  <li class="mh-item afr-arw">
+                      <span class="pooler">Brinquedos e Bebês<span class="spt-seta-submenu"></span></span>
+                      <div class="a-subnivel two-columns">
+                          <div class="a-snl-opts">
+                          <a href="http://www.americanas.com.br/loja/227109/brinquedos" class="a-title">Brinquedos</a>
+                          <ul class="a-sn-list">
+                              <li class="a-snl-item">
+                                  <a href="http://www.americanas.com.br/linha/279688/brinquedos/bonecas">Bonecas</a>
+                              </li>
+                              <li class="a-snl-item">
+                                  <a href="http://www.americanas.com.br/linha/279649/brinquedos/bonecos">Bonecos</a>
+                              </li>
+                              <li class="a-snl-item">
+                                  <a href="http://www.americanas.com.br/linha/279748/brinquedos/brinquedos-eletronicos">Brinquedos eletrônicos</a>
+                              </li>
+                              <li class="a-snl-item">
+                                  <a href="http://www.americanas.com.br/linha/279690/brinquedos/controle-remoto">Controle remoto</a>
+                              </li>
+                              <li class="a-snl-item">
+                                  <a href="http://www.americanas.com.br/linha/279674/brinquedos/mini-veiculos">Mini veículos</a>
+                              </li>
+                              <li class="a-snl-item">
+                                  <a href="http://www.americanas.com.br/linha/279670/brinquedos/bicicleta-infantil">Bicicleta infantil</a>
+                              </li>
+                              <li class="a-snl-item">
+                                  <a href="http://www.americanas.com.br/linha/279695/brinquedos/quebra-cabeca">Quebra-cabeça</a>
+                              </li>
+                              <li class="a-snl-item">
+                                  <a href="http://www.americanas.com.br/linha/279657/brinquedos/playground">Playground</a>
+                              </li>
+                              <li class="a-snl-item">
+                                  <a href="http://www.americanas.com.br/sublinha/280068/brinquedos/esportes/bolas">Bola de futebol</a>
+                              </li>
+                              <li class="a-snl-item">
+                                  <a href="http://www.americanas.com.br/linha/279698/brinquedos/praia-e-piscina">Praia e Piscina</a>
+                              </li>
+                              <li class="a-snl-item">
+                                  <a class="hd-mn-see-more" href="http://www.americanas.com.br/loja/227109/brinquedos">Veja mais Brinquedos</a>
+                              </li>
+                          </ul>
+                      </div>
+                      <div class="a-snl-opts">
+                          <a href="http://www.americanas.com.br/loja/226940/bebes" class="a-title">Bebês</a>
+                          <ul class="a-sn-list">
+                            <li class="a-snl-item">
+                                  <a href="http://www.americanas.com.br/sublinha/272928/bebes/higiene-e-saude/fraldas?chave=at_bebes_at5">Fraldas</a>
+                              </li>
+                              <li class="a-snl-item">
+                                  <a href="http://www.americanas.com.br/sublinha/272687/bebes/passeio/carrinhos-de-passeio">Carrinho de passeio</a>
+                              </li>
+                              <li class="a-snl-item">
+                                 <a href="http://www.americanas.com.br/linha/272169/bebes/bercario">Berçario</a>
+                              </li>
+                              <li class="a-snl-item">
+                                  <a href="http://www.americanas.com.br/linha/272228/bebes/brinquedos-para-bebe">Brinquedos para bebê</a>
+                              </li>
+                              <li class="a-snl-item">
+                                  <a class="hd-mn-see-more" href="http://www.americanas.com.br/loja/226940/bebes">Veja mais Bebês</a>
+                              </li>
+                          </ul>
+                          <a href="http://www.americanas.com.br/nossas-marcas" class="a-title">produtos exclusivos</a>
+                          <ul class="a-sn-list">
+                              <li class="a-snl-item">
+                                  <a href="http://www.americanas.com.br/especial/hotsite/first-steps/368887/sl12firststepsacom/368906">First Steps</a>
+                              </li>
+                              <li class="a-snl-item">
+                                  <a href="http://www.americanas.com.br/especial/hotsite/brinq/402846/sl14-brinkmais-geral-acom/402826">Brink+</a>
+                              </li>
+                          </ul>
+                      </div>
+                      <div class="banner-snl-item">
+                              <div class="oas" data-oas="x83"></div>
+                          </div>
+                      </div>
+                  </li>
+
+                  <li class="mh-item afr-arw">
+                      <span class="pooler">Moda, Beleza e Perfumaria<span class="spt-seta-submenu"></span></span>
+                      <div class="a-subnivel two-columns">
+                          <div class="a-snl-opts">
+                              <a href="http://www.americanas.com.br/loja/358352/moda" class="a-title">Moda</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/subloja/358354/moda/feminino">Feminino</a>
+                                      <ul class="a-snl-sub">
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/358357/moda/feminino/roupas">Roupas</a>
+                                          </li>
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/358358/moda/feminino/calcados">Calçados</a>
+                                          </li>
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/358360/moda/feminino/bolsas-e-acessorios">Bolsas e Acessórios</a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/subloja/358355/moda/masculino">Masculino</a>
+                                      <ul class="a-snl-sub">
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/358361/moda/masculino/roupas">Roupas</a>
+                                          </li>
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/358394/moda/masculino/calcados">Calçados</a>
+                                          </li>
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/358362/moda/masculino/acessorios">Acessórios</a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/subloja/358432/moda/infantil">Infantil</a>
+                                      <ul class="a-snl-sub">
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/358414/moda/infantil/meninas">Para meninas</a>
+                                          </li>
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/358434/moda/infantil/meninos">Para meninos</a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                                  <!-- <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/loja/358352-outlet/moda-outlet">Liquidação <span class="new-tag">novo</span></a>
+                                  </li> -->
+                                  <!-- <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/novidades-da-estacao">Novidades</a>
+                                  </li> -->
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/loja/437212/vestuario-esportivo">vestuário esportivo<span class="new-tag">novo</span></a>
+                                      <ul class="a-snl-sub">
+                                          <li>
+                                              <a href="http://www.americanas.com.br/subloja/438755/vestuario-esportivo/vestuario-esportivo-feminino">feminino</a>
+                                          </li>
+                                          <li>
+                                              <a href="http://www.americanas.com.br/subloja/438418/vestuario-esportivo/vestuario-esportivo-masculino">masculino</a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="a-snl-opts">
+                              <a href="http://www.americanas.com.br/loja/227014/beleza-e-saude" class="a-title">Beleza</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/291589/beleza-e-saude/chapinhas-pranchas-">chapinhas e pranchas</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/291612/beleza-e-saude/escovas-modeladores-babyliss">escovas modeladoras</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/291563/beleza-e-saude/secadores">secadores de cabelos</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/291288/beleza-e-saude/depiladores">depiladores</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/291248/beleza-e-saude/barbeadores">barbeadores</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a class="hd-mn-see-more" href="http://www.americanas.com.br/loja/227014/beleza-e-saude">veja mais beleza</a>
+                                  </li>
+                              </ul>
+
+                              <a href="http://www.americanas.com.br/loja/228926/perfumaria" class="a-title">Perfumaria</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/sublinha/291388/perfumaria/perfumes/perfumes-masculinos">perfumes masculinos</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/sublinha/291348/perfumaria/perfumes/perfumes-femininos">perfumes femininos</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/362081/perfumaria/maleta-de-maquiagem">maquiagem</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/349671/perfumaria/protetor-solar">protetor solar</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a class="hd-mn-see-more" href="http://www.americanas.com.br/loja/228926/perfumaria">veja mais perfumaria</a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="banner-snl-item">
+                              <div class="oas" data-oas="x91"></div>
+                          </div>
+                      </div>
+                  </li>
+
+                  <!-- PASCOA
+
+                  <li class="mh-item afr-arw">
+                      <span class="pooler">Páscoa<span class="new-tag">novo</span><span class="spt-seta-submenu"></span></span>
+                      <div class="a-subnivel">
+                          <div class="a-snl-opts">
+                              <a href="http://www.americanas.com.br/loja/234768/pascoa" class="a-title">Páscoa</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/sublinha/290977/pascoa/ovos-de-pascoa/ovos-de-pascoa-infantis">Ovos de pascoa infantis</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/234829/pascoa/ovos-de-pascoa-amargo">Ovos de Páscoa Amargo</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/234931/pascoa/ovos-de-pascoa-ao-leite">Ovos de Páscoa ao Leite</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/234870/pascoa/ovos-de-pascoa-recheados">Ovos de Páscoa Recheados</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/234909/pascoa/ovos-de-pascoa-crocante">Ovos de Páscoa Crocantes</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/234871/pascoa/ovos-de-pascoa-diet-zero">Ovos de Páscoa Diet/Zero</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/sublinha/314436/alimentos-e-bebidas/bomboniere/chocolates">Barras de chocolate</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/sublinha/314451/alimentos-e-bebidas/bomboniere/caixa-de-bombons">Caixa de bombom</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/291027/pascoa/coelhos-de-chocolate">Coelho de chocolate</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/sublinha/279680/brinquedos/pelucias/pascoa">Coelhos de pelúcia</a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="banner-snl-item">
+                              <div class="oas" data-oas="x67"></div>
+
+                          </div>
+                      </div>
+                  </li> -->
+
+                  <li class="mh-item afr-arw">
+                      <span class="pooler">celulares e telefonia fixa<span class="spt-seta-submenu"></span></span>
+                      <div class="a-subnivel two-columns">
+                          <div class="a-snl-opts">
+                              <a href="http://www.americanas.com.br/loja/229187/celulares-e-telefones" class="a-title">celulares e smartphones</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/350392/celulares-e-telefones/smartphone">Smartphones</a>
+                                      <ul class="a-snl-sub">
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/345488/celulares-e-telefones/moto-g">Moto G</a>
+                                          </li>
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/345399/celulares-e-telefones/iphone">iPhone</a>
+                                          </li>
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/345396/celulares-e-telefones/samsung-galaxy">Samsung Galaxy</a>
+                                          </li>
+                                          <li>
+                                              <a href="http://www.americanas.com.br/sublinha/431513/celulares-e-telefones/samsung-galaxy/galaxy-s7">galaxy S7</a>
+                                          </li>
+                                          <li>
+                                              <a href="http://www.americanas.com.br/sublinha/435034/celulares-e-telefones/samsung-galaxy/galaxy-j5">galaxy J5</a>
+                                          </li>
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/433803/celulares-e-telefones/lg-k">LG K</a>
+                                          </li>
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/372414/celulares-e-telefones/lg-g">LG G</a>
+                                          </li>
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/434996/celulares-e-telefones/lenovo-vibe">lenovo vibe</a>
+                                          </li>
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/394593/celulares-e-telefones/zenfone">ZenFone</a>
+                                          </li>
+                                      </ul>
+
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/263608/celulares-e-telefones/acessorios-para-celular">acessórios para celular</a>
+                                      <a href="http://www.americanas.com.br/linha/377836/celulares-e-telefones/smartwatch">Smartwatch</a>
+                                      <a href="http://www.americanas.com.br/sublinha/263569/celulares-e-telefones/acessorios-para-celular/capas-peliculas">Capas / Peliculas</a>
+                                      
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a class="hd-mn-see-more" href="http://www.americanas.com.br/loja/229187/celulares-e-telefones">Veja mais celulares e smartphones</a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="a-snl-opts">
+                              <a href="http://www.americanas.com.br/loja/373553/telefonia-fixa" class="a-title">TelefonIa fixa</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/263555/celulares-e-telefones/telefone-sem-fio">Telefone sem fio</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/263559/celulares-e-telefones/telefone-com-fio">Telefone com fio</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/sublinha/263557/celulares-e-telefones/telefone-sem-fio/telefones-sem-fio-com-ramal">Telefone sem fio com ramal</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a class="hd-mn-see-more" href="http://www.americanas.com.br/loja/373553/telefonia-fixa">Veja mais Telefonia Fixa</a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="banner-snl-item">
+                              <div class="oas" data-oas="x77"><a href="http://www.americanas.com.br/dia-dos-namorados?chave=d_namo16_bnmenu_telefonia"><img data-original="http://iacom1-a.akamaihd.net/mktacom/2016/hotsite/namorados/namorados-banner_menu1.png" alt="" border="0" width="250" height="374" class="lazyload-ready" src="http://iacom1-a.akamaihd.net/mktacom/2016/hotsite/namorados/namorados-banner_menu1.png" style="display: block;"></a></div>
+                          </div>
+                      </div>
+                  </li>
+                  <li class="mh-item afr-arw">
+                      <span class="pooler">Informática e Tablets<span class="spt-seta-submenu"></span></span>
+                      <div class="a-subnivel two-columns">
+                          <div class="a-snl-opts">
+
+                              <div class="hd-pure-g">
+                                  <div class="hd-pure-u-1-2">
+                                      <a href="http://www.americanas.com.br/loja/228190/informatica" class="a-title">informática</a>
+                                      <ul class="a-sn-list">
+                                          <li class="a-snl-item">
+                                              <a href="http://www.americanas.com.br/linha/267868/informatica/notebook">notebook</a>
+                                          </li>
+                                          <li class="a-snl-item">
+                                              <a href="http://www.americanas.com.br/sublinha/438733/informatica/notebook/notebook-2-em-1">2 em 1</a>
+                                          </li>
+                                          <li class="a-snl-item">
+                                              <a href="http://www.americanas.com.br/sublinha/267881/informatica/computadores-e-all-in-one/all-in-one">all in one</a>
+                                          </li>
+                                          <li class="a-snl-item">
+                                              <a href="http://www.americanas.com.br/linha/267889/informatica/computadores-e-all-in-one">Computadores</a>
+                                          </li>
+                                          <li class="a-snl-item">
+                                              <a class="hd-mn-see-more" href="http://www.americanas.com.br/loja/228190/informatica">Veja mais Informática</a>
+                                          </li>
+                                      </ul>
+
+                                      <a href="http://www.americanas.com.br/linha/267908/informatica/tablets-e-ipad" class="a-title" style="margin-top:30px;">tablet</a>
+                                      <ul class="a-sn-list">
+                                          <li class="a-snl-item">
+                                              <a href="http://www.americanas.com.br/sublinha/267865/informatica/apple/ipad">iPad</a>
+                                          </li>
+                                          <li class="a-snl-item">
+                                              <a href="http://www.americanas.com.br/sublinha/268189/informatica/tablets-e-ipad/tablet/marcas-samsung">Tablet Samsung</a>
+                                          </li>
+                                          <li class="a-snl-item">
+                                              <a class="hd-mn-see-more" href="http://www.americanas.com.br/linha/267908/informatica/tablets-e-ipad">Veja mais tablets</a>
+                                          </li>
+                                      </ul>
+                                  </div>
+                                  <div class="hd-pure-u-1-2">
+                                  <a href="http://www.americanas.com.br/loja/228098/informatica-acessorios" class="a-title">Informática e acessórios</a>
+                                  <ul class="a-sn-list">
+                                      <li class="a-snl-item">
+                                          <a href="http://www.americanas.com.br/linha/447896/informatica-acessorios/hd-externo">HD externo</a>
+                                      </li>
+                                      <li class="a-snl-item">
+                                              <a href="http://www.americanas.com.br/linha/447635/informatica-acessorios/impressora">Impressora</a>
+                                          </li>
+                                      <li class="a-snl-item">
+                                              <a href="http://www.americanas.com.br/linha/447634/informatica-acessorios/impressora-multifuncional">Multifuncionais</a>
+                                          </li>
+                                      <li class="a-snl-item">
+                                          <a href="http://www.americanas.com.br/sublinha/447879/informatica-acessorios/equipamento-de-rede-wireless/roteador">Roteadores</a>
+                                      </li>
+                                      <li class="a-snl-item">
+                                          <a href="http://www.americanas.com.br/sublinha/448319/informatica-acessorios/projetor-e-tela/projetor">Projetor</a>
+                                      </li>
+                                      <li class="a-snl-item">
+                                          <a href="http://www.americanas.com.br/sublinha/448738/informatica-acessorios/acessorios-para-impressora/cartucho">Cartuchos</a>
+                                      </li>
+                                      <li class="a-snl-item">
+                                          <a href="http://www.americanas.com.br/sublinha/448739/informatica-acessorios/acessorios-para-impressora/tonner">Toners</a>
+                                      </li>
+                                      <li class="a-snl-item">
+                                          <a class="hd-mn-see-more" href="http://www.americanas.com.br/loja/228098/informatica-acessorios">Veja mais Acessórios</a>
+                                      </li>
+                                  </ul>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="banner-snl-item">
+                              <div class="oas" data-oas="x78"></div>
+                          </div>
+                      </div>
+                  </li>
+                  <li class="mh-item afr-arw">
+                      <span class="pooler">TVs, Áudio e Home Theater<span class="spt-seta-submenu"></span></span>
+                      <div class="a-subnivel two-columns">
+                          <div class="a-snl-opts">
+                              <a href="http://www.americanas.com.br/loja/227707/tv-e-home-theater" class="a-title">TV e Home Theater</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/262909/tv-e-home-theater/tv">TV</a>
+                                      <ul class="a-snl-sub">
+                                          <li>
+                                              <a href="http://www.americanas.com.br/sublinha/357883/tv-e-home-theater/tv/smart-tv">Smart TV</a>
+                                          </li>
+                                          <li>
+                                              <a href="http://www.americanas.com.br/sublinha/262870/tv-e-home-theater/tv/tv-led">TV LED</a>
+                                          </li>
+                                          <li>
+                                              <a href="http://www.americanas.com.br/sublinha/357894/tv-e-home-theater/tv/tv-4k">TV 4K</a>
+                                         </li>
+                                          <li>
+                                              <a href="http://www.americanas.com.br/sublinha/339430/tv-e-home-theater/tv/tv-monitor">TV Monitor</a>
+                                          </li>
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/262909/tv-e-home-theater/tv/polegadas-32">TV 32"</a>
+                                          </li>
+										  <li>
+                                              <a href="http://www.americanas.com.br/linha/262909/tv-e-home-theater/tv/polegadas-40">TV 40"</a>
+                                          </li>
+										  <li>
+                                              <a href="http://www.americanas.com.br/linha/262909/tv-e-home-theater/tv/polegadas-48">TV 48"</a>
+                                          </li>
+										  <li>
+                                              <a href="http://www.americanas.com.br/linha/262909/tv-e-home-theater/tv/marca-samsung">Samsung</a>
+                                          </li>
+										  <li>
+                                              <a href="http://www.americanas.com.br/linha/262909/tv-e-home-theater/tv/marca-philips">Philips</a>
+                                          </li>
+										  <li>
+                                              <a href="http://www.americanas.com.br/linha/262909/tv-e-home-theater/tv/marca-lg">LG</a>
+                                          </li>
+										  <li>
+                                              <a href="http://www.americanas.com.br/linha/262909/tv-e-home-theater/tv/marca-semp+toshiba">Semp Toshiba</a>
+                                          </li>
+										  <li>
+                                              <a href="http://www.americanas.com.br/linha/262909/tv-e-home-theater/tv/marca-philco">Philco</a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                                                                   
+                              </ul>
+                          </div>
+                          <div class="a-snl-opts">
+                              
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/263029/tv-e-home-theater/home-theater">home theater</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/357292/tv-e-home-theater/suporte-para-tv">Suporte para TV</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/262993/tv-e-home-theater/conversores-digitais">Conversor Digital</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/sublinha/262976/tv-e-home-theater/cabos-e-conectores-de-audio-e-video/cabo-hdmi">Cabo HDMI</a>
+                                  </li>
+                              </ul>
+                              <a href="http://www.americanas.com.br/loja/256408/audio" class="a-title">Áudio</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/262429/audio/micro-system">Micro system</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/262431/audio/som-portatil">Som portátil</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/262488/audio/ipod-e-acessorios">Ipod e acessórios</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/262453/audio/fones-de-ouvido">Fone de ouvido</a>
+                                  </li>
+								  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/351552/audio/soundbar">soundbar</a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="banner-snl-item">
+                              <div class="oas" data-oas="x79"></div>
+                          </div>
+                      </div>
+                  </li>
+                  <li class="mh-item afr-arw">
+                      <span class="pooler">Eletrodomésticos<span class="spt-seta-submenu"></span></span>
+                      <div class="a-subnivel two-columns">
+                          <div class="a-snl-opts">
+                              <a href="http://www.americanas.com.br/loja/227644/eletrodomesticos" class="a-title">Eletrodomésticos</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/316788/eletrodomesticos/geladeira-refrigerador">Geladeiras / Refrigeradores</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/316689/eletrodomesticos/fogao">Fogões</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/316848/eletrodomesticos/cooktop">Cooktop</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/sublinha/317052/eletrodomesticos/forno/forno-de-embutir">Forno de embutir</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/sublinha/317050/eletrodomesticos/coifa-e-depurador/coifas">Coifas</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/316828/eletrodomesticos/micro-ondas">Micro-ondas</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/316829/eletrodomesticos/adega-de-vinho">adega de vinho</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/316690/eletrodomesticos/lava-loucas">Lava-louças</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/316808/eletrodomesticos/lavadora-de-roupa-e-tanquinho">Lavadora de roupas</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/316691/eletrodomesticos/secadora-de-roupa-e-centrifuga">Secadora de roupas</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/loja/369773/linha-industrial">Linha Industrial</a>
+                                  </li>
+                              </ul>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/loja/317728/ar-condicionado-e-aquecedores">Ar condicionado e Ventilação</a>
+                                      <ul class="a-snl-sub">
+                                          <li>
+                                              <a href="http://www.americanas.com.br/sublinha/317752/ar-condicionado-e-aquecedores/ar-condicionado/ar-condicionado-split">Ar condicionado split</a>
+                                          </li>
+                                          <li>
+                                              <a href="http://www.americanas.com.br/sublinha/317750/ar-condicionado-e-aquecedores/ar-condicionado/ar-condicionado-janela">Ar condicionado de janela</a>
+                                          </li>
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/317789/ar-condicionado-e-aquecedores/climatizador-de-ar">Climatizador de ar</a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a class="hd-mn-see-more" href="http://www.americanas.com.br/loja/227644/eletrodomesticos">Veja mais Eletrodomésticos</a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="banner-snl-item">
+                              <div class="oas" data-oas="x80"></div>
+                          </div>
+                      </div>
+                  </li>
+                  <li class="mh-item afr-arw">
+                      <span class="pooler">Eletroportáteis<span class="spt-seta-submenu"></span></span>
+                      <div class="a-subnivel two-columns">
+                          <div class="a-snl-opts">
+                              <a href="http://www.americanas.com.br/loja/227763/eletroportateis" class="a-title">Eletroportáteis</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/278268/eletroportateis/bebedouros-e-purificadores">Bebedouros e Purificadores</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/278190/eletroportateis/aspiradores-e-vassouras">Aspiradores de pó</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/278152/eletroportateis/fritadeira-eletrica">Fritadeiras elétricas</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/278155/eletroportateis/mixers-e-processadores-de-alimentos">Mixers e Processadores de alimentos</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/278191/eletroportateis/cafeteiras-e-chaleiras">Cafeteiras</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/278158/eletroportateis/panelas-eletricas">Panelas elétricas</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/278198/eletroportateis/maquinas-de-costura">Máquinas de costura</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/278248/eletroportateis/batedeiras">Batedeiras</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/278197/eletroportateis/liquidificadores">Liquidificadores</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/278252/eletroportateis/grill-sanduicheira-e-torradeira">Grill, Sanduicheiras e Torradeiras</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/278250/eletroportateis/ferro-de-passar">Ferros de passar</a>
+                                  </li>
+
+
+
+                              </ul>
+                          </div>
+                          <div class="a-snl-opts">
+                              <ul class="a-sn-list">
+
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/278196/eletroportateis/forno-eletrico">Fornos elétricos</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/278199/eletroportateis/pipoqueiras">Pipoqueiras</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/278257/eletroportateis/ventiladores-e-circuladores-de-ar">Ventiladores e Circuladores de ar</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/278159/eletroportateis/panificadora-maquina-de-pao">Panificadoras</a>
+                                  </li>
+
+
+                                  <li class="a-snl-item">
+                                      <a class="hd-mn-see-more" href="http://www.americanas.com.br/loja/227763/eletroportateis">Veja mais Eletroportáteis</a>
+                                  </li>
+                              </ul>
+                              <a href="http://www.americanas.com.br/nossas-marcas" class="a-title">produtos exclusivos</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/especial/hotsite/athome/454948/acom-athometodos/453326">at.home</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/especial/hotsite/marcaorb/400666/sl-lancamentoorb-acom/407048">Orb</a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="banner-snl-item">
+                              <div class="oas" data-oas="x81"></div>
+                          </div>
+                      </div>
+                  </li>
+
+                  <li class="mh-item afr-arw">
+                      <span class="pooler">Games, Música e Filmes<span class="spt-seta-submenu"></span></span>
+                      <div class="a-subnivel two-columns">
+                          <div class="a-snl-opts">
+                              <a href="http://www.americanas.com.br/loja/226762/games" class="a-title">Games</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/347990/games/console-xbox-one">Xbox one</a>
+                                      <ul class="a-snl-sub">
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/351258/games/jogos-xbox-one">Jogos Xbox One</a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/291045/games/console-xbox-360">Xbox 360</a>
+                                      <ul class="a-snl-sub">
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/291228/games/jogos-xbox-360">Jogos Xbox 360</a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/291067/games/console-playstation-3">Playstation 3</a>
+                                      <ul class="a-snl-sub">
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/291236/games/jogos-playstation-3">Jogos Playstation 3</a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/351535/games/console-playstation-4">Playstation 4</a>
+                                      <ul class="a-snl-sub">
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/356437/games/jogos-playstation-4">Jogos Playstation 4</a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/291327/games/jogos-pc">Jogos para pc</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a class="hd-mn-see-more" href="http://www.americanas.com.br/loja/226762/games">Veja Mais Games</a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="a-snl-opts">
+                              <a href="http://www.americanas.com.br/loja/227369/musica" class="a-title">Música</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/360919/musica/pop-internacional">pop internacional</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/360965/musica/rock-internacional">rock internacional</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/227373/musica/blu-ray">blu-ray musical</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a class="hd-mn-see-more" href="http://www.americanas.com.br/loja/227369/musica">veja mais música</a>
+                                  </li>
+                              </ul>
+                              <a href="http://www.americanas.com.br/loja/227609/dvds-e-blu-ray" class="a-title">Filmes</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/315209/dvds-e-blu-ray/lancamentos">lançamentos</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/315442/dvds-e-blu-ray/boxes-e-colecoes">box e coleções</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/315255/dvds-e-blu-ray/series-de-tv">séries de tv</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a class="hd-mn-see-more" href="http://www.americanas.com.br/loja/227609/dvds-e-blu-ray">veja mais filmes</a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="banner-snl-item">
+                              <div class="oas" data-oas="x85"></div>
+                          </div>
+                      </div>
+                  </li>
+                  <li class="mh-item afr-arw">
+                      <span class="pooler">Livros e Papelaria<span class="spt-seta-submenu"></span></span>
+                      <div class="a-subnivel two-columns">
+                          <div class="a-snl-opts">
+                              <a href="http://www.americanas.com.br/loja/228310/livros" class="a-title">Livros</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/230995/livros/mais-vendidos">Mais vendidos</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/231028/livros/pre-venda">pré-venda</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/231012/livros/lancamentos">Lançamentos</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/loja/228622/livros-importados">Livros importados</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/228405/livros/didaticos-e-educacao">livros didáticos</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <span class="pooler">Gêneros</span>
+                                      <ul class="a-snl-sub">
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/228536/livros/literatura-estrangeira">Literatura estrangeira</a>
+                                          </li>
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/228548/livros/literatura-nacional">Literatura nacional</a>
+                                          </li>
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/228312/livros/administracao-e-negocios">Administração e Negócios</a>
+                                          </li>
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/228559/livros/medicina-e-saude">Medicina e Saúde</a>
+                                          </li>
+                                          <li>
+                                              <a href="http://www.americanas.com.br/linha/228511/livros/juvenil">Juvenil</a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a class="hd-mn-see-more" href="http://www.americanas.com.br/loja/228310/livros">Veja mais Livros</a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="a-snl-opts">
+                              <a href="http://www.americanas.com.br/loja/228804/papelaria" class="a-title">Papelaria</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/330688/papelaria/mochilas-escolares">mochilas escolares</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/228860/papelaria/cadernos">cadernos</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/330968/papelaria/ficharios-e-acessorios">fichários</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/330193/papelaria/agendas-e-calendarios">agendas e calendários</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/330901/papelaria/estojos-e-necessaires">estojos</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a class="hd-mn-see-more" href="http://www.americanas.com.br/loja/228804/papelaria">veja mais papelaria</a>
+                                  </li>
+                              </ul>
+                              <a href="http://www.americanas.com.br/nossas-marcas" class="a-title">produtos exclusivos</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/especial/hotsite/marcatopdesk/315787/topdesktodos/315788">Topdesk</a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="banner-snl-item">
+                              <div class="oas" data-oas="x84"></div>
+                          </div>
+                      </div>
+                  </li>
+                  <li class="mh-item afr-arw">
+                      <span class="pooler">Móveis e Decoração<span class="spt-seta-submenu"></span></span>
+                      <div class="a-subnivel two-columns">
+                          <div class="a-snl-opts">
+                              <a href="http://www.americanas.com.br/loja/228740/moveis-e-decoracao" class="a-title">Móveis</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/444385/moveis-e-decoracao/sofa">Sofás</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/444345/moveis-e-decoracao/rack-estante-e-painel">Rack, estante e painel</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/443515/moveis-e-decoracao/colchao">Colchão</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/443489/moveis-e-decoracao/cama-box">cama box / Colchão + box</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/444253/moveis-e-decoracao/guarda-roupa">Guarda-roupas / roupeiros</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/444378/moveis-e-decoracao/sala-de-jantar">sala de jantar</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/443518/moveis-e-decoracao/cozinha-compacta">cozinha compacta</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/443540/moveis-e-decoracao/cozinha-modulada">cozinha modulada</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/sublinha/443446/moveis-e-decoracao/cadeira/cadeira-executiva">Cadeira de escritório</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/443534/moveis-e-decoracao/comoda">cômoda</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/443466/moveis-e-decoracao/cama-box-conjugado">cama box conjugado</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/443549/moveis-e-decoracao/estante-e-livreiro">estante e livreiro</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/sublinha/449893/moveis-e-decoracao/banco-e-banqueta/banqueta-para-bar">Banquetas / cadeiras para bar</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a class="hd-mn-see-more" href="http://www.americanas.com.br/loja/228740/moveis-e-decoracao">Veja mais Móveis</a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="a-snl-opts">
+                              <a href="http://www.americanas.com.br/loja/364673/decoracao" class="a-title">Decoração</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/366275/decoracao/luminaria">luminárias</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/366294/decoracao/persiana">cortinas e persianas</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/366282/decoracao/quadro">quadros</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/444339/moveis-e-decoracao/puff-e-tamborete">puff</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/448980/decoracao/porta-objetos">organizadores</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/366278/decoracao/painel-de-fotos">painel de fotos</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a class="hd-mn-see-more" href="http://www.americanas.com.br/loja/364673/decoracao">Veja mais Decoração</a>
+                                  </li>
+                              </ul>
+                              <a href="http://www.americanas.com.br/nossas-marcas" class="a-title">produtos exclusivos</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/especial/hotsite/athome/454948/acom-athometodos/453326">at.home</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/especial/hotsite/marcaorb/400666/sl-lancamentoorb-acom/407048">Orb</a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="banner-snl-item">
+                              <div class="oas" data-oas="x82"></div>
+                          </div>
+                      </div>
+                  </li>
+
+                  <!-- ESPORTES
+                  <li class="mh-item afr-arw">
+                      <span class="pooler">Esporte e Saúde<span class="spt-seta-submenu"></span></span>
+                      <div class="a-subnivel two-columns">
+                          <div class="a-snl-opts">
+                              <a href="http://www.americanas.com.br/loja/227821/esporte-e-lazer" class="a-title">Esporte</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/290286/esporte-e-lazer/bicicleta">bicicleta</a>
+                                  </li>
+
+                                 <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/341383/esporte-e-lazer/monitor-cardiaco">monitor cardíaco</a>
+                                  </li>
+
+                                 <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/290538/esporte-e-lazer/patins">patins</a>
+                                  </li>
+
+                                 <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/290564/esporte-e-lazer/skate-e-skate-eletrico">skate</a>
+                                  </li>
+
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/sublinha/358215/esporte-e-lazer/skate-e-skate-eletrico/skate-eletrico">hoverboard</a>
+                                  </li>
+
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/sublinha/291717/esporte-e-lazer/praia-e-piscina/piscinas">piscina</a>
+                                  </li>
+
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/sublinha/341439/esporte-e-lazer/aparelho-de-musculacao-e-fitness/aparelho-de-musculacao">aparelho de musculação</a>
+                                  </li>
+
+<li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/sublinha/341445/esporte-e-lazer/aparelho-de-musculacao-e-fitness/esteira-eletrica-ergometrica">esteira ergométrica</a>
+                                  </li>
+
+<li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/sublinha/341488/esporte-e-lazer/aparelho-de-musculacao-e-fitness/bicicleta-ergometrica">bicicleta ergométrica</a>
+                                  </li>
+
+<li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/loja/437212/vestuario-esportivo">vestuário esportivo<span class="new-tag">novo</span></a>
+                                  </li>
+
+<li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/loja/336268/suplementos-e-vitaminas">suplementos</a>
+                                  </li>
+<li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/sublinha/291567/esporte-e-lazer/camping/barracas">barracas</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a class="hd-mn-see-more" href="http://www.americanas.com.br/loja/227821/esporte-e-lazer">Veja mais Esporte</a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="a-snl-opts">
+                              <a href="http://www.americanas.com.br/loja/227014/beleza-e-saude" class="a-title">saúde</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/292289/beleza-e-saude/umidificadores-de-ar">umidificador de ar</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/sublinha/292190/beleza-e-saude/balancas/balanca-digital">balança digital</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/292179/beleza-e-saude/medidores-de-pressao">medidor de pressão</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a class="hd-mn-see-more" href="http://www.americanas.com.br/loja/227014/beleza-e-saude">veja mais saúde</a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="banner-snl-item">
+                              <div class="oas" data-oas="x93"></div>
+                          </div>
+                      </div>
+                  </li> -->
+
+                  
+                  <li class="mh-item afr-arw">
+                      <span class="pooler">Automotivo<span class="spt-seta-submenu"></span></span>
+                      <div class="a-subnivel two-columns">
+                          <div class="a-snl-opts">
+                              <a href="http://www.americanas.com.br/loja/226855/automotivo" class="a-title">Automotivo</a>
+                              <ul class="a-sn-list">
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/267052/automotivo/pneus">pneus</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/267011/automotivo/som-automotivo">som automotivo</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/267033/automotivo/dvd-automotivo">dvd automotivo</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/267010/automotivo/gps">gps</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/368193/automotivo/autopecas">autopeças</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/sublinha/368273/automotivo/autopecas/motor">motor</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/sublinha/368196/automotivo/autopecas/bateria">bateria</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/267035/automotivo/alto-falantes">alto falantes</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/267038/automotivo/iluminacao">iluminação</a>
+                                  </li>
+				  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/267051/automotivo/modulos-de-potencia">módulos de potência</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/368134/automotivo/central-multimidia">central multimídia</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/267053/automotivo/ferramentas-automotivas">ferramentas automotivas</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/267108/automotivo/capas">capas</a>
+                                  </li>
+								  
+
+                              </ul>
+                          </div>
+                          <div class="a-snl-opts">
+                              <a class="a-title">motos</a>
+                              <ul class="a-sn-list">
+
+				  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/sublinha/267045/automotivo/pneus/pneus-para-moto">pneus para motos</a>
+                                  </li>
+				  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/267148/automotivo/capacetes">capacetes</a>
+                                  </li>
+                                  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/267018/automotivo/vestuario">vestuário</a>
+                                  </li>
+				  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/267055/automotivo/malas">malas</a>
+                                  </li>
+				  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/267019/automotivo/pecas">peças para motos</a>
+                                  </li>
+				  <li class="a-snl-item">
+                                      <a href="http://www.americanas.com.br/linha/267054/automotivo/air-bag">air-bag</a>
+                                  </li>
+
+                                  
+                              </ul>
+                          </div>
+                          <div class="banner-snl-item">
+                              <div class="oas" data-oas="x92"></div>
+                          </div>
+                      </div>
+                    </li>
+		    <li class="mh-item afr-arw">
+                      <span class="pooler">Lojas especiais<span class="new-tag">novo</span><span class="spt-seta-submenu"></span></span>
+                      <div class="a-subnivel two-columns">
+                          <div class="a-snl-opts">
+
+                              <div class="hd-pure-g">
+                                  <div class="hd-pure-u-1-2">
+                                      <a href="http://www.americanas.com.br/tudo-pros-pequenos?chave=brd_0_mn_0_pr_lojapequenos" class="a-title">tudo pros pequenos</a>
+                                      <ul class="a-sn-list">
+                                          <li class="a-snl-item">
+                                              <a href="http://www.americanas.com.br/tudoprospequenos-moda?chave=brd_0_mn_0_moda_lojapequenos">moda infantil</a>
+                                          </li>
+                                          <li class="a-snl-item">
+                                              <a href="http://www.americanas.com.br/tudoprospequenos-quartinho?chave=brd_0_mn_0_quarto_lojapequenos">quartinho</a>
+                                          </li>
+
+                                          
+                                      </ul>
+
+                                      <a href="http://www.americanas.com.br/mercadinho?chave=brd_0_mn_0_pr_lojamercadinho" class="a-title">mercadinho</a>
+                                      <ul class="a-sn-list">
+                                          <li class="a-snl-item">
+                                              <a href="http://www.americanas.com.br/mercadinho-alimentacao?chave=brd_0_mn_0_alimentacao_lojamercadinho">alimentação</a>
+                                          </li>
+					  <li class="a-snl-item">
+                                              <a href="http://www.americanas.com.br/mercadinho-pet?chave=brd_0_mn_0_petshop_lojamercadinho">pet shop</a>
+                                          </li>
+                                          
+                                      </ul>
+									  
+				      <a href="http://www.americanas.com.br/loja-de-organizacao?chave=brd_0_mn_0_pr_lojaorganizacao" class="a-title">loja de organização</a>
+                                      <ul class="a-sn-list">
+                                          <li class="a-snl-item">
+                                              <a href="http://www.americanas.com.br/organize-quarto?chave=brd_0_mn_0_quarto_lojaorganizacao">quarto</a>
+                                          </li>
+                                          <li class="a-snl-item">
+                                              <a href="http://www.americanas.com.br/organize-cozinha?chave=brd_0_mn_0_cozinha_lojaorganizacao">cozinha</a>
+                                          </li>
+
+                                          
+                                      </ul>
+                                      <a href="http://www.americanas.com.br/maos-a-obra?chave=brd_0_mn_0_pr_lojaconstrucao" class="a-title">construir e reformar</a>
+                                      <ul class="a-sn-list">
+                                          <li class="a-snl-item">
+                                          <a href="http://www.americanas.com.br/maosaobra-iluminacao?chave=brd_0_mn_0_iluminacao_lojaconstrucao">iluminação</a>
+                                          </li>
+                                          <li class="a-snl-item">
+                                              <a href="http://www.americanas.com.br/maosaobra-janelaporta?chave=brd_0_mn_0_janela_lojaconstrucao">janelas e portas</a>
+                                          </li>
+
+                                                                            
+                                     </ul>
+                                     </div>
+                                  
+                                  <div class="hd-pure-u-1-2">
+				  <a href="http://www.americanas.com.br/artigos-para-festa?chave=brd_0_mn_0_pr_lojafesta" class="a-title">artigos para festa</a>
+                                  <ul class="a-sn-list">
+                                      <li class="a-snl-item">
+                                          <a href="http://www.americanas.com.br/faz-a-festa-decoracao?chave=brd_0_mn_0_decoracao_lojafesta">decoração</a>
+                                      </li>
+                                      <li class="a-snl-item">
+                                              <a href="http://www.americanas.com.br/faz-a-festa-lembrancinha?chave=brd_0_mn_0_lembrancinhas_lojafesta">lembrancinhas</a>
+                                          </li>
+
+                                                                            
+                                  </ul>
+								  
+				  <a href="http://www.americanas.com.br/esporte-fitness?chave=brd_0_mn_0_pr_lojaesporte" class="a-title">esportes</a>
+                                  <ul class="a-sn-list">
+                                      <li class="a-snl-item">
+                                          <a href="http://www.americanas.com.br/esporte-fitness-artigos?chave=?chave=brd_0_mn_0_artig_lojaesporte">artigos esportivos</a>
+                                      </li>
+                                      <li class="a-snl-item">
+                                              <a href="http://www.americanas.com.br/esporte-fitness-academia?chave=?chave=brd_0_mn_0_acad_lojaesporte">academia</a>
+                                          </li>
+                                                                            
+                                  </ul>
+
+                                  <a href="http://www.americanas.com.br/sosbeleza?chave=brd_0_mn_0_pr_sosbeleza" class="a-title">s.o.s beleza</a>
+                                  <ul class="a-sn-list">
+                                      <li class="a-snl-item">
+                                          <a href="http://www.americanas.com.br/sosbeleza-perfumes?chave=brd_0_mn_0_perf_sosbeleza">perfumaria</a>
+                                      </li>
+                                      <li class="a-snl-item">
+                                              <a href="http://www.americanas.com.br/sosbeleza-cabelos?chave=brd_0_mn_0_cabelo_sosbeleza">cabelo</a>
+                                          </li>
+                                                                            
+                                  </ul>
+
+                                  <a href="http://www.americanas.com.br/oficina?chave=brd_0_mn_0_pr_oficina" class="a-title">oficina</a>
+                                  <ul class="a-sn-list">
+                                      <li class="a-snl-item">
+                                          <a href="http://www.americanas.com.br/oficina-rodascalotas?chave=brd_hs_le_0_rodascalotas_oficina">Pneus</a>
+                                      </li>
+                                      <li class="a-snl-item">
+                                              <a href="http://busca.americanas.com.br/busca.php?q=capacete&common_filter[Categoria]=267148&chave=brd_hs_0_0_capacete_oficina">Capacetes</a>
+                                          </li>
+                                                                            
+                                  </ul>
+
+                                 </div>								  
+                              </div>
+                          </div>
+                          <div class="banner-snl-item">
+                              <div class="oas" data-oas="x67"></div>
+
+                          </div>
+                      </div>
+                  </li>
+                </ul>
+                      <ul class="mh-list list-bottom">
+                          <li class="mh-item afr-arw">
+                             <span class="pooler">todos os departamentos<span class="spt-seta-submenu"></span></span>
+                              <div class="a-subnivel all-depts">
+                                  <a href="http://www.americanas.com.br/todos-os-departamentos?WT.mc_id=home­-todos-­departamentos" class="a-title">todos os departamentos</a>
+                                  <div class="hd-pure-g">
+                                      <div class="hd-pure-u-1-4">
+                                          <ul class="a-snl-sub">
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/226795/alimentos-e-bebidas?WT.mc_id=home-menuLista-alimentos">Alimentos e bebidas</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/256408/audio?WT.mc_id=home-menuLista-audio">Áudio</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/226855/automotivo?WT.mc_id=home-menuLista-automotivo">Automotivo</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/317728/ar-condicionado-e-aquecedores">Ar-condicionado e Ventilação</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/226940/bebes?WT.mc_id=home-menuLista-bebes">Bebês</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/227014/beleza-e-saude?WT.mc_id=home-menuLista-beleza">Beleza e saúde</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/227109/brinquedos?WT.mc_id=home-menuLista-brinquedos">Brinquedos</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/315798/blu-ray?WT.mc_id=home-menuIconeOver-bluRay-linha">Blu-ray e blu-ray 3D</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/227296/cama-mesa-e-banho?WT.mc_id=home-menuLista-cameba">Cama, mesa e banho</a>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                      <div class="hd-pure-u-1-4">
+                                          <ul class="a-snl-sub">
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/227559/cameras-e-filmadoras?WT.mc_id=home-menuLista-cameras">Câmeras e filmadoras</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/229187/celulares-e-telefones?WT.mc_id=home-menuLista-celulares">Celulares e Smartphones</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/227644/eletrodomesticos?WT.mc_id=home-menuLista-eletrodomesticos" >Eletrodomésticos</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/227763/eletroportateis?WT.mc_id=home-menuLista-eletroportateis" >Eletroportáteis</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/227821/esporte-e-lazer?WT.mc_id=home-menuLista-esporte">Esporte e lazer</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/227999/ferramentas-e-jardim?WT.mc_id=home-menuLista-ferramentas">Ferramentas e jardim</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/227609/dvds-e-blu-ray?WT.mc_id=home-menuLista-dvdBlu">Filmes e séries</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/226762/games?WT.mc_id=home-menuLista-games">Games</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/421773/industria-comercio-e-negocios?WT.mc_id=home-menuLista-industria-comercio">indústria, comércio e negócios <span class="new-tag">novo</span></a>
+                                              </li>
+
+                                          </ul>
+                                      </div>
+                                      <div class="hd-pure-u-1-4">
+                                          <ul class="a-snl-sub">
+                                                <li>
+                                                  <a href="http://www.americanas.com.br/loja/228190/informatica?WT.mc_id=home-menuLista-informatica">Informática</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/228098/informatica-acessorios?WT.mc_id=home-menuLista-infoacess">Informática e acessórios</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/228255/instrumentos-musicais?WT.mc_id=home-menuLista-instrumentos">Instrumentos musicais</a>
+                                              </li>
+                                              <li>
+                                               <a href="http://www.americanas.com.br/loja/369773/linha-industrial">Linha Industrial <span class="new-tag">novo</span></a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/228310/livros?WT.mc_id=home-menuLista-livros">Livros</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/228641/malas-e-acessorios?WT.mc_id=home-menuLista-malas">Malas e acessórios</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/358352/moda?WT.mc_id=home-menuLista-moda">Moda e acessórios</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/228740/moveis-e-decoracao?WT.mc_id=home-menuLista-moveis">Móveis e decoração</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/227369/musica">Música</a>
+                                              </li>
+
+                                          </ul>
+                                      </div>
+                                      <div class="hd-pure-u-1-4">
+                                          <ul class="a-snl-sub">
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/228804/papelaria?WT.mc_id=home-menuLista-papelaria">Papelaria</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/228926/perfumaria?WT.mc_id=home-menuLista-perfumaria">Perfumaria e cosméticos</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/228975/pet-shop?WT.mc_id=home-menuLista-petshop">Pet shop</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/229017/relogios?WT.mc_id=home-menuLista-relogios">Relógios</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/336268/suplementos-e-vitaminas?WT.mc_id=home-menuLista-suplementos">Suplementos e Vitaminas</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/373553/telefonia-fixa">Telefonia Fixa</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/227707/tv-e-home-theater?WT.mc_id=home-menuLista-eletronicos">TVs e Áudio</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/229231/utilidades-domesticas?WT.mc_id=home-menuLista-utilidadeDomestica">Utilidades domésticas</a>
+                                              </li>
+                                              <li>
+                                                  <a href="http://www.americanas.com.br/loja/437212/vestuario-esportivo?WT.mc_id=home-menuLista-vestuario-esportivo">vestuário esportivo <span class="new-tag">novo</span></a>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                                  <div class="a-snl-bottom-info">
+                                     <div class="hd-pure-g">
+                                          <div class="hd-pure-u-1-2">
+                                              <span class="a-title">parceiros</span>
+                                              <ul class="a-bt-inf-list">
+                                                  <li class="a-bt-inf-it">
+                                                      <a href="http://www.milevo.com.br/" class="a-bt-inf-lnk aml" target="_blank">Milevo.com</a>
+                                                  </li>
+                                                  <li class="a-bt-inf-it">
+                                                      <a href="http://www.soubarato.com.br/?epar=pm_cv_ba_am_siteacomsbacom2&opn=SBACOM2" class="a-bt-inf-lnk soub" target="_blank">Outlet - Sou Barato</a>
+                                                  </li>
+                                                  <li class="a-bt-inf-it">
+                                                      <a href="http://www.americanas.com.br/loja/409233/loja-centauro?chave=MN_PR_CENTAURO" class="a-bt-inf-lnk soub" target="_blank">centauro</a>
+                                                  </li>
+                                              </ul>
+                                          </div>
+                                          <div class="hd-pure-u-1">
+                                              <a href="http://servicos.americanas.com.br" class="a-title">serviços</a>
+                                              <ul class="a-bt-inf-list">
+                                                  <li class="a-bt-inf-it">
+                                                      <a href="http://www.americanas.com.br/frete?WT.mc_id=d_tiposfrete_menuprincipal&chave=HM_SV_FRETE" class="a-bt-inf-lnk aml">Tipos de entrega</a>
+                                                  </li>
+                                                  <li class="a-bt-inf-it">
+                                                      <a href="http://www.americanas.com.br/negocios-corporativos?WT.mc_id=d_negocioscorp_menuservicos&chave=HM_SV_NEGCORP" class="a-bt-inf-lnk aml">Negócios Corporativos</a>
+                                                  </li>
+                                                 <!--  <li class="a-bt-inf-it">
+                                                      <a href="http://www.americanas.com.br/planopet?WT.mc_id=d_planopet_menuprincipal&chave=MN_SV_planopet" class="a-bt-inf-lnk aml">Assistência Pet</a>
+                                                  </li> -->
+                                                  <li class="a-bt-inf-it">
+                                                      <a href="https://listadecasamento.americanas.com.br/pages/HomePage?chave=MN_SV_LISTACASAMENTO" class="a-bt-inf-lnk aml">Lista de Casamento</a>
+                                                  </li>
+                                                  <li class="a-bt-inf-it">
+                                                      <a href="http://www.americanas.com.br/valepresente?chave=MN_SV_VALEPRESENTE" class="a-bt-inf-lnk aml">vale presente</a>
+                                                  </li>
+                                              </ul>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </li>
+                      </ul>
+                  </nav>
+              </div>
+            </li>
+
+            <!-- TT -->
+            <li class="ams-item ams-item-tt">
+                <div class="oas" data-oas-width="585" data-oas-height="20" data-oas="TT" data-component="banner" spacey="true"></div>
+            </li>
+            <!-- TT -->
+
+            <li class="ams-item oferta-do-dia">
+                <a href="http://www.americanas.com.br/aofertadodia?WT.ac=ofertadodia">
+                    <span class="oferta-dia-wrp">
+                        <span class="spt-ic-oferta-do-dia"></span>oferta do dia<span class="spt-seta-menu"></span>
+                    </span>
+                </a>
+                <div class="banner-oferta-do-dia">
+                    <div class="bnr-ofr-img" style="margin-left: 0;">
+                        <div class="oas" data-oas="Top2"></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</header>
+<script>
+  var readyState = window["onReady"] || $(document).ready;
+  readyState(function(){
+     window.resourcesDir = '//iacom1-a.akamaihd.net/statics-1.68.4/catalog/js/v1/';
+     $.getScript(window.resourcesDir + "header.js");
+     $(".bar-floating .cart-empty").html('<strong class="cart-empty-title">sua cesta está vazia</strong>');
+  });
+</script>
+
+
+<!-- template autocomplete -->
+<div class="search-autocomplete" hidden="hidden">
+    <div class="pure-g">
+        <div class="pure-u-1">
+            <div id="suggestion-list"></div>
+            <script id="suggestion-list-tmpl" type="x-tmpl-mustache">
+                <ul class="suggestion-list">
+                    {{#sugestoes}}
+                    <li class="suggestion-item">
+                        <a href="{{url}}"><span class="suggestion-name">{{consulta}}</span> {{#categoria}}<span class="suggestion-category" data-category="{{categoria.id}}"> em {{categoria.nome}}</span>{{/categoria}}</a>
+                    </li>
+                    {{/sugestoes}}
+                </ul>
+            </script>
+        </div>
+        <div class="pure-u-1 recommend-box">
+            <h1 class="title">Produtos sugeridos</h1>
+            <div id="recommend-list"></div>
+            <script id="recommend-list-tmpl" type="x-tmpl-mustache">
+                <ul class="recommend-list">
+                    {{#produtos}}
+                    <li class="recommend-item">
+                        <a href="{{url}}">
+                            <img src="{{imagem}}" class="recommend-image"/>
+                            <span class="recommend-info">
+                              <span class="recommend-name">{{descricao}}</span>
+
+                              {{#ratingsImage}}
+                              <div class="recommend-rating">
+                                <img src="{{.}}" class="recommend-rating" width="90" height="15" alt="rating {{recommendedCount}}" />
+                                <span>({{recommendedCount}})</span>
+                              </div>
+                              {{/ratingsImage}}
+
+                              <span class="recommend-price">{{preco}}</span>
+                              {{#installment}}
+                              <span class="recommend-installment">{{total_installments}}x de {{installment_value}}</span>
+                              {{/installment}}
+                            </span>
+                        </a>
+                    </li>
+                    {{/produtos}}
+                </ul>
+            </script>
+        </div>
+    </div>
+</div>
+
+
+<!-- <link rel="stylesheet" href="http://apps.americanas.com.br/media/moda/css/banner.style.css" />-->
+<!-- 319447 -->
+		<div class="grid-control content-static"><!--INICIO COMPONENTE-->
+<script>
+console.log('2.0.1 atendimento-hml');
+</script>
+<script type="text/javascript">
+var winUrl = window.location.href.toLowerCase();
+var isLocal = /^file:/.test(winUrl);
+var isHomolog = isLocal || /central-de-atendimento-teste/.test(winUrl);
+
+if(isLocal) {
+	document.write('<link type="text/css" rel="stylesheet" href="http://iacom1-a.akamaihd.net/statics-1.74.7.1795/css/acom_components.css">');
+	document.write('<link type="text/css" rel="stylesheet" href="http://iacom1-a.akamaihd.net/statics-1.74.7.1795/catalog/css/catalog.css">');
+	document.write('<link type="text/css" rel="stylesheet" href="http://img.americanas.com.br/catalog/skins/Null/css/skinHeaderFooter.css">');
+	document.write('<link type="text/css" rel="stylesheet" href="http://iacom1-a.akamaihd.net/statics-1.74.7.1795/catalog/skin/app/dist/brands/americanas/styles/app.css">');
+	document.write('<link type="text/css" rel="stylesheet" href="http://iacom1-a.akamaihd.net/statics-1.68.4/catalog/css/v1/header.min.css">');
+	document.write('<link type="text/css" rel="stylesheet" href="http://apps.americanas.com.br/media/selo/css/americanas.css">');
+}
+</script>
+<meta charset="UTF-8" /> 
+<link rel="stylesheet" href="http://img.submarino.com.br/central-atendimento/style/css1/acom/small.css"    media="only screen and (min-width: 1em)" />
+<link rel="stylesheet" href="http://img.submarino.com.br/central-atendimento/style/css1/acom/medium.css"   media="only screen and (min-width: 48em)" />
+<link rel="stylesheet" href="http://img.submarino.com.br/central-atendimento/style/css1/acom/large.css"    media="only screen and (min-width: 80em)" />
+<div id="atendimento" class="acom">
+    <div class="tit_atendimento">Atendimento</div>
+	
+	<!--
+	<h3 style="margin: 0px 20px 40px 20px; text-align: center; color: #E60014;">
+    Atenção: devido à grande quantidade de transações, o tempo de processamento do seu pedido pode demorar um pouco mais que o habitual. Mas não se preocupe, seu pedido foi finalizado e já, já você vai poder acompanhá-lo.
+    <br><br>
+    <b>IMPORTANTE: Caso tenha escolhido boleto, não se esqueça de imprimir e pagar para finalizar seu pedido!</b>
+  </h3>
+	-->
+	
+    <div id="at1">
+        <div id="pes_ped">
+            <div id="pes">
+                <div id="pes1">
+                    <div class="frase1">Como podemos te ajudar?</div>                          
+                    <div class="frase2">Digite sua dúvida abaixo e a gente explica pra você</div>
+                </div>
+                <div id="pes2">
+                    <form class="formulario" method="get" target="_top" action="http://faq.americanas.com.br/faq/">
+                        <input type="hidden" value="" name="A">
+                        <input id='botapBusca' class="buttom_pedido"  type="submit" value="buscar">
+                        <input placeholder="Ex.: Alterar endereço" type="text"  class="inputSearch" name="q" value="">
+                    </form>
+                </div>  
+            </div>
+            <div id="ped">
+                <div id="ped1"></div>
+                <div class="tit_assunto">Pedidos</div>
+                <div id="ped2">
+                    <form method="get" target="_top" action="https://minhaconta.americanas.com.br/#/orders/home">
+                        <input id="acompanhaPedido" class="buttom_pedido"  type="submit" value="acompanhar pedidos">
+                    </form>
+                </div> 
+            </div>
+        </div>
+        <div id='separaVertical'></div>
+        <div class="separaHorizontal_01"></div>
+        <div class="separaHorizontal"></div>
+        <div id="faq">
+            <div class="ico_faq"></div>
+            <div class="tit_assunto">Assuntos mais procurados</div>
+            <ul class="itens_faq">
+                <li><a href="http://faq.americanas.com.br/faq/?A=MTU2&T=VHJvY2FzIGUgZGV2b2x1w6fDtWVz#MTU3">Trocas e devoluções</a></li>
+                <li><a href="http://faq.americanas.com.br/faq/?A=MTYw&T=UGFnYW1lbnRv#MTYx">Pagamento</a></li>
+                <li><a href="http://faq.americanas.com.br/faq/?A=MTU0&T=UHJvY2Vzc28gZGUgZW50cmVnYQ==#MTU1">Processo de entrega</a></li>
+                <li><a href="http://faq.americanas.com.br/faq/?A=MTcw&T=UHJvZHV0b3M=#MTcx">Produtos</a></li>
+                <li><a href="http://faq.americanas.com.br/faq/?A=MTcy&T=U2VydmnDp29z#MTcz">Serviços</a></li>
+                <li><a href="http://faq.americanas.com.br/faq/?A=MTc2&T=UHJvbW/Dp8O1ZXMgZSBkZXNjb250b3M=#MTc3">Promoções e descontos</a></li>
+            </ul> 
+        </div>
+    </div>   
+    <div id="separaHorizontal"></div>
+    <div id="can_de_at">
+        <div class="tit_assunto">Canais de atendimento</div>
+    </div>
+    <div id="at2">
+        <div id="bloco_3A">
+            <ul>
+                <h4>Site Americanas.com</h4>
+                <li><a href="http://faq.americanas.com.br/">Dúvidas frequentes</a></li>
+                
+				
+				<li><a href="http://www.americanas.com.br/estaticapop/pop-atendimento/" title="Atendimento" crmwa_mdc="Footer|atendimento|" data-modal="true" data-modal-maxwidth="750" data-modal-maxheight="600" target="_blank">Atendimento</a></li>				
+<!--
+				<li><a href="http://www.americanas.com.br/atendimento-email">Atendimento por e-mail</a></li>
+                <li><a href="http://www.americanas.com.br/estaticapop/central-atendimento/" title="Atendimento por telefone" crmwa_mdc="Footer|compre_pelo_telefone|" data-modal="true" data-modal-maxwidth="850" data-modal-maxheight="500" target="_blank">Atendimento por telefone</a></li>
+-->				
+                <li><a href="http://www.americanas.com.br/estaticapop/popCentralAtendimento/" title="Compre pelo telefone" crmwa_mdc="Footer|compre_pelo_telefone|" data-modal="true" data-modal-maxwidth="750" data-modal-maxheight="470" target="_blank">Compre por telefone</a></li>
+            </ul>
+        </div>
+        <div id='separaVertical'></div>
+        <div id="bloco_3B">
+            <ul>
+                <h4>Lojas físicas</h4>
+                <li><a href="http://www.americanas.com.br/estatica-lasa/lasa">Endereços</a></li>
+                <li><a href="http://www.americanas.com.br/estatica-lasa/lasa">Institucional</a></li>
+                <li><a href="http://www.americanas.com.br/estaticapop-lasa" title="Dúvidas frequentes" crmwa_mdc="Footer|compre_pelo_telefone|" data-modal="true" data-modal-maxwidth="850" data-modal-maxheight="500" target="_blank">Dúvidas frequentes</a></li>
+                <li><a href="http://www.americanas.com.br/estatica/atendimento-form-lojas/#area02">Atendimento por e-mail</a></li>
+                <li><a href="http://www.americanas.com.br/estaticapop/pop-central-lasa/" title="Compre pelo telefone" crmwa_mdc="Footer|compre_pelo_telefone|" data-modal="true" data-modal-maxwidth="750" data-modal-maxheight="470" target="_blank">Atendimento por telefone</a></li>
+            </ul>
+        </div>
+        <div id='separaVertical'></div>
+        <div id="bloco_3C">
+            <ul>
+                <h4>Cartões Americanas.com</h4>
+                <h5>Nossos canais exclusivos de atendimento feitos para você</h5>
+                <div class="cartao"></div>
+                <li><a href="http://www.americanas.com.br/cartao-americanas/duvidas-frequentes">Dúvidas frequentes</a></li>
+                <li><a href="http://www.americanas.com.br/atendimento-cartao">Atendimento por e-mail</a></li>
+                <li><a href="http://www.americanas.com.br/cartao-americanas-telefones">Atendimento por telefone</a></li>
+            </ul> 
+        </div>
+    </div>
+</div>
+	<script type="text/javascript">
+		var waitjQuery = waitjQuery || [];
+		waitjQuery.push(function () {
+			var $lightbox = $('.faqBoxs').find('.lightbox');        
+			$lightbox.click(function (e) {
+				try{
+					e.preventDefault();
+					var fbUrl=$(this).relativeHref();
+					$.fancybox({'width':750,'height':510,type:'iframe','autoDimensions':false,'href':fbUrl,'onComplete':function(){resizeFB();}});
+				}catch(e){
+					window.open($(this).attr('href'));
+					}                
+				});
+		});
+	</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46084060-6', 'auto');
+  ga('send', 'pageview');
+
+if(isLocal) {
+	document.write('<link type="text/css" rel="stylesheet" href="http://iacom1-a.akamaihd.net/statics-1.60/catalog/css/v1/footer.min.css">');
+	document.write('<link type="text/css" rel="stylesheet" href="http://iacom1-a.akamaihd.net/mktacom/site/footer/css/cr-footer.css">');
+	document.write('<link type="text/css" rel="stylesheet" href="http://apps.americanas.com.br/media/selo/css/americanas.css">');
+}
+</script>
+<!--FIM COMPONENTE-->
+		</div><!-- 320185 -->
+<style>
+    .bannerCustomFull{
+        letter-spacing: 0.001em !important;
+    }
+    .bannerCustom .label{
+        color: #fff;
+    }
+    .bannerCustom.bannerYellow .label{
+        color: #666;
+    }
+    .selo-level{
+      float:right;
+      clear:both;
+      margin-right:20px;
+    }
+  .bannerCustom .product-price{
+        bottom: 43px !important;
+
+    }
+    .bannerCustom .product-price-value{
+        font-size: 20px !important;
+        height: 22px !important;
+        line-height: 23px !important;
+    }
+    .bannerCustom .product-price-currency{
+        left: -21px !important;
+        font-size: 14px !important;
+    }
+    .bannerCustom.product-price .product-price-value-wrapper{
+        margin-left: 20px !important;
+    }
+    .bannerCustom.app-product .btn-buy{
+        margin-top: 78px !important;
+        line-height: 19px !important;
+    }
+    .bannerCustom  .product-price .product-price-cents{
+       line-height: 19px !important;
+    }
+    .bannerCustom.bannerBlue{
+        background-color: #0088ce;
+    }
+    .bannerCustom.bannerRed{
+        background-color: #e20f3a;
+    }
+    .bannerCustom.bannerYellow{
+        background-color: #edfe36;
+    }
+    .bannerCustom.bannerYellow  .product-price{
+        color: #e70014;
+    }
+    .bannerCustom.bannerRed  *, .bannerCustom.bannerBlue  *{
+        color: #fff;
+    }
+    .bannerCustom.bannerRed .btn-buy .icon-shopping-cart,
+    .bannerCustom.bannerBlue  .btn-buy .icon-shopping-cart{
+        background-position: 0  -408px;
+    }
+    .bannerCustom.bannerYellow .btn-buy{
+        color: #e70014;
+    }
+    .bannerCustom.bannerYellow .btn-buy .icon-shopping-cart{
+        background-position: 0  -423px;
+    }
+    </style>
+
+  <script>
+     App.on('load', function () {
+        var App = this, $ = this.$;
+        oas.on('print:end', function(){
+            console.log('OAS READY');
+             App.$('.bannerCustomFull').parent().parent().parent().parent().removeClass('pure-u-1-2').addClass('pure-1-1');
+        });
+       /*App.$('.bannerCustom .btn-buy').html("<i class='icon-shopping-cart'></i> Compre");*/
+
+     });
+    </script>
+        <div class="app-spacey" data-pos="top3"></div>
+<style>
+.mobileVersion p{
+ text-align:center;
+}
+</style>
+<link rel="stylesheet" href="//iacom1-a.akamaihd.net/statics-1.60/catalog/css/v1/footer.min.css"/>
+<style>
+.a-footer .ft-list1{list-style-position:outside;padding-left:15px;}
+.a-footer .ft-info .ft-questions, .a-footer .ft-info .ft-institutional {padding: 0 0 0 30px;}
+.a-footer .ft-list1 .ft-lt1-it {margin-bottom: 4px;line-height: 1.2;}
+.a-footer .ft-info .ft-if-payment .ft-if-pay.debt .ft-if-pay-lst{width:135px;}
+</style>
+
+<footer class="a-footer" role="contentinfo">
+    <div class="ft-wp">
+        <div class="ft-header">
+             <a href="/" title="Americanas.com" class="ft-logo" crmwa_mdc="Footer|americanas.com|"><span>Americanas.com</span></a>
+             <strong class="ft-slogan">a maior loja. os menores preços.</strong>
+             <span class="ft-txt">
+                não encontrou o que procurava? <a href="/estaticapop/deixar-sugestao" data-modal="true" data-modal-maxwidth="550" data-modal-maxheight="400" title="deixe aqui a sua sugestão de produto." class="ft-txt-lnk" crmwa_mdc="Footer|deixe_aqui_a_sua_sugestao_de_produto.|">deixe aqui a sua sugestão de produto.</a>
+             </span>
+        </div>
+        <div class="ft-info">
+            <div class="ft-pure-g">
+                <div class="ft-pure-u-22">
+                    <div class="ft-telephones">
+                        <strong class="ft-tit">
+                            <a href="http://www.americanas.com.br/estaticapop/popCentralAtendimento/" title="Compre pelo telefone" crmwa_mdc="Footer|compre_pelo_telefone|" data-modal="true" data-modal-maxwidth="750" data-modal-maxheight="430" target="_blank">compre pelo telefone <span>4003.1000</span></a>
+                        </strong>
+                        <strong class="ft-tit">
+                          <a href="http://www.americanas.com.br/central-de-atendimento?WT.mc_id=internas-atendimentoHome&amp;WT.mc_ev=click" style="text-decoration: underline;">atendimento</a>
+                        </strong>
+                    </div>
+                    <div class="ft-item">
+                        <strong class="ft-tit">
+                            cartão americanas.com
+                        </strong>
+                        <ul class="ft-list1">
+                            <li class="ft-lt1-it">
+                                <a class="ft-lt1-lnk" href="https://carrinho.americanas.com.br/finance?chave=FOOTER_VC_CARTAOACOM&WT.mc_id=d_cartaoacom_footer">Peça já o seu</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a class="ft-lt1-lnk" href="http://www.americanas.com.br/cartao-americanas-mais-sorrisos?chave=FOOTER_VC_CARTAOACOM&WT.mc_id=d_cartaoacom_footer">Mais Sorrisos</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a class="ft-lt1-lnk" href="http://www.americanas.com.br/cartao-americanas-mais-tempo?chave=FOOTER_VC_CARTAOACOM&WT.mc_id=d_cartaoacom_footer">Mais Tempo</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a class="ft-lt1-lnk" href="http://www.americanas.com.br/cartao-americanas-mais-limite?chave=FOOTER_VC_CARTAOACOM&WT.mc_id=d_cartaoacom_footer">Mais Limite</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ft-item ft-midia">
+                        <strong class="ft-tit">
+                          <a href="http://www.midiakitb2w.com.br" style="text-decoration: underline;">anuncie</a>
+                        </strong>
+                    </div>
+                </div>
+                <div class="ft-pure-u-1-5">
+                    <div class="ft-questions">
+                        <strong class="ft-tit">dúvidas</strong>
+                        <ul class="ft-list1">
+                            <li class="ft-lt1-it">
+                                <a href="http://www.americanas.com.br/central-de-atendimento" class="ft-lt1-lnk" title="Central de atendimento">Central de atendimento</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://www.americanas.com.br/como-comprar" class="ft-lt1-lnk" title="Como comprar">Como comprar</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://faq.americanas.com.br/faq/?A=MTU2&amp;B=&amp;all=true&amp;T=VHJvY2FzIGUgZGV2b2x1w6fDtWVz#MTU3" class="ft-lt1-lnk" title="Trocas e devoluções">Trocas e devoluções</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://faq.americanas.com.br/faq/?A=MTU2&amp;T=VHJvY2FzIGUgZGV2b2x1w6fDtWVz#MTU3+MjU0MDE=" class="ft-lt1-lnk" title="Direito de arrependimento">Direito de arrependimento</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://faq.americanas.com.br/faq/?A=MTU0&amp;B=&amp;all=true&amp;T=UHJvY2Vzc28gZGUgZW50cmVnYQ==#MTU1" class="ft-lt1-lnk" title="Processo de Entrega">Processo de Entrega</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://www.americanas.com.br/promocoes-e-concursos" class="ft-lt1-lnk" title="Resultado de promoções">Resultado de promoções</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="/estaticapop/politica-de-privacidade-lightbox" title="Política de privacidade" class="ft-lt1-lnk" data-modal="true" data-modal-maxwidth="550" data-modal-maxheight="400">Politica de privacidade</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://www.americanas.com.br/estaticapop/regras-do-site" title="Regras do site" class="ft-lt1-lnk" data-modal="true" data-modal-maxwidth="800" data-modal-maxheight="600">Regras do site</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://www.americanas.com.br/estatica/alerta-de-emails" title="Alerta de e-mails e sites falsos" class="ft-lt1-lnk">Alerta de e-mails e sites falsos</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://www.americanas.com.br/contrato-compra-e-venda" title="Termos e Condições de compra e venda de produtos" class="ft-lt1-lnk">Termos e Condições de compra e venda de produtos</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://www.procon.rj.gov.br/" class="ft-lt1-lnk" target="_blank" title="Procon-RJ">Procon-RJ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ft-pure-u-1-5">
+                    <div class="ft-institutional">
+                        <strong class="ft-tit">institucional</strong>
+                        <ul class="ft-list1">
+                            <li class="ft-lt1-it">
+                                <a href="http://www.americanas.com.br/estatica/sobre-americanas" class="ft-lt1-lnk" title="Sobre a Americanas.com">Sobre a Americanas.com</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://www.b2wdigital.com" title="Investidores B2W" class="ft-lt1-lnk">Investidores B2W</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://ri.lasa.com.br" title="Lojas Americanas S.A." class="ft-lt1-lnk">Lojas Americanas S.A.</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://www.americanas.com.br/lojamaisproxima" class="ft-lt1-lnk" title="Loja mais próxima">Loja mais próxima</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://vagas.com/lojasamericanas" class="ft-lt1-lnk" target="_blank" title="Trabalhe na Lojas Americanas">Trabalhe na Lojas Americanas</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://somos.b2wdigital.com/" class="ft-lt1-lnk" target="_blank" title="Trabalhe na americanas.com">Trabalhe na americanas.com</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://www.americanas.com.br/estatica/assistencia-tecnica-fabricantes" class="ft-lt1-lnk">Nossos principais fornecedores</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://www.americanas.com.br/estatica/seja-nosso-fornecedor" class="ft-lt1-lnk" title="Seja nosso fornecedor">Seja nosso fornecedor</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://www.afiliados.com.br/americanas/" target="_blank" class="ft-lt1-lnk">Programa de Afiliados</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://www.americanas.com.br/estatica/premios" class="ft-lt1-lnk">Prêmios</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://www.americanas.com.br/estaticapop/assessoria-imprensa" data-modal="true" data-modal-maxWidth="550">Assessoria de Imprensa</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ft-pure-u-1-5">
+                    <div class="ft-services">
+                        <strong class="ft-tit">serviços</strong>
+                        <ul class="ft-list1">
+                            <li class="ft-lt1-it">
+                                <a href="https://listadecasamento.americanas.com.br/pages/HomePage" title="Lista de casamento" class="ft-lt1-lnk">Lista de Casamento</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://www.americanas.com.br/frete?WT.mc_id=d_entrega_footer" title="Tipos de entrega" class="ft-lt1-lnk">Tipos de entrega</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://www.americanas.com.br/negocios-corporativos" title="Negócios corporativos" class="ft-lt1-lnk">Negócios corporativos</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://servicos.americanas.com.br/seguro-roubo-furto" title="Seguro roubo e furto" class="ft-lt1-lnk">Seguro roubo e furto</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://servicos.americanas.com.br/instalacao-ar-condicionado-split" title="Instalar" class="ft-lt1-lnk">Instalar</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://servicos.americanas.com.br/garantia-estendida" title="Garantia Estendida" class="ft-lt1-lnk">Garantia Estendida</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://www.americanas.com.br/valepresente" title="Vale presente" class="ft-lt1-lnk">Vale presente</a>
+                            </li>
+                            <li class="ft-lt1-it">
+                                <a href="http://servicos.americanas.com.br/" title="Confira todos" class="ft-lt1-lnk">Confira todos</a>
+                            </li>
+                        </ul>
+                        <strong class="ft-tit">parceiros</strong>
+                        <ul class="ft-list1">
+                            <li class="ft-lt1-it">
+                                <a href="http://www.soubarato.com.br/?epar=ds_bs_00_am_siteacomsbacom3&amp;opn=SBACOM3" class="ft-lt1-lnk" title="Sou Barato">Sou Barato</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ft-pure-u-1-5">
+                    <div class="ft-banner">
+                       <div class="oas" data-oas-width="170" data-oas-height="200" data-oas="Right2" hidden></div>
+<div class="app-spacey" data-pos="right2" ></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ft-pure-g">
+                <div class="ft-pure-u-1-2">
+                    <div class="ft-news-social">
+                        <strong class="ft-tit side">siga-nos</strong>
+                        <ul class="ft-list2">
+                            <li class="ft-lt2-it">
+                                <a href="https://www.facebook.com/AmericanasCom" target="_blank" title="Facebook" class="ft-lt2-bt bt-fb">Facebook</a>
+                            </li>
+                            <li class="ft-lt2-it">
+                                <a href="https://twitter.com/americanascom" target="_blank" title="Twitter" class="ft-lt2-bt bt-tw">Twitter</a>
+                            </li>
+                            <li class="ft-lt2-it">
+                                <a href="https://plus.google.com/+americanascom/posts" target="_blank" title="Google+" class="ft-lt2-bt bt-gp">Google+</a>
+                            </li>
+                            <li class="ft-lt2-it">
+                                <a class="ft-lt2-bt bt-in" title="Instagram" target="_blank" href="http://bit.ly/1pYEuIE">Instagram</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <link type="text/css" rel="stylesheet" href="//iacom1-a.akamaihd.net/mktacom/site/footer/css/cr-footer.css" />
+
+                <div class="ft-pure-u-1-2">
+                    <div class="ft-newsletter a-newsletter">
+                        <form class="ft-form app-cr"
+                              data-cr-origin="48"
+                              data-cr-event-name="CR_FOOTER"
+                              data-cr-event-id="4255"
+                              data-cr-opt="out"
+                              data-cr-confirmation="true">
+                            <label for="cr-form-email-bottom-home">
+                                <strong class="ft-tit side">ofertas exclusivas para você</strong>
+                            </label>
+                            <input type="text" placeholder="digite seu e-mail" name="cr-email" class="ft-fr-ipt" id="cr-form-email-bottom-home" />
+                            <input type="submit" value="ok" class="ft-fr-bt"/>
+
+                            <div class="cr-msg"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ft-info">
+            <div class="ft-if-payment">
+                <strong class="ft-tit">formas de pagamento</strong>
+                <div class="ft-if-pay cards">
+                    <span class="ft-small-tit">cartões</span>
+                    <ul class="ft-if-pay-lst">
+                        <li>Visa</li>
+                        <li>MasterCard</li>
+                        <li>AmericanExpress</li>
+                        <li>Diners Club</li>
+                        <li>Aura</li>
+                        <li>Elo</li>
+                        <li>Casa</li>
+                        <li>Caixa</li>
+                    </ul>
+                </div>
+                <div class="ft-if-pay billet">
+                    <span class="ft-small-tit">boleto</span>
+                    <ul class="ft-if-pay-lst">
+                        <li>Boleto Bancário</li>
+                    </ul>
+                </div>
+                <div class="ft-if-pay debt">
+                    <span class="ft-small-tit">débito online</span>
+                    <ul class="ft-if-pay-lst">
+                        <li>Visa</li>
+                        <li>Itaú</li>
+                        <li>Bradesco</li>
+                        <li>Banco do Brasil</li>
+                        <li>Mastercad Maestro</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ft-if-seals">
+                <strong class="ft-tit">certificados</strong>
+                <ul class="ft-list2">
+                    <li class="ft-lt2-it">
+                        <div id="armored_website">
+                            <param id="aw_preload" value="true" />
+                       </div>
+                       <script async src="//selo.siteblindado.com/aw.js"></script>
+                    </li>
+                    <li class="ft-lt2-it">
+                        <span class="ft-lt2-bt tim-seal">Movido com Intelig Telecom</span>
+                    </li>
+                    <li class="ft-lt2-it">
+                        <a class="ft-lt2-bt green-campaign-seal" href="http://www.b2wdigital.com/institucional/companhia-verde" target="_blank">Compania Verde</a>
+                    </li>
+                    <li class="ft-lt2-it">
+                        <a class="ft-lt2-bt powerby-seller-seal" href="http://www.bseller.com.br" target="_blank">Power by B Seller</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="selo-level">
+                <div class="oas" data-oas-width="170" data-oas-height="200" data-oas="Frame1"></div>
+            </div>
+        </div>
+
+
+        <div class="ft-address">
+            <div class="ft-rules-box">
+                <p class="ft-rules ft-rules1">Todas as regras e promoções são válidas apenas para produtos vendidos e entregues pela Americanas.com. O preço válido será o da finalização da compra.</p>
+            </div>
+            <div class="ft-address-txt"  itemscope="itemscope" itemtype="http://schema.org/Organization">
+                <div class="organization-info">
+                    <span itemprop="name">B2W - Companhia Digital</span> / <span itemprop="taxID"> CNPJ: 00.776.574/0006-60 / Inscrição Estadual: 492.513.778.117</span>
+                </div>
+                <div class="organization-more-info" itemprop="address" itemscope="itemscope" itemtype="http://schema.org/PostalAddress">
+                    Endereço:
+                    <span itemprop="streetAddress">Rua Sacadura Cabral, 102</span> -
+                    <span itemprop="addressLocality">Rio de Janeiro, RJ</span> -
+                    <span itemprop="postalCode">20081-902</span>
+                    <span class="email-wrp">
+                        Atendimento ao cliente:
+                        <a href="http://www.americanas.com.br/atendimento-email" class="ft-email-lnk">
+                            <span itemprop="email">atendimento.acom@americanas.com</span>
+                        </a>
+                    </span>
+                </div>
+                <div class="site-map-box">
+                    <span class="hook">A maior loja. Os menores preços.</span>
+                    <span class="site-map"> <a href="http://staging.www.americanas.com.br/mapa-do-site" class="ft-address-lnk">Mapa do site</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="mobileVersion">
+
+        </div>
+    </div>
+</footer>
+<script>
+var isMobile = /iP(hone|od)|Android.*Mobile/.test(navigator.userAgent);
+if (isMobile) {
+   var sitemapLink = document.getElementsByClassName('mobileVersion');
+   if (sitemapLink && sitemapLink.length > 0) {
+        sitemapLink[0].innerHTML = sitemapLink[0].innerHTML + "<p><a href=\"javascript:void(0);\" onclick=\"javascript:setCookie('NovoMobileOptOut','0'); window.location = window.location.href.replace('MobileOptOut=1','MobileOptOut=0'); return false;\">Acessar a Versão Mobile</a></p>";
+   }
+}
+
+if(typeof jQuery != 'undefined') {
+  if($(".a-main-product").length){
+         $(".a-main-product .table-size>a").attr("data-modal-maxwidth","810").attr("data-modal-maxheight","400" );
+      }
+      $(function() {
+      $(".home-page .pure-u-3-4 .single-product").each(function(index, b) {
+          var href = $(this).find(".prodTitle").attr("href");
+          $(this).find(".prodTitle").attr("href", href+"?chave=HM_SAZ_VT_"+(index+1));
+          $(this).find(".url").attr("href", href+"?chave=HM_SAZ_VT_"+(index+1));
+      });
+
+      var count = 0;
+      $(".home-page [data-oas='x33']").closest(".grid-control").find(".single-product").each(function(index) {
+          var href = $(this).find(".prodTitle").attr("href");
+          $(this).find(".prodTitle").attr("href", href+"?chave=HM_BL1_VT_"+(index+1));
+          $(this).find(".url").attr("href", href+"?chave=HM_BL1_VT_"+(index+1));
+          count = index+1;
+      });
+      $(".home-page [data-oas='x26']").closest(".grid-control").find(".single-product").each(function(index) {
+          var href = $(this).find(".prodTitle").attr("href");
+          count++;
+          $(this).find(".prodTitle").attr("href", href+"?chave=HM_BL2_VT_"+(count));
+          $(this).find(".url").attr("href", href+"?chave=HM_BL2_VT_"+(count));
+      });
+  });
+}
+
+App.on('load', function (){
+    var str = location.href;
+    if(str.search("/estatica") > -1 || str.search("/hotsite") > -1){
+        $('.ft-lt1-lnk').click(function(){
+            App.$('.ft-lt1-lnk').fancybox({
+                type: 'iframe',
+                href: $(this).attr('href')
+            });
+        });
+    }
+});
+
+</script>
+
+<script>
+App.on('load', function(){
+    var App = this, $ = this.$, _ = this._, $elemPar = $('.grid-control:nth-of-type(1)'), num = 0;
+    $elemPar.addClass('bg-geral bg-0');
+    oas.on('print:end', function(){
+        var $elm = $('.banner-principal .slide-items');
+        $elm.trigger('configuration', {
+            scroll: {
+                onBefore: function(data){
+                    var attrsrc = data.items.visible.find('.product-image').data('original');
+                    data.items.visible.find('.product-image').attr('src', attrsrc);
+                    $elm.trigger('currentPosition', function(i){
+                        $elemPar.removeClass('bg-' + num);
+                        num = i;
+                        $elemPar.addClass('bg-' + num);
+                    });
+                }
+            }
+        });
+    });
+});
+</script>
+
+
+
+<script>
+
+// prepara imagens do submenu e oferta do dia do header para s?? aparecer com "mouseover" e lazyload;
+App.once('load', function () {
+  var app = this, $ = app.$, _ = app._;
+  var header = $('#a-header');
+  var menu = header.find('.abh-menu-header');
+  var oferta = header.find('.ams-item.oferta-do-dia');
+
+  function init() {
+
+    menu.find('img[data-original], img[data-src]').lazyload({
+      event: 'visible',
+      effect: 'fadeIn'
+    });
+    oferta.find('img[data-original], img[data-src]').lazyload({
+      event: 'visible',
+      effect: 'fadeIn'
+    });
+
+    menu.find('> ul > li').on('mouseover', function () {
+      $(this).find('img[data-original], img[data-src]').trigger('visible');
+    });
+
+    oferta.on('mouseover', function () {
+      $(this).find('img[data-original], img[data-src]').trigger('visible');
+    });
+  }
+
+  app.$.app.on('run', init);
+    init();
+  });
+</script><div class="sitemap-link" data-component="mapa_do_site">
+        <a href="http://www.americanas.com.br/mapa-do-site" class="ft-address-lnk">Mapa do site</a>
+    </div><script type="text/javascript">			
+			var crmWA_dataLayer = crmWA_dataLayer || [];
+			crmWA_dataLayer.push({
+			        'objTipoDePagina':'central-de-atendimento',
+                                'objDepartamento': '', 
+                                'objSubLoja':'',
+                                'objLinha': '',
+                                'objSubLinha': '',
+                                'objSublinhaLevel2': '',
+                                'objSublinhaLevel3': '',
+                                'objBreadCrumb':"",
+                                'objVersaoCatalogoFront' : 'release-258',
+                                'objVersaoCatalogoBack' : '1.87.19.875'
+			});
+		</script>
+
+	<script src="http://imagens.americanas.com.br/statics-release-258/catalog/js/v1/injs.js"></script>
+	<script>
+		injs.jsDir = "http://imagens.americanas.com.br/statics-release-258/catalog/js/v1/";
+	</script>
+
+  <script src="http://imagens.americanas.com.br/statics-release-258/catalog/js/v1/space.js"></script>
+  <script src="http://imagens.americanas.com.br/statics-release-258/catalog/js/v1/main.js"></script>
+
+
+	<META NAME="WT.cg_n" CONTENT="" />
+	<script>
+	app_loaded = true;
+	onReady();
+	</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-63212705-2', {cookieDomain: '.americanas.com.br'});
+  ga('set', 'dimension1', 'Catalogo-Desktop');
+  ga('set', 'dimension2', '1.0.0');
+  ga('send', 'pageview');
+</script><meta itemprop="name" content=""/>
+<meta itemprop="additionalType" content="central-de-atendimento"/>
+
+<div itemscope itemtype="http://schema.org/WebSite">
+          <meta itemprop="version/catalogFront"  content="release-258"/>
+         <meta itemprop="version/catalogBack" content="1.87.19.875"/>
+ </div>
+
+<meta itemprop="description/loja" content=""/>
+<meta itemprop="description/subLoja" content=""/>
+<meta itemprop="description/linha" content=""/>
+<meta itemprop="description/subLinha" content=""/>
+<meta itemprop="description/sublinhaLevel2" content=""/>
+<meta itemprop="description/sublinhaLevel3" content=""/>
+	<!-- Adobe Dynamic TagManagement -->
+	<script src="//assets.adobedtm.com/296b83a81627fd662c5aecf8289129e20324f9b7/satelliteLib-039094e35ebf75cdac2c5d09be98e7e0ba98dcc6.js"></script>
+	<!-- general static content acom 296555-->
+
+<!-- Selos -->
+<script async src="http://apps.americanas.com.br/media/selo/js/selo_v2.js"></script>
+<!-- End -->
+
+<script async src="http://iacom1-a.akamaihd.net/catalog/skins/home-especial/cupom/bit.js"></script>
+
+
+<!-- Maxymiser script start -->
+<script type="text/javascript"src="//service.maxymiser.net/cdn/pakua/submarino/js/mmcore.js"></script>
+<!-- Maxymiser script end -->
+<!-- FULL STORY ACOM 1.2  -->
+<script type="text/javascript">!function(){function e(){var e=document.createElement("script");e.innerHTML="window['_fs_debug'] = false;window['_fs_host'] = 'www.fullstory.com';window['_fs_org'] = '1Q8a';(function(m,n,e,t,l,o,g,y){g=m[e]=function(a,b){g.q?g.q.push([a,b]):g._api(a,b);};g.q=[];o=n.createElement(t);o.async=1;o.src='https://'+_fs_host+'/s/fs.js';y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);g.identify=function(i,v){g(l,{uid:i});if(v)g(l,v)};g.setUserVars=function(v){FS(l,v)};g.clearUserCookie=function(d,i){d=n.domain;while(1){n.cookie='fs_uid=;domain='+d+';path=/;expires='+new Date(0);i=d.indexOf('.');if(i<0)break;d=d.slice(i+1)}}})(window,document,'FS','script','user');",document.body.appendChild(e)}function o(e,o){return Math.random()*(o-e)+e}function n(e){return e?decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*"+encodeURIComponent(e).replace(/[\-\.\+\*]/g,"\\$&")+"\\s*\\=\\s*([^;]*).*$)|^.*$"),"$1"))||null:null}function t(e,o,n,t,r,i){if(!e||/^(?:expires|max\-age|path|domain|secure)$/i.test(e))return!1;var c="";if(n)switch(n.constructor){case Number:c=1/0===n?"; expires=Fri, 31 Dec 9999 23:59:59 GMT":"; max-age="+n;break;case String:c="; expires="+n;break;case Date:c="; expires="+n.toUTCString()}return document.cookie=encodeURIComponent(e)+"="+encodeURIComponent(o)+c+(r?"; domain="+r:"")+(t?"; path="+t:"")+(i?"; secure":""),!0}if(window.location&&window.location.search&&-1!=window.location.search.indexOf("record=true")||"FVFS=VE"===n("b2wcrmts")||"true"===n("record")?e():o(0,100)<.1?(e(),t("record",!0,null,"/",".americanas.com.br",null)):t("record",!1,null,"/",".americanas.com.br",null),window.FS&&n("B2W-UID")){var r={};n("acomNick")&&(r.displayName=n("acomNick")),n("B2W-UID")&&(r.b2wId_str=n("B2W-UID")),n("customer.id")&&(r.customerId_str=n("customer.id")),"FVFS=VE"===n("b2wcrmts")&&(r.b2wcrmts_str=n("b2wcrmts")),FS.identify(n("B2W-UID"),r)}}();</script>
+<!-- END FULL STORY ACOM 1.2 -->
+
+
+<!-- Granify -->
+<script>
+var GRANIFY_SITE_ID=1344;
+ 
+(function(e,t,n){var r,i,s,o,u;u=false;try{o=new RegExp("(?:^|\\W)_gr_test_url=([^;]*)");s=document.cookie.match(o);if(s){if(s[1]==="1")u=true}else{r=Math.random();if(r>.95)u=true;i=new Date(+(new Date)+1e3*60*60*24*2);document.cookie="_gr_test_url="+ +u+";expires="+i.toGMTString()+";path=/"}}catch(a){}if(u)e.replace("javascript.js","javascript.next.js");try{o=new RegExp("(?:^|\\W)_gr_ep=([^;]*)");s=document.cookie.match(o);if(!s){document.cookie="_gr_ep_sent=;expires=Thu, 01-Jan-1970 00:00:01 GMT;path=/";document.cookie="_gr_er_sent=;expires=Thu, 01-Jan-1970 00:00:01 GMT;path=/";if(!window.location.origin){if(window.location.port)port=":"+window.location.port;else port="";window.location.origin=window.location.protocol+"//"+window.location.hostname+port}path=window.location.toString().replace(window.location.origin,"");referrer=document.referrer;i=new Date(+(new Date)+1e3*60*30);document.cookie="_gr_ep="+path+";expires="+i.toGMTString()+";path=/";document.cookie="_gr_er="+referrer+";expires="+i.toGMTString()+";path=/"}}catch(a){}a=new Date;a=""+a.getUTCFullYear()+(a.getUTCMonth()+1)+a.getUTCDate();e=e+"?id="+t+"&v="+a;window.Granify=n;n._stack=[];n.init=function(e,t,r){function i(e,t){e[t]=function(){Granify._stack.push([t].concat(Array.prototype.slice.call(arguments,0)))}}var s=n;h=["on","identify","addTag","trackPageView","trackCart","trackOrder"];for(a=0;a<h.length;a++)i(s,h[a])};n.init();var f,l,c,p=document.createElement("iframe");p.src="javascript:false";p.title="";p.role="presentation";(p.frameElement||p).style.cssText="width: 0 !important; height: 0 !important; border: 0 !important; overflow: hidden !important; position: absolute !important; top: -1000px !important; left: -1000px !important;";c=document.getElementsByTagName("script");c=c[c.length-1];c.parentNode.insertBefore(p,c);try{l=p.contentWindow.document}catch(a){f=document.domain;p.src="javascript:var d=document.open();d.domain='"+f+"';void(0);";l=p.contentWindow.document}l.open()._l=function(){var t=this.createElement("script");if(f)this.domain=f;t.id="js-iframe-async";t.src=e;this.body.appendChild(t)};l.write('<body onload="document._l();">');l.close()})("//cdn.granify.com/assets/javascript.js",GRANIFY_SITE_ID,[])
+</script>
+
+
+
+
+<script>
+	var category_granify,
+	    page_type_granify,
+	    collection_granify;
+
+	category_granify = document.querySelector("body").getAttribute("data-department-name");
+	if (category_granify == null){
+		category_granify  = "";
+	}
+
+	collection_granify = location.pathname.indexOf('HomeLandingPage') != -1 || location.pathname.indexOf('loja') != -1 || location.pathname.indexOf('subloja') != -1 || location.pathname.indexOf('linha') != -1 || location.pathname.indexOf('sublinha') != -1;
+
+	if(location.pathname == "/") {
+		page_type_granify = "home";
+	} else if (location.pathname.indexOf('/produto/') != -1) {
+		page_type_granify = "product";
+	} else if (collection_granify) {
+		page_type_granify = "collection";
+	} else {
+		page_type_granify = "other";
+	
+	}
+
+
+	Granify.trackPageView({
+	  page_type: page_type_granify,
+	  category: category_granify
+	});
+
+</script>
+
+<!-- END Granify -->
+
+<!-- Add Shoppers-->
+<script>
+if((document.querySelector("body").getAttribute("class").indexOf('product-page') != -1) || (document.querySelector("body").getAttribute("class").indexOf('category-page') != -1) || (document.querySelector("body").getAttribute("class").indexOf('departament-page') != -1) || (document.querySelector("body").getAttribute("class").indexOf('home-page') != -1)){
+    var js = document.createElement('script'); js.type = 'text/javascript'; js.async = true; js.id = 'AddShoppers';
+    js.src = ('https:' == document.location.protocol ? 'https://shop.pe/widget/' : 'http://cdn.shop.pe/widget/') + 'widget_async.js#55b258f0a3876441733f4647';
+    document.getElementsByTagName("head")[0].appendChild(js);
+
+    if(document.querySelector("body").getAttribute("class").indexOf('product-page') == -1){
+          AddShoppersTracking = {
+             header: "A maior loja os menores preços",
+             image: "http://iacom1-a.akamaihd.net/mktacom/2014/banners/a-personalizado/banner_azinho_vermelho.jpg",
+             url: "http://www.americanas.com.br/?franq=AFL­03­137955",
+             name: "Aqui você encontra mais de 1 milhão de produtos e com o preço que cabe do seu bolso :)",
+             description: "Olha quanta coisa legal tem na Americanas.com, e os preços são ótimos também ;) #TemNaAmericanascom"
+            };
+        }
+}
+</script>
+<!-- End Add Shoppers -->
+
+<!-- recomendacao -->
+<script src="http://iacom1-a.akamaihd.net/catalog/skins/recommendation-catcher.v0.2.2.min.js"></script>
+<script src="http://iacom1-a.akamaihd.net/catalog/skins/recommendation-logger.v0.1.15.min.js"></script>
+
+<script>
+  if (typeof RecommendationCatcher != 'undefined' ) {
+    RecommendationCatcher.run({domain:'.americanas.com.br'});
+  }
+
+  if (typeof RecommendationLogger != 'undefined') {
+    RecommendationLogger.run({
+        recommendation: {
+	  version:'2.1.15-22_03_2016',
+	  name:'neemu',
+	  logAPI:'https://laas.americanas.com.br/acom/grava.php'
+	}, 
+	productInfoAPI: 'http://productinfo-v1.americanas.com.br/productinfo',
+        domain: '.americanas.com.br'
+      });
+  }
+
+</script>
+<!-- End recomendacao -->
+
+<!-- general static content acom 296555 - END -->
+		<!-- Adobe Dynamic TagManagement -->
+	<script type="text/javascript">_satellite.pageBottom();</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"applicationID":"5363873","applicationTime":35,"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"0699e41a46","transactionName":"M1NXNxEFXEtRUkRZVgoZdhYQEF1VHxs=","agent":"","errorBeacon":"bam.nr-data.net"}</script>
+	</body>
+</html>
