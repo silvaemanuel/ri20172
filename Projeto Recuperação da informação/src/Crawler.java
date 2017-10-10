@@ -50,10 +50,21 @@ public class Crawler extends Thread{
 			else{
 				currentUrl = this.visitNextUrl();
 				URL aURL = new URL(url);
-
+				
+				int i = 0;
+				if (aURL.getHost().length() + 10 >= currentUrl.length()) {
+					i = currentUrl.length();
+				}else {
+					i = aURL.getHost().length() + 10;
+				}
 				//Garante que os links visitados devem conter a URL inicial para serem visitados.
-				while(!currentUrl.substring(0, aURL.getHost().length() + aURL.getHost().length()/2).contains(aURL.getHost())) {
+				while(!currentUrl.substring(0, i).contains(aURL.getHost())) {
 					currentUrl = this.visitNextUrl();
+					if (aURL.getHost().length() + 10 >= currentUrl.length()) {
+						i = currentUrl.length();
+					}else {
+						i = aURL.getHost().length() + 10;
+					}
 				}
 				URL currentURL = new URL(currentUrl);
 				if (!(currentURL.getHost() + currentURL.getFile()).equals(aURL.getHost())) {
