@@ -1,0 +1,70 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4
+Relation:     C__Users_Eduardo_Desktop_WebPages_Sites_Txts-weka.filters.unsupervised.attribute.StringToWordVector-R1-W1000-prune-rate-1.0-C-T-I-N0-stemmerweka.core.stemmers.NullStemmer-stopwords-handlerweka.core.stopwords.WordsFromFile -stopwords C:\Users\Eduardo\Desktop\stopwords.txt-M1-tokenizerweka.core.tokenizers.WordTokenizer -delimiters " \r\n\t.,;:\'\"()?!"-weka.filters.supervised.attribute.AttributeSelection-Eweka.attributeSelection.InfoGainAttributeEval-Sweka.attributeSelection.Ranker -T -1.7976931348623157E308 -N -1-weka.filters.unsupervised.attribute.Remove-R2-3,6,8-9,11-1223
+Instances:    180
+Attributes:   6
+              classificação
+              jogadores
+              plataforma
+              desenvolvedor
+              gênero
+              @@class@@
+Test mode:    evaluate on training data
+
+=== Classifier model (full training set) ===
+
+Logistic Regression with ridge parameter of 1.0E-8
+Coefficients...
+                     Class
+Variable               Neg
+==========================
+classificação    -5.1593
+jogadores          -2.4398
+plataforma          0.1106
+desenvolvedor       -0.795
+gênero            -1.0804
+Intercept           2.4651
+
+
+Odds Ratios...
+                     Class
+Variable               Neg
+==========================
+classificação     0.0057
+jogadores           0.0872
+plataforma          1.1169
+desenvolvedor       0.4516
+gênero             0.3395
+
+
+Time taken to build model: 0.04 seconds
+
+=== Evaluation on training set ===
+
+Time taken to test model on training data: 0.01 seconds
+
+=== Summary ===
+
+Correctly Classified Instances         161               89.4444 %
+Incorrectly Classified Instances        19               10.5556 %
+Kappa statistic                          0.7889
+Mean absolute error                      0.1627
+Root mean squared error                  0.2856
+Relative absolute error                 32.549  %
+Root relative squared error             57.1133 %
+Total Number of Instances              180     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,878    0,089    0,908      0,878    0,893      0,789    0,960     0,953     Neg
+                 0,911    0,122    0,882      0,911    0,896      0,789    0,960     0,956     Pos
+Weighted Avg.    0,894    0,106    0,895      0,894    0,894      0,789    0,960     0,954     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 79 11 |  a = Neg
+  8 82 |  b = Pos
+

@@ -1,0 +1,247 @@
+		pesquisa de hardware e software do steam									 																																 																		loja	 			destaques 		explorar 		curadores 		lista de desejos 		notícias 		estatísticas 				comunidade	 			página inicial 		discussões 		oficina 		mercado 		transmissões 													sobre		 				suporte	 																																									instale o steam						 																											iniciar sessão 					 | 					idioma																																												български (búlgaro) 																										čeština (tcheco) 																										dansk (dinamarquês) 																										nederlands (holandês) 																										english (inglês) 																										suomi (finlandês) 																										français (francês) 																										ελληνικά (grego) 																										deutsch (alemão) 																										magyar (húngaro) 																										italiano (italiano) 																										日本語 (japonês) 																										한국어 (coreano) 																										norsk (norueguês) 																										polski (polonês) 																										português (portugal) 																																			русский (russo) 																										română (romeno) 																										简体中文 (chinês simplificado) 																										español (espanhol) 																										svenska (sueco) 																										繁體中文 (chinês tradicional) 																										ไทย (tailandês) 																										türkçe (turco) 																										українська (ucraniano) 																						ajude-nos a traduzir o steam 																																																																																							carrinho								(0)							 																																																																							sua loja 																																																										página inicial da loja									 																												vistos recentemente									 																			curadores steam									 																			atualizados recentemente									 																																																							jogos 										jogos 																																																																																																				gratuito para jogar												 																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													acesso antecipado												 																																																																																																																																																																																																																																																												demonstrações										 																					realidade virtual										 																					compatível com o controle steam										 																				navegar por gênero:																																														aventura												 																																																									ação												 																																																									casual												 																																																									corrida												 																																																																														esportes												 																																																									estratégia												 																																																																														indie												 																																																									multijogador massivo												 																																																									rpg												 																																																									simulação												 																																																				ver marcadores populares										 																				navegar por plataforma:																					macos										 																					steamos + linux										 																																																software 									software 																																																										central de softwares									 																																							animação e modelagem										 																														desenvolvimento de jogos										 																														design e ilustração										 																														edição de fotos										 																														educativo										 																														produção de vídeo										 																														produção de áudio										 																														publicação para web										 																														utilitários										 																																																hardware 									hardware 																																																										controle steam									 																			steam link									 																			máquinas steam									 																			htc vive									 																																							vídeos 									vídeos 																																																										central de vídeos									 																		navegar por tipo:																														filme										 																														episódico										 																														documentário										 																														gaming										 																														tutorial										 																														curta-metragem										 																											navegar por gênero:																														ação										 																														anime										 																														comédia										 																														drama										 																														terror										 																														ficção científica										 																																							notícias							 																																																																		 																																																																																																																																										pesquisa de hardware e software do steam: september 2017									steam conducts a monthly survey to collect data about what kinds of computer hardware and software our customers are using. 				participation in the survey is optional, and anonymous. the information gathered is incredibly helpful to us as we make 				decisions about what kinds of technology investments to make and products to offer.			 			
+			 				pc video card usage by mfg									april 2016 - september 2017															click for more info 																								dx10/11/12 systems									april 2016 - september 2017															click for more info 																								pc processor usage by manufacturer									april 2016 - september 2017															click for more info 																				
+							pc number of cpus per computer									4 cpu adoption trend: +12.450% (18 mos)					april 2016 - september 2017															click for more info 																								mac hardware ownership									april 2016 - september 2017																																		vr headsets				 					april 2016 - september 2017																																											
+														 combined				 									  windows only				 									  mac only				 									  linux only				 																		      windows, mac and linux				use the dropdown to filter by platform or view combined stats.										september 2017 (click line item to see more detail)										item				most popular				percentage				change						 					os version					windows 10 64 bit 					45.37% 					-4.66% 					
+																								 							windows							96.60%							+0.30% 							
+																						windows 10 64 bit						45.37%						-4.66%						
+															windows 7 64 bit						41.01%						+6.00%						
+															windows 8.1 64 bit						5.23%						-0.78%						
+															windows 7						2.98%						-0.14%						
+															windows 10						0.61%						-0.02%						
+															windows 8 64 bit						0.58%						-0.07%						
+															windows xp 32 bit						0.54%						0.00%						
+															windows 8.1						0.13%						0.00%						
+																 							osx							2.74%							-0.29% 							
+																						macos 10.12.6 64 bit						1.40%						+0.36%						
+															macos 10.11.6 64 bit						0.39%						-0.07%						
+															macos 10.10.5 64 bit						0.24%						-0.04%						
+															macos 10.12.5 64 bit						0.23%						-0.44%						
+															macos 10.12.4 64 bit						0.07%						-0.06%						
+															macos 10.13.0 64 bit						0.07%						+0.07%						
+															macos 10.9.5 64 bit						0.07%						-0.01%						
+															macos 10.12.3 64 bit						0.06%						-0.02%						
+																 							linux							0.60%							-0.03% 							
+																						ubuntu 16.04.3 lts 64 bit						0.14%						+0.08%						
+															ubuntu 17.04 64 bit						0.09%						0.00%						
+															linux 64 bit						0.07%						0.00%						
+															linux mint 18.2 sonya 64 bit						0.05%						+0.05%						
+																					 					system ram					8 gb 					44.46% 					+1.69% 					
+																				less than 512 mb					0.00%					0.00%					
+												512 mb to 999 mb					0.03%					0.00%					
+												1 gb					0.53%					+0.01%					
+												2 gb					3.15%					-0.15%					
+												3 gb					6.39%					+0.12%					
+												4 gb					14.85%					-0.11%					
+												5 gb					0.59%					-0.07%					
+												6 gb					2.83%					-0.40%					
+												7 gb					2.25%					-0.08%					
+												8 gb					44.46%					+1.69%					
+												9 gb					0.03%					-0.01%					
+												10 gb					0.25%					-0.04%					
+												11 gb					0.17%					-0.01%					
+												12 gb and higher					24.45%					-0.94%					
+																					 					intel cpu speeds					3.3 ghz to 3.69 ghz 					20.97% 					+0.14% 					
+																				below 1.4 ghz					0.50%					+0.07%					
+												1.4 ghz to 1.49 ghz					0.36%					0.00%					
+												1.5 ghz to 1.69 ghz					1.86%					+0.01%					
+												1.7 ghz to 1.99 ghz					2.44%					-0.09%					
+												2.0 ghz to 2.29 ghz					4.85%					-0.19%					
+												2.3 ghz to 2.69 ghz					16.50%					-0.81%					
+												2.7 ghz to 2.99 ghz					12.02%					+1.28%					
+												3.0 ghz to 3.29 ghz					19.37%					+1.77%					
+												3.3 ghz to 3.69 ghz					20.97%					+0.14%					
+												3.7 ghz and above					5.01%					-0.73%					
+																					 					physical cpus					4 cpus 					57.94% 					+0.58% 					
+																				unspecified					0.00%					0.00%					
+												1 cpu					1.32%					+0.04%					
+												2 cpus					36.83%					-0.08%					
+												3 cpus					1.83%					-0.38%					
+												4 cpus					57.94%					+0.58%					
+												5 cpus					0.00%					-0.01%					
+												6 cpus					1.42%					-0.17%					
+												7 cpus					0.00%					0.00%					
+												8 cpus					0.59%					0.00%					
+												10 cpus					0.02%					+0.01%					
+												11 cpus					0.00%					0.00%					
+												12 cpus					0.02%					0.00%					
+												14 cpus					0.00%					0.00%					
+												16 cpus					0.01%					0.00%					
+												18 cpus					0.00%					0.00%					
+												20 cpus					0.00%					0.00%					
+												22 cpus					0.00%					0.00%					
+												24 cpus					0.00%					0.00%					
+												28 cpus					0.00%					0.00%					
+												32 cpus					0.00%					0.00%					
+																					 					video card description					 nvidia geforce gtx 1060 					7.47% 					+1.17% 					
+																				 nvidia geforce gtx 1060					7.47%					+1.17%					
+												 nvidia geforce gtx 960					6.59%					+0.90%					
+												 nvidia geforce gtx 750 ti					6.03%					+0.81%					
+												other					79.91%					+67.20%					
+																					 					vram					2047 mb 					27.93% 					+1.07% 					
+																				256 mb					0.87%					-0.04%					
+												512 mb					4.43%					-0.20%					
+												768 mb					1.64%					+0.12%					
+												1024 mb					26.86%					-1.25%					
+												2047 mb					27.93%					+1.07%					
+												2048 mb					0.77%					-0.17%					
+												3071 mb					4.74%					+1.07%					
+												4095 mb					14.34%					+0.58%					
+												4096 mb					0.82%					-0.25%					
+												6143 mb					4.64%					-0.16%					
+												8191 mb					4.35%					-0.86%					
+												11263 mb					0.61%					0.00%					
+												other					8.02%					+0.12%					
+																					 					primary display resolution					1920 x 1080 					56.79% 					+2.51% 					
+																				1024 x 768					1.07%					+0.01%					
+												1280 x 720					0.50%					-0.02%					
+												1280 x 768					0.22%					-0.02%					
+												1280 x 800					1.04%					-0.09%					
+												1280 x 1024					2.60%					-0.30%					
+												1360 x 768					2.10%					-0.26%					
+												1366 x 768					17.36%					-0.49%					
+												1440 x 900					3.85%					-0.30%					
+												1536 x 864					0.70%					+0.04%					
+												1600 x 900					4.39%					-0.37%					
+												1680 x 1050					2.76%					-0.35%					
+												1920 x 1080					56.79%					+2.51%					
+												1920 x 1200					0.88%					-0.14%					
+												2560 x 1080					0.67%					-0.02%					
+												2560 x 1440					2.68%					+0.02%					
+												3440 x 1440					0.25%					-0.03%					
+												3840 x 2160					0.79%					-0.11%					
+												other					1.36%					-0.08%					
+																					 					multi-monitor desktop resolution					3840 x 1080 					33.37% 					-0.45% 					
+																				1920 x 2160					0.61%					+0.03%					
+												2390 x 768					0.34%					+0.10%					
+												2560 x 1024					0.50%					-0.02%					
+												2640 x 1024					0.21%					-0.01%					
+												2646 x 1024					0.52%					+0.05%					
+												2720 x 1024					0.23%					+0.23%					
+												2726 x 768					0.42%					-0.01%					
+												2732 x 768					0.56%					-0.01%					
+												2806 x 900					0.42%					+0.05%					
+												2880 x 900					0.33%					-0.01%					
+												2880 x 1024					0.26%					+0.01%					
+												2880 x 1800					0.26%					+0.03%					
+												2944 x 1080					1.03%					-0.05%					
+												2960 x 900					0.20%					-0.01%					
+												2960 x 1050					0.56%					+0.04%					
+												2966 x 900					0.32%					0.00%					
+												3000 x 1920					0.42%					+0.04%					
+												3040 x 900					0.24%					+0.02%					
+												3046 x 1050					0.30%					+0.01%					
+												3120 x 1050					0.26%					+0.01%					
+												3200 x 900					0.44%					-0.02%					
+												3200 x 1080					5.74%					-0.24%					
+												3200 x 1200					0.35%					+0.02%					
+												3280 x 1050					0.22%					+0.22%					
+												3280 x 1080					1.75%					+0.03%					
+												3286 x 1080					2.75%					0.00%					
+												3360 x 1050					0.68%					+0.02%					
+												3360 x 1080					2.90%					-0.13%					
+												3520 x 1080					2.61%					-0.08%					
+												3520 x 1200					0.36%					+0.04%					
+												3600 x 1080					4.43%					-0.08%					
+												3600 x 1086					0.21%					-0.05%					
+												3600 x 1200					0.25%					0.00%					
+												3840 x 1080					33.37%					-0.45%					
+												3840 x 1081					0.28%					+0.03%					
+												3840 x 1200					1.95%					+0.04%					
+												3840 x 2160					0.62%					+0.04%					
+												4240 x 1440					0.22%					-0.02%					
+												4480 x 1080					0.99%					+0.03%					
+												4480 x 1440					3.42%					-0.05%					
+												5120 x 1080					0.30%					0.00%					
+												5120 x 1440					0.86%					+0.09%					
+												5120 x 2880					0.35%					+0.06%					
+												5360 x 1440					0.32%					+0.02%					
+												5760 x 1080					2.36%					-0.07%					
+												5760 x 2160					1.41%					+0.13%					
+												6400 x 1440					0.37%					-0.02%					
+												7680 x 2160					0.43%					+0.03%					
+												other					22.07%					+0.55%					
+																					 					microphones					yes 					99.11% 					+0.61% 					
+																				yes					99.11%					+0.61%					
+												unknown					0.49%					-0.35%					
+												no					0.41%					-0.26%					
+																					 					language					english 					34.64% 					-3.92% 					
+																				english					34.64%					-3.92%					
+												simplified chinese					29.54%					+7.91%					
+												russian					10.33%					-1.94%					
+												spanish					4.27%					-0.50%					
+												brazilian portuguese					3.20%					-0.33%					
+												german					3.06%					-0.96%					
+												korean					2.95%					+0.91%					
+												french					2.37%					-0.39%					
+												polish					1.64%					-0.34%					
+												turkish					1.54%					-0.40%					
+												thai					1.12%					+0.17%					
+												traditional chinese					0.91%					+0.08%					
+												japanese					0.81%					+0.10%					
+												italian					0.65%					-0.05%					
+												portuguese					0.51%					-0.09%					
+												czech					0.47%					-0.07%					
+												swedish					0.35%					-0.03%					
+												hungarian					0.33%					-0.06%					
+												dutch					0.32%					-0.01%					
+												danish					0.27%					-0.02%					
+												finnish					0.17%					-0.05%					
+												romanian					0.15%					0.00%					
+												norwegian					0.15%					0.00%					
+												ukrainian					0.11%					-0.03%					
+												greek					0.09%					+0.02%					
+												bulgarian					0.04%					0.00%					
+												unknown					0.00%					0.00%					
+																					 					free hard drive space					100 gb to 249 gb 					25.25% 					+0.28% 					
+																				unspecified					0.00%					0.00%					
+												less than 10 gb					1.06%					-0.12%					
+												10 gb to  99 gb					19.19%					-0.27%					
+												100 gb to 249 gb					25.25%					+0.28%					
+												250 gb to 499 gb					24.35%					-0.21%					
+												500 gb to 749 gb					11.97%					-0.53%					
+												750 gb to 999 gb					9.26%					+0.46%					
+												above 1 tb					8.92%					+0.38%					
+																					 					total hard drive space					above 1 tb 					44.88% 					+2.98% 					
+																				unspecified					0.00%					0.00%					
+												less than 10 gb					0.00%					0.00%					
+												10 gb to  99 gb					0.72%					+0.08%					
+												100 gb to 249 gb					8.48%					+0.56%					
+												250 gb to 499 gb					19.54%					-1.00%					
+												500 gb to 749 gb					5.61%					-0.38%					
+												750 gb to 999 gb					20.75%					-2.25%					
+												above 1 tb					44.88%					+2.98%					
+																					 					network speed					unspecified 					99.09% 					+0.64% 					
+																				unspecified					99.09%					+0.64%					
+												33.6 kbps					0.03%					-0.02%					
+												56.0 kbps					0.03%					-0.03%					
+												112.0 kbps					0.01%					-0.02%					
+												256.0 kbps					0.05%					-0.03%					
+												768.0 kbps					0.05%					-0.04%					
+												1,024.0 kbps					0.06%					-0.05%					
+												2,048.0 kbps					0.28%					-0.19%					
+												10,000.0 kbps					0.40%					-0.26%					
+																					 					vr headsets					htc vive 					0.19% 					-0.04% 					
+																				htc vive					0.19%					-0.04%					
+												oculus rift					0.18%					-0.01%					
+												oculus rift dk2					0.01%					-0.01%					
+												oculus rift dk1					0.00%					0.00%					
+												unknown					0.00%					0.00%					
+																					 					other settings					sse2 					100.00% 					0.00% 					
+																				fcmov					100.00%					0.00%					
+												sse2					100.00%					0.00%					
+												sse3					99.99%					0.00%					
+												lahf / sahf					99.86%					-0.04%					
+												cmpxchg16b 					99.80%					-0.02%					
+												ntfs					96.46%					+0.29%					
+												prefetchw					96.45%					+0.27%					
+												ssse3					95.61%					+0.57%					
+												sse4.1					93.00%					+0.80%					
+												sse4.2					91.19%					+0.95%					
+												avx					82.73%					+0.92%					
+												aes					80.59%					+1.57%					
+												hyperthreading					52.49%					-1.87%					
+												sse4a					15.64%					-1.37%					
+																																											  				  											
+										
+				
+														                     © 2017 valve corporation. todos os direitos reservados. todas as marcas são propriedade dos seus respectivos donos nos eua e em outros países.        iva incluso em todos os preços onde aplicável.              política de privacidade               |              termos legais               |              acordo de assinatura do steam               |              reembolsos         														ver versão para dispositivos móveis									                        sobre a valve           |  steamworks           |  empregos           |  distribuição no steam 		  |  vales-presente 		  |   steam 		  |   @steam_games     
