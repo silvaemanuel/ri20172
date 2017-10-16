@@ -1,0 +1,24 @@
+sem heirística
+Nuuvem achou 13 páginas relevantes.
+Walmart achou 373 páginas relevantes.
+cultura achou 97 páginas relevantes.
+Americanas achou 39 páginas relevantes.
+steam achou 0 páginas relevantes.
+Submarino achou 13 páginas relevantes.
+kabum achou 65 páginas relevantes.
+Saraiva achou 92 páginas relevantes.
+Fastfhop achou 18 páginas relevantes.
+
+
+com heuristica
+Nuuvem achou 22 páginas relevantes.
+Walmart achou 499 páginas relevantes.
+cultura achou 213 páginas relevantes.
+Americanas achou 445 páginas relevantes.
+steam achou 30 páginas relevantes.
+Submarino achou 214 páginas relevantes.
+kabum achou 391 páginas relevantes.
+Saraiva achou 367 páginas relevantes.
+Fastfhop achou 206 páginas relevantes.
+
+o classificador foi bem simples, porém suficiente para demonstrar que com a heurística os resultos são melhores, a heuristica busca pelas palavras ["jogo", "plataforma", "gênero", "requisitos", "game", "jogador", "mutiplayer", "desenvolvedor", "pagamento", "cartão", "boleto", "R$"] no corpo do documento html para identificar um anúncio de jogo.
