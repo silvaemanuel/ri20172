@@ -45,7 +45,7 @@ public class CrawlerAux {
 			Document htmlDocument = connection.get();
 			this.htmlDocument = htmlDocument;
 			
-			//savePage(htmlDocument);
+			savePage(htmlDocument);
 			
 			System.out.println(url);
 
