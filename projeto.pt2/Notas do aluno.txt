@@ -1,0 +1,4 @@
+Professor, eu fiz algumas alterações para deixar o código mais limpo e fácil de entender.
+Não consegui utilizar o método de hash para otimizar buscas em querys grandes a tempo, 
+porém os valores calculados aparentemente estão corretos, também vou deixar o arquivo invertido
+completo para sua análise.
